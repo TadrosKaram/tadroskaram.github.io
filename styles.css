@@ -38,7 +38,7 @@ nav ul li {
 }
 nav ul li a {
     text-decoration: none;
-    color: #c9e185;
+   
     font-weight: bold;
     transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -101,18 +101,8 @@ hr {
     transform: scale(1.1);
 }
 
-#linkedin-link {
-    margin-left: 1rem;
-}
-#linkedin-link a {
-    color: #0077b5;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-#linkedin-link a:hover {
-    color: #005a87;
-    transform: scale(1.1);
-}
+
+
 
 .icons {
 
@@ -154,4 +144,27 @@ font-weight: lighter;
 color: rgb(94, 94, 94);
 font-style: italic;
 
+}
+#instagram {
+    background: linear-gradient(purple, rgb(104, 6, 104) , darkorange); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-weight: bold; 
+}
+
+
+#whatsapp {
+    background: linear-gradient(darkgreen, lightgreen); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-weight: bold; 
+}
+
+#linkedin-link {
+    color: darkblue; /* Fallback color */
+    background: linear-gradient(darkblue, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    display: inline-block;
 }
