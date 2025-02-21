@@ -205,7 +205,7 @@ font-style: italic;
     align-items: center;     /* Center vertically */
     height: 100vh;           /* Full screen height */
     text-align: center;      /* Center text inside */
-    margin:auto;
+    margin-bottom:175px;
 }
 
 #form-parent h1 {
