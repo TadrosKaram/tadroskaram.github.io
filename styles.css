@@ -128,30 +128,27 @@ hr {
     display: inline-block;
 }
 
-/* ================= Download Button ================= */
 #download-button {
+    display: inline-block;
+    text-align: center;
     background-color: #ffffff;
     border: 2px solid darkgreen;
     padding: 10px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-#download-button:hover {
-    background-color: darkgreen;
-    transform: scale(1.1);
-    color: #ffffff;
-    box-shadow: 3px 3px 15px rgba(0, 128, 0, 0.5);
-}
-.download-btn {
+    font-weight: bold;
     text-decoration: none;
     color: black;
-    font-weight: bold;
+    border-radius: 5px; /* Optional: Makes it rounded */
 }
-#download-open {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+#download-button:hover {
+    background-color: darkgreen;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 3px 3px 15px rgba(0, 128, 0, 0.5);
 }
+
 
 /* ================= Feedback Form ================= */
 /* Note: There are two elements with id "form-parent" in your HTML.
