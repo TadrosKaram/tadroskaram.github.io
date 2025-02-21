@@ -169,27 +169,25 @@ font-style: italic;
     display: inline-block;
 }
 
-.download-btn {
-
-
-    text-decoration: none;
-    color: #000000;
-}
-
 #download-button {
-
     background-color: #ffffff;
+    border: 2px solid darkgreen;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 #download-button:hover {
-
-
     background-color: darkgreen;
     transform: scale(1.1);
 }
 
+.download-btn {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
 .download-btn:hover {
-
-
     color: white;
 }
