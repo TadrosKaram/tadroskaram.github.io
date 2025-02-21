@@ -180,6 +180,8 @@ font-style: italic;
 #download-button:hover {
     background-color: darkgreen;
     transform: scale(1.1);
+    color:#ffffff;
+    box-shadow: 3px 3px 15px rgba(0, 128, 0, 0.5);
 }
 
 .download-btn {
@@ -188,9 +190,6 @@ font-style: italic;
     font-weight: bold;
 }
 
-.download-btn:hover {
-    color: white;
-}
 
 #download-open {
 
@@ -199,7 +198,6 @@ font-style: italic;
     align-items: center;
 }
 
-/* Center Everything */
 #form-parent {
     display: flex;
     flex-direction: column;  /* Stack elements vertically */
@@ -209,14 +207,12 @@ font-style: italic;
     text-align: center;      /* Center text inside */
 }
 
-/* Center h1 Text */
 #form-parent h1 {
     text-align: center;
     font-size: 24px;
     color: darkgreen;
 }
 
-/* Feedback Box Styling */
 #feedbacks {
     width: 90%;
     max-width: 400px;
@@ -229,7 +225,7 @@ font-style: italic;
     background-color: #f9f9f9;
     transition: 0.3s;
     resize: none;
-    display: block; /* Ensures proper spacing */
+    display: block; 
     margin-top: 10px;
 }
 
@@ -239,7 +235,7 @@ font-style: italic;
     box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
 }
 
-/* Submit Button Styling */
+
 #submit-form {
     display: block;
     width: 90%;
