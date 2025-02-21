@@ -204,4 +204,53 @@ font-style: italic;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+#feedbacks {
+    width: 100%;
+    max-width: 400px;
+    height: 150px;
+    padding: 12px;
+    border: 2px solid darkgreen;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    background-color: #f9f9f9;
+    transition: 0.3s;
+    resize: none;
+}
+
+#feedbacks:focus {
+    border-color: green;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
+}
+
+
+#submit-form {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: darkgreen;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#submit-form:hover {
+    background: green;
+    transform: scale(1.05);
+    box-shadow: 3px 3px 15px rgba(0, 128, 0, 0.5);
+}
+
+#submit-form:active {
+    transform: scale(0.98);
 }
