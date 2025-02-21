@@ -211,7 +211,7 @@ font-style: italic;
 #form-parent h1 {
     text-align: center;
     font-size: 24px;
-    color: darkgreen;
+    color: rgb(255, 255, 255);
 }
 
 #feedbacks {
@@ -245,7 +245,7 @@ font-style: italic;
     padding: 12px;
     border: none;
     border-radius: 25px;
-    background: darkgreen;
+    background: rgb(8, 79, 177);
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -256,9 +256,9 @@ font-style: italic;
 }
 
 #submit-form:hover {
-    background: green;
+    background: rgb(8, 79, 177);
     transform: scale(1.05);
-    box-shadow: 3px 3px 15px rgba(0, 128, 0, 0.5);
+    box-shadow: 3px 3px 15px rgba(7, 73, 160, 0.5);
 }
 
 #submit-form:active {
