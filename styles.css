@@ -176,8 +176,8 @@ hr {
     color: rgb(255, 255, 255);
 }
 #feedbacks {
-    width: 90%;
-    max-width: 400px;
+    width: 800px;
+    
     height: 150px;
     padding: 12px;
     border: 2px solid rgb(0, 45, 100);
