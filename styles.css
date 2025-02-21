@@ -169,9 +169,27 @@ font-style: italic;
     display: inline-block;
 }
 
-a {
+.download-btn {
 
 
     text-decoration: none;
-    color: #00000;
+    color: #000000;
+}
+
+#download-button {
+
+    background-color: #ffffff;
+}
+
+#download-button:hover {
+
+
+    background-color: darkgreen;
+    transform: scale(1.1);
+}
+
+.download-btn:hover {
+
+
+    color: white;
 }
