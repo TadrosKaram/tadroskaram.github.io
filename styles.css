@@ -128,6 +128,55 @@ hr {
     display: inline-block;
 }
 
+#download-open {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+#download-button {
+    display: inline-block;  /* Makes the link behave like a button */
+    background-color: #ffffff;
+    border: 2px solid rgb(18, 106, 149);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+#download-button:hover {
+    background-color: rgb(28, 52, 114);
+    color: white;
+    transform: scale(1.05); /* Less aggressive scaling */
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+}
+
+#fiverr-button {
+    display: inline-block;  /* Makes the link behave like a button */
+    background-color: #ffffff;
+    border: 2px solid rgb(18, 106, 149);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+#fiverr-button:hover {
+    background-color: rgb(28, 52, 114);
+    color: white;
+    transform: scale(1.05); /* Less aggressive scaling */
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+}
 
 
 /* ================= Feedback Form ================= */
