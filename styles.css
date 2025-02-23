@@ -134,6 +134,8 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100px;
 }
 
 #download-button {
@@ -152,10 +154,9 @@ hr {
 #download-button:hover {
     background-color: rgb(28, 52, 114);
     color: white;
-    transform: scale(1.1);
-    box-shadow: 3px 3px 15px rgba(0, 128, 0, 0.5);
+    transform: scale(1.05); /* Less aggressive scaling */
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
 }
-
 
 
 /* ================= Feedback Form ================= */
