@@ -3,102 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Your Name - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Tadros's Karam Portfolio</h1>
-    </header>
-    
-    <nav>
-        <ul>
-        
-            <li><a id="whatsapp" href="https://wa.link/qu51wc" target="_blank">WhatsApp</a></li>
-            <li><a id="instagram" href="https://www.instagram.com/taso_karam/" target="_blank">Instagram</a></li>
-            <li id="linkedin-link"><a href="https://www.linkedin.com/in/tadros-karam/" target="_blank">LinkedIn</a></li>
-            <li id="cv-section"><a href="#download-open">CV</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="about" class="section">
-           
-            
-            <h2>About Me</h2>
-            <p id="about">Hi, I'm Tadros Karam. I am a computer engineer student at faculty of engineering ain shams university. This where I showcase my skills and current certifications.</p>
-            
-        </section>
-        <hr>
-        <section id="skills" class="section">
-            <h2>Skills</h2>
-            <p>All current skills:</p>
-            <div class="icons">
-                <i class="fa-brands fa-html5" style="color: #ffffff;">html</i>
-                <i class="fa-brands fa-css" style="color: #ffffff;">css</i>
-                <i class="fa-brands fa-linux" style="color: #ffffff;">linux</i>
-                <i class="fa-brands fa-python" style="color:#ffffff;">python</i>
-                <i  style="color:#ffffff;" id="c">C++</i>
-                
-                <i  style="color:#ffffff;" id="matlab">MATLAB</i>
-                <i class="fa-solid fa-microchip" style="color: #ffffff;">HARDWARE</i>
+<body class="bg-gray-900 text-gray-300">
+    <header class="bg-gray-800 shadow-md py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-semibold text-purple-400">Your Name</a>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li><a href="#about" class="hover:text-purple-300 transition duration-300">About</a></li>
+                        <li><a href="#certifications" class="hover:text-purple-300 transition duration-300">Certifications</a></li>
+                        <li><a href="#skills" class="hover:text-purple-300 transition duration-300">Skills</a></li>
+                        <li><a href="#contact" class="hover:text-purple-300 transition duration-300">Contact</a></li>
+                    </ul>
+                </nav>
+                <button id="hamburger-btn" class="md:hidden text-gray-400 hover:text-purple-300 focus:outline-none focus:shadow-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+
+                </button>
             </div>
-            <br>
-            <br>
-            <br>
-            <div class="currently-studying">
-                <p>Currently studying:</p>
-                <ul>
-                    <li>JavaScript</li>
-                    <li>Java CSE231s</li>
-                    
-                </ul>
-            </div>
-        </section>
-        <hr>
-        <section id="certifications" class="section">
-            <h2>Certifications</h2>
-            <div class="cert-screen">   <img src="cert1.jpg" width="500px">
-                <p class="desc">This is a HTML & CSS certificate provided by FreeCodeCamp</p>
-            <br>
-                <hr>
-                <br>
-                <img src="cer2.png" width="500px">
-                <p class="desc">MATLAB is a skill which i will already practice in my college but I took<br>this course as training</p>
-                <br>
-                <br>
-                <img src="cert3.png" width="500px">
-                <p class="desc">One of the hardest skills to learn glad i have completed this certificate</p>
-            
-         
-        </section>
-        <div id="download-open">
-            <a href="CV.pdf" target="_blank" id="download-button" class="button">View CV</a>
-            <a href="https://www.fiverr.com/s/jjqAzrG" target="_blank" id="fiverr-button" class="button">Teaching</a>
-            <a href="https://www.fiverr.com/s/BREqVLb" target="_blank" id="lang-button" class="button">Language2Language</a>
         </div>
-        
-        <div id="form-parent">
-            
-        <form action="https://formspree.io/f/manqvapl" method="POST" id="feedback-form">
+    </header>
 
-            
-            <div id="form-parent">
-                <h1>Leave a Feedback or a Message! ❤️</h1>
-                <textarea id="feedbacks" placeholder="Type something here..." name="feedback"></textarea>
-                <input type="submit" id="submit-form" name="submit" value="Send Feedback">
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-gray-400 hover:text-purple-300 focus:outline-none focus:shadow-outline">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
-            
-
-
-
-
-        </form>
+            <nav class="block">
+                <ul class="space-y-4">
+                    <li><a href="#about" class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">About</a></li>
+                    <li><a href="#certifications" class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Certifications</a></li>
+                    <li><a href="#skills" class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Skills</a></li>
+                    <li><a href="#contact" class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="about" class="mb-16">
+            <h2 class="text-3xl font-semibold text-purple-400 mb-4">About Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <img src="placeholder-image.jpg" alt="Your Photo" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="text-gray-400">
+                    <p class="mb-4">
+                        Hello! I'm [Your Name], a passionate [Your Profession] with a focus on [Your Focus/Specialty].
+                    </p>
+                    <p class="mb-4">
+                        I have a strong background in [Mention your key skills or technologies]. I'm always eager to learn new things and take on challenging projects.
+                    </p>
+                    <p>
+                        My goal is to create [Mention your goals - e.g., innovative solutions, user-friendly experiences, etc.].
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="mb-16">
+            <h2 class="text-3xl font-semibold text-purple-400 mb-4">Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-1">Certification 1</h3>
+                    <p class="text-gray-400 mb-2">A brief description of Certification 1.  Highlight the skills or knowledge gained.</p>
+                    <p class="text-gray-400 mb-2">Issued by: [Issuing Organization]</p>
+                    <p class="text-gray-400 mb-2">Date: [Date of Issue]</p>
+                    <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300 inline-flex items-center">
+                        View Certification
+                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1">
+                            <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 1 0-1.06 1.06l4.25 4.25a.75.75 0 001.06 0l4.25-4.25a.75.75 0 1 0-1.06-1.06L15.61 9.25H4.25A.75.75 0 013 10z" clip-rule="evenodd" />
+                        </svg>
+
+                    </a>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-1">Certification 2</h3>
+                    <p class="text-gray-400 mb-2">A brief description of Certification 2. Highlight the skills or knowledge gained.</p>
+                    <p class="text-gray-400 mb-2">Issued by: [Issuing Organization]</p>
+                    <p class="text-gray-400 mb-2">Date: [Date of Issue]</p>
+                    <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300 inline-flex items-center">
+                        View Certification
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1">
+                            <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 1 0-1.06 1.06l4.25 4.25a.75.75 0 001.06 0l4.25-4.25a.75.75 0 1 0-1.06-1.06L15.61 9.25H4.25A.75.75 0 013 10z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-1">Certification 3</h3>
+                    <p class="text-gray-400 mb-2">A brief description of Certification 3.  Highlight the skills or knowledge gained.</p>
+                     <p class="text-gray-400 mb-2">Issued by: [Issuing Organization]</p>
+                    <p class="text-gray-400 mb-2">Date: [Date of Issue]</p>
+                    <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300 inline-flex items-center">
+                        View Certification
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1">
+                            <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 1 0-1.06 1.06l4.25 4.25a.75.75 0 001.06 0l4.25-4.25a.75.75 0 1 0-1.06-1.06L15.61 9.25H4.25A.75.75 0 013 10z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="mb-16">
+            <h2 class="text-3xl font-semibold text-purple-400 mb-4">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-200 mb-2">Technical Skills</h3>
+                    <ul class="list-disc list-inside text-gray-400">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>MATLAB</li>
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>Hardware</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-200 mb-2">Soft Skills</h3>
+                    <ul class="list-disc list-inside text-gray-400">
+                        <li>Problem-solving</li>
+                        
+                        <li>Teamwork</li>
+                        <li>Outgoing And Friendly</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-16">
+            <h2 class="text-3xl font-semibold text-purple-400 mb-4">Contact</h2>
+            <p class="text-gray-400 mb-4">
+                I'm always open to new opportunities and collaborations. Feel free to reach out to me through the following channels:
+            </p>
+            <ul class="list-disc list-inside text-gray-400">
+                <li>Email: <a href="mailto:2100425@eng.asu.edu.eg" class="text-purple-300 hover:text-purple-400 transition duration-300">2100425@eng.edu.asu.eg</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/tadros-karam/" target="_blank" class="text-purple-300 hover:text-purple-400 transition duration-300">linkedin.com/in/yourprofile</a></li>
+                
+                </ul>
+        </section>
     </main>
-    <footer>Any coding Tasks contact me on my LinkedIn 🤖 Hello There</footer>
-    
-    
+
+    <footer class="bg-gray-800 py-4 text-center text-gray-400">
+        <p>&copy; 2025 Tadros Karam. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+        const navLinks = document.querySelectorAll('header nav ul li a');
+        const sections = document.querySelectorAll('section');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle("hidden");
+        }
+
+        hamburgerBtn.addEventListener("click", toggleMobileMenu);
+        closeMenuBtn.addEventListener("click", toggleMobileMenu);
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener("click", toggleMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+                toggleMobileMenu();
+            }
+        });
+
+        function updateActiveNavLink() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
 </body>
 </html>
