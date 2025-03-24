@@ -294,12 +294,11 @@
         const ctx = canvas.getContext('2d');
         const scoreElement = document.getElementById('score');
 
-        // Set canvas size
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-
+        // Set canvas size with fixed dimensions for consistent grid
         const gridSize = 20;
-        const tileCount = Math.floor(canvas.width / gridSize);
+        const tileCount = 30; // Fixed number of tiles for consistent gameplay
+        canvas.width = tileCount * gridSize;
+        canvas.height = tileCount * gridSize;
 
         let snake = [
             { x: 10, y: 10 }
@@ -321,7 +320,7 @@
             // Draw grid (optional, for better visibility)
             ctx.strokeStyle = '#374151';
             ctx.lineWidth = 0.5;
-            for (let i = 0; i < tileCount; i++) {
+            for (let i = 0; i <= tileCount; i++) {
                 ctx.beginPath();
                 ctx.moveTo(i * gridSize, 0);
                 ctx.lineTo(i * gridSize, canvas.height);
@@ -346,17 +345,9 @@
         function moveSnake() {
             const head = { x: snake[0].x + dx, y: snake[0].y + dy };
 
-            // Allow passing through walls - fixed order of operations
-            if (head.x < 0) {
-                head.x = tileCount - 1;
-            } else if (head.x >= tileCount) {
-                head.x = 0;
-            }
-            if (head.y < 0) {
-                head.y = tileCount - 1;
-            } else if (head.y >= tileCount) {
-                head.y = 0;
-            }
+            // Allow passing through walls with modulo operation for smoother transitions
+            head.x = ((head.x % tileCount) + tileCount) % tileCount;
+            head.y = ((head.y % tileCount) + tileCount) % tileCount;
 
             // Check for collisions with self
             for (let i = 1; i < snake.length; i++) {
@@ -385,37 +376,32 @@
         }
 
         function generateFood() {
-            let attempts = 0;
-            const maxAttempts = 100; // Prevent infinite loop
-            
-            while (attempts < maxAttempts) {
-                food = {
-                    x: Math.floor(Math.random() * tileCount),
-                    y: Math.floor(Math.random() * tileCount)
-                };
-                
-                // Check if food spawned on snake
-                let foodOnSnake = false;
-                for (let segment of snake) {
-                    if (food.x === segment.x && food.y === segment.y) {
-                        foodOnSnake = true;
-                        break;
+            // Create an array of all possible positions
+            const availablePositions = [];
+            for (let x = 0; x < tileCount; x++) {
+                for (let y = 0; y < tileCount; y++) {
+                    // Check if position is not occupied by snake
+                    let isOccupied = false;
+                    for (let segment of snake) {
+                        if (x === segment.x && y === segment.y) {
+                            isOccupied = true;
+                            break;
+                        }
+                    }
+                    if (!isOccupied) {
+                        availablePositions.push({ x, y });
                     }
                 }
-                
-                if (!foodOnSnake) {
-                    return; // Food is valid, exit function
-                }
-                
-                attempts++;
             }
-            
-            // If we couldn't find a valid position after max attempts,
-            // place food at a random position and hope for the best
-            food = {
-                x: Math.floor(Math.random() * tileCount),
-                y: Math.floor(Math.random() * tileCount)
-            };
+
+            // If there are available positions, randomly select one
+            if (availablePositions.length > 0) {
+                const randomIndex = Math.floor(Math.random() * availablePositions.length);
+                food = availablePositions[randomIndex];
+            } else {
+                // If no available positions (snake fills the board), game over
+                gameOver();
+            }
         }
 
         function gameOver() {
