@@ -181,14 +181,13 @@
         </section>
 
         <section id="vibe-coding" class="mb-16">
-            <h2 class="text-3xl font-semibold text-purple-400 mb-4">Vibe Coding :D</h2>
+            <h2 class="text-3xl font-semibold text-purple-400 mb-4">Games Created with AI</h2>
             <div class="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="text-xl font-semibold text-gray-200 mb-4">AI-Powered</h3>
+                        <h3 class="text-xl font-semibold text-gray-200 mb-4">AI-Powered Games</h3>
                         <p class="text-gray-400 mb-4">
-                            This section of my portfolio was crafted using Vibe Coding with Cursor AI IDE, showcasing the power of AI-assisted development. The seamless integration of AI capabilities helped create a modern, responsive design that perfectly represents my professional journey.
-                            Here is a simple snake game that i made using Vibe Coding :D
+                            These games were crafted using Vibe Coding with Cursor AI IDE, showcasing the power of AI-assisted development. The seamless integration of AI capabilities helped create engaging and interactive games.
                         </p>
                         <div class="flex items-center space-x-2 text-purple-300 mb-6">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -196,36 +195,69 @@
                             </svg>
                             <span>Built with Cursor AI IDE</span>
                         </div>
-                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-gray-400 text-sm">Game Controls</span>
-                                <div class="flex space-x-2">
-                                    <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                                    <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                                    <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                                </div>
-                            </div>
-                            <div class="text-gray-300 text-sm space-y-2">
-                                <p>Use arrow keys or WASD to control the snake</p>
-                                <p>Press Space to start/pause the game</p>
-                                <p>Press R to restart after game over</p>
-                            </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <button onclick="openGamePopup('snake')" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                                Snake Game
+                            </button>
+                            <button onclick="openGamePopup('hangman')" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                                Hangman Game
+                            </button>
                         </div>
                     </div>
-                    <div class="flex flex-col justify-center space-y-6">
-                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-1">
+                    <div class="flex flex-col justify-center items-center">
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-1 w-full max-w-md">
                             <div class="bg-gray-800 rounded-lg p-4 text-center">
-                                <span class="text-purple-300 text-lg">Snake Game</span>
-                                <p class="text-gray-400 text-sm mt-2">Score: <span id="score">0</span></p>
+                                <span class="text-purple-300 text-lg">Select a Game to Play</span>
+                                <p class="text-gray-400 text-sm mt-2">Click on a game button to start playing!</p>
                             </div>
-                        </div>
-                        <div class="bg-gray-900 rounded-lg p-4">
-                            <canvas id="gameCanvas" class="w-full h-[400px] bg-gray-800 rounded-lg"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Game Popups -->
+        <div id="gamePopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+            <div class="bg-gray-800 rounded-lg p-6 max-w-4xl w-full mx-4 relative">
+                <button onclick="closeGamePopup()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div id="snakeGame" class="hidden">
+                    <h3 class="text-2xl font-semibold text-purple-400 mb-4">Snake Game</h3>
+                    <div class="bg-gray-900 rounded-lg p-4">
+                        <canvas id="gameCanvas" class="w-full h-[400px] bg-gray-800 rounded-lg"></canvas>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-gray-400 text-sm">Score: <span id="score">0</span></p>
+                        <div class="text-gray-300 text-sm space-y-2 mt-2">
+                            <p>Use arrow keys or WASD to control the snake</p>
+                            <p>Press Space to start/pause the game</p>
+                            <p>Press R to restart after game over</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="hangmanGame" class="hidden">
+                    <h3 class="text-2xl font-semibold text-purple-400 mb-4">Hangman Game</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="flex flex-col items-center">
+                            <canvas id="hangmanCanvas" class="w-full h-[300px] bg-gray-900 rounded-lg"></canvas>
+                            <div class="mt-4 text-center">
+                                <p class="text-gray-400 text-sm">Lives: <span id="lives">6</span></p>
+                                <p class="text-gray-300 text-2xl font-mono mt-2" id="wordDisplay"></p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="grid grid-cols-7 gap-2" id="keyboard"></div>
+                            <button onclick="resetHangman()" class="mt-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                                New Game
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
 
@@ -341,9 +373,12 @@
                 ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize - 2, gridSize - 2);
             });
 
-            // Draw food
+            // Draw food (2x size)
             ctx.fillStyle = '#f472b6';
-            ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 2, gridSize - 2);
+            const foodSize = gridSize * 2 - 4; // 2x size with 2px padding
+            const foodX = (food.x * gridSize) - (gridSize / 2); // Center the larger food block
+            const foodY = (food.y * gridSize) - (gridSize / 2);
+            ctx.fillRect(foodX, foodY, foodSize, foodSize);
         }
 
         function moveSnake() {
@@ -492,6 +527,187 @@
 
         // Start the game
         startGame();
+    </script>
+
+    <script>
+        // Game Popup Functions
+        function openGamePopup(game) {
+            document.getElementById('gamePopup').classList.remove('hidden');
+            document.getElementById('gamePopup').classList.add('flex');
+            
+            // Hide all games
+            document.getElementById('snakeGame').classList.add('hidden');
+            document.getElementById('hangmanGame').classList.add('hidden');
+            
+            // Show selected game
+            if (game === 'snake') {
+                document.getElementById('snakeGame').classList.remove('hidden');
+                startGame(); // Restart snake game
+            } else if (game === 'hangman') {
+                document.getElementById('hangmanGame').classList.remove('hidden');
+                initHangman(); // Initialize hangman game
+            }
+        }
+
+        function closeGamePopup() {
+            document.getElementById('gamePopup').classList.add('hidden');
+            document.getElementById('gamePopup').classList.remove('flex');
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('gamePopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGamePopup();
+            }
+        });
+
+        // Hangman Game
+        const hangmanCanvas = document.getElementById('hangmanCanvas');
+        const hangmanCtx = hangmanCanvas.getContext('2d');
+        const wordDisplay = document.getElementById('wordDisplay');
+        const livesDisplay = document.getElementById('lives');
+        const keyboard = document.getElementById('keyboard');
+
+        // Set canvas size
+        hangmanCanvas.width = hangmanCanvas.offsetWidth;
+        hangmanCanvas.height = hangmanCanvas.offsetHeight;
+
+        const words = ['JAVASCRIPT', 'PYTHON', 'HTML', 'CSS', 'REACT', 'NODE', 'MONGODB', 'EXPRESS'];
+        let currentWord = '';
+        let guessedLetters = new Set();
+        let lives = 6;
+        let gameOver = false;
+
+        function initHangman() {
+            currentWord = words[Math.floor(Math.random() * words.length)];
+            guessedLetters.clear();
+            lives = 6;
+            gameOver = false;
+            livesDisplay.textContent = lives;
+            updateWordDisplay();
+            createKeyboard();
+            drawHangman(0);
+        }
+
+        function updateWordDisplay() {
+            wordDisplay.textContent = currentWord
+                .split('')
+                .map(letter => guessedLetters.has(letter) ? letter : '_')
+                .join(' ');
+        }
+
+        function createKeyboard() {
+            keyboard.innerHTML = '';
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+            letters.forEach(letter => {
+                const button = document.createElement('button');
+                button.textContent = letter;
+                button.className = 'bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-3 rounded transition duration-300';
+                button.onclick = () => guessLetter(letter);
+                keyboard.appendChild(button);
+            });
+        }
+
+        function guessLetter(letter) {
+            if (gameOver || guessedLetters.has(letter)) return;
+            
+            guessedLetters.add(letter);
+            const button = Array.from(keyboard.children).find(btn => btn.textContent === letter);
+            if (button) button.disabled = true;
+
+            if (currentWord.includes(letter)) {
+                updateWordDisplay();
+                if (wordDisplay.textContent.replace(/\s/g, '') === currentWord) {
+                    gameOver = true;
+                    setTimeout(() => alert('Congratulations! You won!'), 100);
+                }
+            } else {
+                lives--;
+                livesDisplay.textContent = lives;
+                drawHangman(6 - lives);
+                if (lives === 0) {
+                    gameOver = true;
+                    setTimeout(() => alert('Game Over! The word was: ' + currentWord), 100);
+                }
+            }
+        }
+
+        function drawHangman(step) {
+            hangmanCtx.clearRect(0, 0, hangmanCanvas.width, hangmanCanvas.height);
+            hangmanCtx.strokeStyle = '#d8b4fe';
+            hangmanCtx.lineWidth = 3;
+
+            // Base
+            if (step >= 1) {
+                hangmanCtx.beginPath();
+                hangmanCtx.moveTo(50, 250);
+                hangmanCtx.lineTo(250, 250);
+                hangmanCtx.stroke();
+            }
+
+            // Pole
+            if (step >= 2) {
+                hangmanCtx.beginPath();
+                hangmanCtx.moveTo(150, 250);
+                hangmanCtx.lineTo(150, 50);
+                hangmanCtx.stroke();
+            }
+
+            // Top
+            if (step >= 3) {
+                hangmanCtx.beginPath();
+                hangmanCtx.moveTo(150, 50);
+                hangmanCtx.lineTo(250, 50);
+                hangmanCtx.stroke();
+            }
+
+            // Rope
+            if (step >= 4) {
+                hangmanCtx.beginPath();
+                hangmanCtx.moveTo(250, 50);
+                hangmanCtx.lineTo(250, 80);
+                hangmanCtx.stroke();
+            }
+
+            // Head
+            if (step >= 5) {
+                hangmanCtx.beginPath();
+                hangmanCtx.arc(250, 100, 20, 0, Math.PI * 2);
+                hangmanCtx.stroke();
+            }
+
+            // Body
+            if (step >= 6) {
+                hangmanCtx.beginPath();
+                hangmanCtx.moveTo(250, 120);
+                hangmanCtx.lineTo(250, 180);
+                hangmanCtx.stroke();
+            }
+
+            // Arms
+            if (step >= 7) {
+                hangmanCtx.beginPath();
+                hangmanCtx.moveTo(250, 140);
+                hangmanCtx.lineTo(220, 160);
+                hangmanCtx.moveTo(250, 140);
+                hangmanCtx.lineTo(280, 160);
+                hangmanCtx.stroke();
+            }
+
+            // Legs
+            if (step >= 8) {
+                hangmanCtx.beginPath();
+                hangmanCtx.moveTo(250, 180);
+                hangmanCtx.lineTo(220, 220);
+                hangmanCtx.moveTo(250, 180);
+                hangmanCtx.lineTo(280, 220);
+                hangmanCtx.stroke();
+            }
+        }
+
+        function resetHangman() {
+            initHangman();
+        }
     </script>
 </body>
 </html>
