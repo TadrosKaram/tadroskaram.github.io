@@ -318,6 +318,20 @@
             ctx.fillStyle = '#1f2937';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+            // Draw grid (optional, for better visibility)
+            ctx.strokeStyle = '#374151';
+            ctx.lineWidth = 0.5;
+            for (let i = 0; i < tileCount; i++) {
+                ctx.beginPath();
+                ctx.moveTo(i * gridSize, 0);
+                ctx.lineTo(i * gridSize, canvas.height);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, i * gridSize);
+                ctx.lineTo(canvas.width, i * gridSize);
+                ctx.stroke();
+            }
+
             // Draw snake
             ctx.fillStyle = '#d8b4fe';
             snake.forEach(segment => {
@@ -332,11 +346,11 @@
         function moveSnake() {
             const head = { x: snake[0].x + dx, y: snake[0].y + dy };
 
-            // Check for collisions with walls
-            if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
-                gameOver();
-                return;
-            }
+            // Allow passing through walls
+            if (head.x < 0) head.x = tileCount - 1;
+            if (head.x >= tileCount) head.x = 0;
+            if (head.y < 0) head.y = tileCount - 1;
+            if (head.y >= tileCount) head.y = 0;
 
             // Check for collisions with self
             for (let i = 1; i < snake.length; i++) {
@@ -365,17 +379,37 @@
         }
 
         function generateFood() {
+            let attempts = 0;
+            const maxAttempts = 100; // Prevent infinite loop
+            
+            while (attempts < maxAttempts) {
+                food = {
+                    x: Math.floor(Math.random() * tileCount),
+                    y: Math.floor(Math.random() * tileCount)
+                };
+                
+                // Check if food spawned on snake
+                let foodOnSnake = false;
+                for (let segment of snake) {
+                    if (food.x === segment.x && food.y === segment.y) {
+                        foodOnSnake = true;
+                        break;
+                    }
+                }
+                
+                if (!foodOnSnake) {
+                    return; // Food is valid, exit function
+                }
+                
+                attempts++;
+            }
+            
+            // If we couldn't find a valid position after max attempts,
+            // place food at a random position and hope for the best
             food = {
                 x: Math.floor(Math.random() * tileCount),
                 y: Math.floor(Math.random() * tileCount)
             };
-            // Make sure food doesn't spawn on snake
-            snake.forEach(segment => {
-                if (food.x === segment.x && food.y === segment.y) {
-                    generateFood();
-                    return;
-                }
-            });
         }
 
         function gameOver() {
