@@ -748,8 +748,37 @@
         }
 
         function resetHangman() {
-            initHangman();
+            // Reset all game state
+            currentWord = words[Math.floor(Math.random() * words.length)];
+            guessedLetters.clear();
+            lives = 6;
+            gameOver = false;
+            
+            // Reset display
+            livesDisplay.textContent = lives;
+            updateWordDisplay();
+            
+            // Reset keyboard
+            createKeyboard();
+            
+            // Reset hangman drawing
+            drawHangman(0);
+            
+            // Re-enable all buttons
+            const buttons = keyboard.getElementsByTagName('button');
+            for (let button of buttons) {
+                button.disabled = false;
+                button.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
         }
+
+        // Add event listener for the New Game button
+        document.addEventListener('DOMContentLoaded', function() {
+            const newGameButton = document.querySelector('button[onclick="resetHangman()"]');
+            if (newGameButton) {
+                newGameButton.addEventListener('click', resetHangman);
+            }
+        });
     </script>
 </body>
 </html>
