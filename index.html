@@ -189,19 +189,84 @@
                         <p class="text-gray-400 mb-4">
                             This section of my portfolio was crafted using Vibe Coding with Cursor AI IDE, showcasing the power of AI-assisted development. The seamless integration of AI capabilities helped create a modern, responsive design that perfectly represents my professional journey.
                         </p>
-                        <div class="flex items-center space-x-2 text-purple-300">
+                        <div class="flex items-center space-x-2 text-purple-300 mb-6">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                             </svg>
                             <span>Built with Cursor AI IDE</span>
                         </div>
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-gray-400 text-sm">AI Code Assistant</span>
+                                <div class="flex space-x-2">
+                                    <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                                    <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                                    <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                                </div>
+                            </div>
+                            <pre class="text-sm text-gray-300 font-mono overflow-x-auto">
+<span class="text-purple-400">function</span> <span class="text-yellow-400">generatePortfolio</span>() {
+    <span class="text-blue-400">const</span> ai = <span class="text-green-400">new</span> CursorAI();
+    <span class="text-blue-400">const</span> portfolio = ai.createPortfolio({
+        style: <span class="text-orange-400">'modern'</span>,
+        features: [<span class="text-orange-400">'responsive'</span>, <span class="text-orange-400">'interactive'</span>],
+        theme: <span class="text-orange-400">'dark'</span>
+    });
+    <span class="text-purple-400">return</span> portfolio;
+}</pre>
+                        </div>
+                        <div class="bg-gray-900 rounded-lg p-4">
+                            <div class="flex items-center space-x-2 text-green-400 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm">AI Suggestions</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex items-center space-x-2 text-gray-400 text-sm">
+                                    <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                                    <span>Add smooth scroll animations</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-gray-400 text-sm">
+                                    <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                                    <span>Implement dark mode toggle</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-gray-400 text-sm">
+                                    <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                                    <span>Add project showcase section</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center justify-center">
+                    <div class="flex flex-col justify-center space-y-6">
                         <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-1">
                             <div class="bg-gray-800 rounded-lg p-4 text-center">
                                 <span class="text-purple-300 text-lg">Vibe Coding</span>
                                 <p class="text-gray-400 text-sm mt-2">AI-Powered Development</p>
                             </div>
+                        </div>
+                        <div class="bg-gray-900 rounded-lg p-4">
+                            <div class="flex items-center space-x-2 text-purple-300 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span>AI Features</span>
+                            </div>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                                    <span>Smart code completion</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                                    <span>Context-aware suggestions</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                                    <span>Real-time code analysis</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
