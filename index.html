@@ -541,11 +541,8 @@
 
         function openGamePopup(game) {
             const popup = document.getElementById('gamePopup');
-            popup.style.display = 'flex';
+            popup.style.display = 'fixed';
             
-            // Hide all games
-            document.getElementById('snakeGame').style.display = 'none';
-            document.getElementById('hangmanGame').style.display = 'none';
             
             // Show selected game
             if (game === 'snake') {
