@@ -217,9 +217,9 @@
         </section>
 
         <!-- Game Popups -->
-        <div id="gamePopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-[100]">
-            <div class="bg-gray-800 rounded-lg p-6 max-w-4xl w-full mx-4 relative z-[101]">
-                <button onclick="closeGamePopup()" class="absolute top-4 right-4 text-gray-400 hover:text-white cursor-pointer">
+        <div id="gamePopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+            <div style="background-color: #1f2937; border-radius: 0.5rem; padding: 1.5rem; max-width: 56rem; width: 100%; margin: 1rem; position: relative; z-index: 1001;">
+                <button onclick="closeGamePopup()" style="position: absolute; top: 1rem; right: 1rem; color: #9ca3af; cursor: pointer;">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -541,8 +541,7 @@
 
         function openGamePopup(game) {
             const popup = document.getElementById('gamePopup');
-            popup.classList.remove('hidden');
-            popup.classList.add('flex');
+            popup.style.display = 'flex';
             
             // Hide all games
             document.getElementById('snakeGame').style.display = 'none';
@@ -560,8 +559,7 @@
 
         function closeGamePopup() {
             const popup = document.getElementById('gamePopup');
-            popup.classList.add('hidden');
-            popup.classList.remove('flex');
+            popup.style.display = 'none';
         }
 
         // Close popup when clicking outside
