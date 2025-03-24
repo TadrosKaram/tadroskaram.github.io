@@ -196,10 +196,10 @@
                             <span>Built with Cursor AI IDE</span>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
-                            <button onclick="openGamePopup('snake')" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                            <button id="snakeButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer">
                                 Snake Game
                             </button>
-                            <button onclick="openGamePopup('hangman')" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                            <button id="hangmanButton" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer">
                                 Hangman Game
                             </button>
                         </div>
@@ -531,29 +531,35 @@
 
     <script>
         // Game Popup Functions
+        document.getElementById('snakeButton').addEventListener('click', function() {
+            openGamePopup('snake');
+        });
+
+        document.getElementById('hangmanButton').addEventListener('click', function() {
+            openGamePopup('hangman');
+        });
+
         function openGamePopup(game) {
             const popup = document.getElementById('gamePopup');
-            popup.classList.remove('hidden');
-            popup.classList.add('flex');
+            popup.style.display = 'flex';
             
             // Hide all games
-            document.getElementById('snakeGame').classList.add('hidden');
-            document.getElementById('hangmanGame').classList.add('hidden');
+            document.getElementById('snakeGame').style.display = 'none';
+            document.getElementById('hangmanGame').style.display = 'none';
             
             // Show selected game
             if (game === 'snake') {
-                document.getElementById('snakeGame').classList.remove('hidden');
+                document.getElementById('snakeGame').style.display = 'block';
                 startGame(); // Restart snake game
             } else if (game === 'hangman') {
-                document.getElementById('hangmanGame').classList.remove('hidden');
+                document.getElementById('hangmanGame').style.display = 'block';
                 initHangman(); // Initialize hangman game
             }
         }
 
         function closeGamePopup() {
             const popup = document.getElementById('gamePopup');
-            popup.classList.add('hidden');
-            popup.classList.remove('flex');
+            popup.style.display = 'none';
         }
 
         // Close popup when clicking outside
