@@ -217,9 +217,9 @@
         </section>
 
         <!-- Game Popups -->
-        <div id="gamePopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-            <div class="bg-gray-800 rounded-lg p-6 max-w-4xl w-full mx-4 relative">
-                <button onclick="closeGamePopup()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <div id="gamePopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-[100]">
+            <div class="bg-gray-800 rounded-lg p-6 max-w-4xl w-full mx-4 relative z-[101]">
+                <button onclick="closeGamePopup()" class="absolute top-4 right-4 text-gray-400 hover:text-white cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -250,7 +250,7 @@
                         </div>
                         <div class="flex flex-col items-center">
                             <div class="grid grid-cols-7 gap-2" id="keyboard"></div>
-                            <button onclick="resetHangman()" class="mt-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                            <button onclick="resetHangman()" class="mt-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer">
                                 New Game
                             </button>
                         </div>
@@ -532,8 +532,9 @@
     <script>
         // Game Popup Functions
         function openGamePopup(game) {
-            document.getElementById('gamePopup').classList.remove('hidden');
-            document.getElementById('gamePopup').classList.add('flex');
+            const popup = document.getElementById('gamePopup');
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
             
             // Hide all games
             document.getElementById('snakeGame').classList.add('hidden');
@@ -550,8 +551,9 @@
         }
 
         function closeGamePopup() {
-            document.getElementById('gamePopup').classList.add('hidden');
-            document.getElementById('gamePopup').classList.remove('flex');
+            const popup = document.getElementById('gamePopup');
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
         }
 
         // Close popup when clicking outside
@@ -559,6 +561,13 @@
             if (e.target === this) {
                 closeGamePopup();
             }
+        });
+
+        // Prevent event propagation from game content
+        document.querySelectorAll('#snakeGame, #hangmanGame').forEach(game => {
+            game.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
         });
 
         // Hangman Game
@@ -602,7 +611,7 @@
             letters.forEach(letter => {
                 const button = document.createElement('button');
                 button.textContent = letter;
-                button.className = 'bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-3 rounded transition duration-300';
+                button.className = 'bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-3 rounded transition duration-300 cursor-pointer';
                 button.onclick = () => guessLetter(letter);
                 keyboard.appendChild(button);
             });
@@ -613,7 +622,10 @@
             
             guessedLetters.add(letter);
             const button = Array.from(keyboard.children).find(btn => btn.textContent === letter);
-            if (button) button.disabled = true;
+            if (button) {
+                button.disabled = true;
+                button.classList.add('opacity-50', 'cursor-not-allowed');
+            }
 
             if (currentWord.includes(letter)) {
                 updateWordDisplay();
