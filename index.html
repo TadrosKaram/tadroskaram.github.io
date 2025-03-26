@@ -160,6 +160,14 @@
             background-color: #f472b6;
             transform: translateY(-3px);
         }
+        .profile-photo {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .profile-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(216, 180, 254, 0.5);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-300">
@@ -211,7 +219,7 @@
             <h2 class="text-3xl font-semibold text-purple-400 mb-4">About Me</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <img src="me.jpg" alt="Your Photo" class="rounded-lg shadow-lg w-full hover:scale-105 transition duration-300" width="500px">
+                    <img src="me.jpg" alt="Your Photo" class="rounded-lg shadow-lg w-full profile-photo" width="500px">
                 </div>
                 <div class="text-gray-400">
                     <p class="mb-4" style="font-size: 42px; font-style: italic; font-weight: lighter;">
