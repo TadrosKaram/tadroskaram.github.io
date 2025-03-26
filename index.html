@@ -13,27 +13,152 @@
             font-family: 'Inter', sans-serif;
         }
         .active {
-            color: #d8b4fe; /* Tailwind's purple-300 */
+            color: #d8b4fe;
+            position: relative;
+        }
+        .active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #d8b4fe;
+            transform: scaleX(1);
+            transition: transform 0.3s ease;
         }
         .highlighted {
-            color: #d8b4fe; /* Tailwind's purple-300 */
-            font-weight: 600; /* Make the highlighted words bold */
+            color: #d8b4fe;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
         }
-        .special-highlight { /* New class for the specific words */
-            color: #f472b6; /* Tailwind's pink-400 */
+        .highlighted::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #d8b4fe;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .highlighted:hover::after {
+            transform: scaleX(1);
+        }
+        .special-highlight {
+            color: #f472b6;
             font-weight: 600;
             opacity: 0.7;
+            position: relative;
+            display: inline-block;
+        }
+        .special-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #f472b6;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .special-highlight:hover::after {
+            transform: scaleX(1);
         }
         .transparent-highlight {
-            color: #f472b6; /* Tailwind's pink-400 */
+            color: #f472b6;
             font-weight: 600;
-            opacity: 0.7; /* Reduced opacity */
+            opacity: 0.7;
+            position: relative;
+            display: inline-block;
+        }
+        .transparent-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #f472b6;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .transparent-highlight:hover::after {
+            transform: scaleX(1);
         }
         .hover\:scale-105:hover {
-          transform: scale(1.05);
+            transform: scale(1.05);
         }
         .hover\:shadow-lg:hover {
-          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .skill-bar {
+            height: 8px;
+            background-color: #374151;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .skill-progress {
+            height: 100%;
+            background-color: #d8b4fe;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        .certification-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .certification-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(216, 180, 254, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        .certification-card:hover::before {
+            transform: translateX(100%);
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #d8b4fe;
+            color: #1f2937;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .scroll-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-to-top:hover {
+            background-color: #f472b6;
+            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -142,24 +267,92 @@
             <h2 class="text-3xl font-semibold text-purple-400 mb-4">Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h3 class="text-xl font-semibold text-gray-200 mb-2">Technical Skills</h3>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>MATLAB</li>
-                        <li>C++</li>
-                        <li>Python</li>
-                         <li>Hardware</li>
-                    </ul>
+                    <h3 class="text-xl font-semibold text-gray-200 mb-4">Technical Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-400">HTML</span>
+                                <span class="text-gray-400">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-400">CSS</span>
+                                <span class="text-gray-400">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-400">JavaScript</span>
+                                <span class="text-gray-400">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-400">MATLAB</span>
+                                <span class="text-gray-400">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-400">C++</span>
+                                <span class="text-gray-400">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-400">Python</span>
+                                <span class="text-gray-400">65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold text-gray-200 mb-2">Soft Skills</h3>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>Problem-solving</li>
-                        <li>Teamwork</li>
-                        <li>Outgoing And Friendly</li>
-                    </ul>
+                    <h3 class="text-xl font-semibold text-gray-200 mb-4">Soft Skills</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                            <span class="text-gray-400">Problem-solving</span>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <span class="text-gray-400">Teamwork</span>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-gray-400">Outgoing</span>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <span class="text-gray-400">Friendly</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -171,14 +364,53 @@
 
         <section id="contact" class="mb-16">
             <h2 class="text-3xl font-semibold text-purple-400 mb-4">Contact</h2>
-            <p class="text-gray-400 mb-4">
-                I'm always open to new opportunities and collaborations. Feel free to reach out to me through the following channels:
-            </p>
-            <ul class="list-disc list-inside text-gray-400">
-                <li>Email: <a href="mailto:2100425@eng.asu.edu.eg" class="text-purple-300 hover:text-purple-400 transition duration-300">2100425@eng.edu.asu.eg</a></li>
-                <li><a href="https://www.linkedin.com/in/tadros-karam/" target="_blank" class="text-purple-300 hover:text-purple-400 transition duration-300">My linkedin</a></li>
-            </ul>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-400 mb-6">
+                        I'm always open to new opportunities and collaborations. Feel free to reach out to me through the following channels:
+                    </p>
+                    <div class="space-y-4">
+                        <a href="mailto:2100425@eng.asu.edu.eg" class="flex items-center text-purple-300 hover:text-purple-400 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            2100425@eng.asu.edu.eg
+                        </a>
+                        <a href="https://www.linkedin.com/in/tadros-karam/" target="_blank" class="flex items-center text-purple-300 hover:text-purple-400 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-400 mb-2">Name</label>
+                            <input type="text" id="name" class="w-full bg-gray-700 text-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-400 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full bg-gray-700 text-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-400 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full bg-gray-700 text-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
         </section>
+
+        <button id="scrollToTop" class="scroll-to-top">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </button>
 
         </main>
 
@@ -237,6 +469,52 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+
+        // Add fade-in animation to sections
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('fade-in');
+            observer.observe(section);
+        });
+
+        // Scroll to top button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add hover effect to certification cards
+        document.querySelectorAll('.certification-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
             });
         });
     </script>
