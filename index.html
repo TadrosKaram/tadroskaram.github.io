@@ -256,6 +256,7 @@
         .profile-photo {
             position: relative;
             transition: all 0.3s ease;
+            animation: float 6s ease-in-out infinite;
         }
         .profile-photo:hover {
             transform: scale(1.05);
@@ -267,7 +268,7 @@
             box-shadow: 0 0 15px rgba(216, 180, 254, 0.3);
         }
         .soft-skill:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02);
             box-shadow: 0 0 20px rgba(216, 180, 254, 0.6);
         }
         .soft-skill svg {
@@ -301,7 +302,7 @@
             box-shadow: 0 0 15px rgba(216, 180, 254, 0.2);
         }
         .tech-skill:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02);
             box-shadow: 0 0 25px rgba(216, 180, 254, 0.4);
         }
         .tech-skill svg {
@@ -335,6 +336,91 @@
             #about p {
                 font-size: 24px !important;
             }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(216, 180, 254, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(216, 180, 254, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(216, 180, 254, 0.5); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .pulsing {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .glowing {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .hover-glow:hover {
+            animation: glow 1s ease-in-out infinite;
+        }
+
+        .skill-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .skill-icon:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .goal-card {
+            transition: all 0.3s ease;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(216, 180, 254, 0.2);
+        }
+
+        .contact-link {
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            transform: translateX(5px);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, #d8b4fe, #f472b6);
+            transition: width 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 100%;
+        }
+
+        .section-title:hover {
+            color: #d8b4fe;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -384,10 +470,10 @@
 
     <main class="container mx-auto px-4 py-8">
         <section id="about" class="mb-16">
-            <h2 class="text-3xl font-semibold text-purple-400 mb-4">About Me</h2>
+            <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">About Me</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <img src="me.jpg" alt="Your Photo" class="rounded-lg shadow-lg w-full profile-photo" width="500px">
+                    <img src="me.jpg" alt="Your Photo" class="rounded-lg shadow-lg w-full profile-photo floating" width="500px">
                 </div>
                 <div class="text-gray-400">
                     <p class="mb-4" style="font-size: 42px; font-style: italic; font-weight: lighter;">
@@ -404,7 +490,7 @@
         </section>
 
         <section id="certifications" class="mb-16">
-            <h2 class="text-3xl font-semibold text-purple-400 mb-4">Certifications</h2>
+            <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">Certifications</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105">
                     <h3 class="text-xl font-semibold text-gray-200 mb-2">HTML & CSS Certification</h3>
@@ -425,7 +511,7 @@
         </section>
 
         <section id="skills" class="mb-16">
-            <h2 class="text-3xl font-semibold text-purple-400 mb-4">Skills</h2>
+            <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <h3 class="text-xl font-semibold text-gray-200 mb-4">Technical Skills</h3>
@@ -469,12 +555,12 @@
                             
                         </div>
                         <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" viewBox="0 0 256 255" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z"/>
                             </svg>
                             <span class="text-gray-400">Python</span>
                             <div class="text-sm text-purple-400 mt-1">Will not focus on it in the near future but it's really important and the best in machine learning will focus on it when my focus on Maching Learning<br>I took the Machine Learning course as training for my University<br>And I found how much python is really needed Currently I'm Beginner 🤖</div>
-                            
                         </div>
                         <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -569,9 +655,9 @@
         </section>
 
         <section id="career-goals" class="mb-16">
-            <h2 class="text-3xl font-semibold text-purple-400 mb-4">Career Goals</h2>
+            <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">Career Goals</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-800 p-6 rounded-lg hover:shadow-lg transition duration-300 goal-card">
+                <div class="bg-gray-800 p-6 rounded-lg hover:shadow-lg transition duration-300 goal-card glowing">
                     <div class="flex items-start space-x-4">
                         <div class="flex-shrink-0">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -645,19 +731,19 @@
         </section>
 
         <section id="cv" class="mb-16">
-            <h2 class="text-3xl font-semibold text-purple-400 mb-4">CV</h2>
+            <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">CV</h2>
             <iframe src="CV2025.pdf" width="100%" height="800px" style="border:none;"></iframe>
         </section>
 
         <section id="contact" class="mb-16">
-            <h2 class="text-3xl font-semibold text-purple-400 mb-4">Contact</h2>
+            <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">Contact</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <p class="text-gray-400 mb-6">
                         I'm always open to new opportunities and collaborations. Feel free to reach out to me through the following channels:
                     </p>
                     <div class="space-y-4">
-                        <a href="mailto:2100425@eng.asu.edu.eg" class="flex items-center text-purple-300 hover:text-purple-400 transition duration-300">
+                        <a href="mailto:2100425@eng.asu.edu.eg" class="flex items-center text-purple-300 hover:text-purple-400 transition duration-300 contact-link">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
