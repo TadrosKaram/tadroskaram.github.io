@@ -422,6 +422,22 @@
             color: #d8b4fe;
             transform: translateY(-2px);
         }
+
+        /* Project Card Styles */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .project-card:hover {
+            border-color: #d8b4fe;
+            box-shadow: 0 0 25px rgba(216, 180, 254, 0.3);
+        }
+        .project-card a:hover h4 {
+            color: #d8b4fe;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-300">
@@ -556,7 +572,7 @@
                         </div>
                         <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" viewBox="0 0 256 255" fill="none" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13z"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z"/>
                             </svg>
                             <span class="text-gray-400">Python</span>
@@ -715,19 +731,46 @@
                 </div>
             </div>
             
-            <div class="flex justify-center mt-8">
-                <div class="terminal-loader">
-                    <div class="terminal-header">
-                        <div class="terminal-title">Projects</div>
-                        <div class="terminal-controls">
-                            <div class="control close"></div>
-                            <div class="control minimize"></div>
-                            <div class="control maximize"></div>
+            
+        </section>
+
+        <!-- Projects section -->
+        <section id="projects" class="mb-16">
+            <h2 class="text-3xl font-semibold text-purple-400 mb-8 section-title">Projects</h2>
+
+            <div>
+                <ul class="space-y-8">
+                    <li>
+                        <div class="flex items-center mb-6">
+                            <span class="w-3 h-3 bg-purple-400 rounded-full mr-4 flex-shrink-0"></span>
+                            <h3 class="text-2xl font-semibold text-gray-200 section-title">Java Project for CSE231s - Spring 2025</h3>
                         </div>
-                    </div>
-                    <div class="text">Soon... :D</div>
-                </div>
+                        <ul class="space-y-6 ml-7">
+                            <li class="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 hover:scale-105 project-card">
+                                <a href="https://javaprojectasu-cse231.netlify.app/" target="_blank" class="block">
+                                    <div class="flex items-center mb-4">
+                                        <h4 class="text-xl font-semibold text-gray-200">Hotel Management System</h4>
+                                    </div>
+                                    <p class="text-gray-400 mb-4 text-sm">
+                                        A comprehensive Hotel Management System built using Java, part of the CSE231 - Spring 2025 project. 
+                                    </p>
+                                    <div class="flex justify-end">
+                                        <span class="text-purple-300 hover:text-purple-400 transition duration-300 inline-flex items-center text-sm">
+                                            View Project
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
+
+            <!-- Add other project subsections here if needed -->
+
         </section>
 
         <section id="cv" class="mb-16">
