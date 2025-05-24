@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,102 +14,108 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* From Uiverse.io by jeremyssocial */ 
-@keyframes blinkCursor {
-  50% {
-    border-right-color: transparent;
-  }
-}
 
-@keyframes typeAndDelete {
-  0%,
-  10% {
-    width: 0;
-  }
-  45%,
-  55% {
-    width: 6.2em;
-  } /* adjust width based on content */
-  90%,
-  100% {
-    width: 0;
-  }
-}
+        /* From Uiverse.io by jeremyssocial */
+        @keyframes blinkCursor {
+            50% {
+                border-right-color: transparent;
+            }
+        }
 
-.terminal-loader {
-  border: 0.1em solid #6d28d9;
-  background-color: #1a1a1a;
-  color: #d8b4fe;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 1em;
-  padding: 1.5em 1em;
-  width: 12em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-}
+        @keyframes typeAndDelete {
 
-.terminal-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1.5em;
-  background-color: #6d28d9;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  padding: 0 0.4em;
-  box-sizing: border-box;
-}
+            0%,
+            10% {
+                width: 0;
+            }
 
-.terminal-controls {
-  float: right;
-}
+            45%,
+            55% {
+                width: 6.2em;
+            }
 
-.control {
-  display: inline-block;
-  width: 0.6em;
-  height: 0.6em;
-  margin-left: 0.4em;
-  border-radius: 50%;
-  background-color: #d8b4fe;
-}
+            /* adjust width based on content */
+            90%,
+            100% {
+                width: 0;
+            }
+        }
 
-.control.close {
-  background-color: #f472b6;
-}
+        .terminal-loader {
+            border: 0.1em solid #6d28d9;
+            background-color: #1a1a1a;
+            color: #d8b4fe;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1em;
+            padding: 1.5em 1em;
+            width: 12em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
 
-.control.minimize {
-  background-color: #d8b4fe;
-}
+        .terminal-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1.5em;
+            background-color: #6d28d9;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            padding: 0 0.4em;
+            box-sizing: border-box;
+        }
 
-.control.maximize {
-  background-color: #571fb1;
-}
+        .terminal-controls {
+            float: right;
+        }
 
-.terminal-title {
-  float: left;
-  line-height: 1.5em;
-  color: #d8b4fe;
-}
+        .control {
+            display: inline-block;
+            width: 0.6em;
+            height: 0.6em;
+            margin-left: 0.4em;
+            border-radius: 50%;
+            background-color: #d8b4fe;
+        }
 
-.text {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 0.2em solid #d8b4fe;
-  animation:
-    typeAndDelete 4s steps(11) infinite,
-    blinkCursor 0.5s step-end infinite alternate;
-  margin-top: 1.5em;
-}
+        .control.close {
+            background-color: #f472b6;
+        }
+
+        .control.minimize {
+            background-color: #d8b4fe;
+        }
+
+        .control.maximize {
+            background-color: #571fb1;
+        }
+
+        .terminal-title {
+            float: left;
+            line-height: 1.5em;
+            color: #d8b4fe;
+        }
+
+        .text {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.2em solid #d8b4fe;
+            animation:
+                typeAndDelete 4s steps(11) infinite,
+                blinkCursor 0.5s step-end infinite alternate;
+            margin-top: 1.5em;
+        }
 
         .active {
             color: #d8b4fe;
             position: relative;
         }
+
         .active::after {
             content: '';
             position: absolute;
@@ -120,12 +127,14 @@
             transform: scaleX(1);
             transition: transform 0.3s ease;
         }
+
         .highlighted {
             color: #d8b4fe;
             font-weight: 600;
             position: relative;
             display: inline-block;
         }
+
         .highlighted::after {
             content: '';
             position: absolute;
@@ -137,9 +146,11 @@
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
+
         .highlighted:hover::after {
             transform: scaleX(1);
         }
+
         .special-highlight {
             color: #f472b6;
             font-weight: 600;
@@ -147,6 +158,7 @@
             position: relative;
             display: inline-block;
         }
+
         .special-highlight::after {
             content: '';
             position: absolute;
@@ -158,9 +170,11 @@
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
+
         .special-highlight:hover::after {
             transform: scaleX(1);
         }
+
         .transparent-highlight {
             color: #f472b6;
             font-weight: 600;
@@ -168,6 +182,7 @@
             position: relative;
             display: inline-block;
         }
+
         .transparent-highlight::after {
             content: '';
             position: absolute;
@@ -179,40 +194,49 @@
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
+
         .transparent-highlight:hover::after {
             transform: scaleX(1);
         }
+
         .hover\:scale-105:hover {
             transform: scale(1.05);
         }
+
         .hover\:shadow-lg:hover {
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
         }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         .skill-bar {
             height: 8px;
             background-color: #374151;
             border-radius: 4px;
             overflow: hidden;
         }
+
         .skill-progress {
             height: 100%;
             background-color: #d8b4fe;
             border-radius: 4px;
             transition: width 1s ease;
         }
+
         .certification-card {
             position: relative;
             overflow: hidden;
         }
+
         .certification-card::before {
             content: '';
             position: absolute;
@@ -224,9 +248,11 @@
             transform: translateX(-100%);
             transition: transform 0.6s ease;
         }
+
         .certification-card:hover::before {
             transform: translateX(100%);
         }
+
         .scroll-to-top {
             position: fixed;
             bottom: 2rem;
@@ -245,79 +271,98 @@
             transition: all 0.3s ease;
             z-index: 1000;
         }
+
         .scroll-to-top.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         .scroll-to-top:hover {
             background-color: #f472b6;
             transform: translateY(-3px);
         }
+
         .profile-photo {
             position: relative;
             transition: all 0.3s ease;
             animation: float 6s ease-in-out infinite;
         }
+
         .profile-photo:hover {
             transform: scale(1.05);
             box-shadow: 0 0 30px rgba(216, 180, 254, 0.5);
         }
+
         .soft-skill {
             position: relative;
             transition: all 0.3s ease;
             box-shadow: 0 0 15px rgba(216, 180, 254, 0.3);
         }
+
         .soft-skill:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 0 20px rgba(216, 180, 254, 0.6);
         }
+
         .soft-skill svg {
             color: #d8b4fe;
             transition: all 0.3s ease;
         }
+
         .soft-skill span {
             color: #d8b4fe;
             transition: all 0.3s ease;
         }
+
         .soft-skill:hover svg,
         .soft-skill:hover span {
             color: #f472b6;
         }
+
         .special-skill {
             box-shadow: 0 0 25px rgba(216, 180, 254, 0.5);
             background: linear-gradient(145deg, #1f2937, #374151);
         }
+
         .special-skill svg {
             color: #f472b6;
         }
+
         .special-skill span {
             color: #f472b6;
         }
+
         .special-skill:hover {
             box-shadow: 0 0 30px rgba(216, 180, 254, 0.8);
         }
+
         .tech-skill {
             position: relative;
             transition: all 0.3s ease;
             box-shadow: 0 0 15px rgba(216, 180, 254, 0.2);
         }
+
         .tech-skill:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 0 25px rgba(216, 180, 254, 0.4);
         }
+
         .tech-skill svg {
             color: #d8b4fe;
             transition: all 0.3s ease;
         }
+
         .tech-skill span {
             color: #d8b4fe;
             transition: all 0.3s ease;
             font-weight: 500;
         }
+
         .tech-skill:hover svg,
         .tech-skill:hover span {
             color: #f472b6;
         }
+
         .tech-skill::after {
             content: '';
             position: absolute;
@@ -329,30 +374,57 @@
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
+
         .tech-skill:hover::after {
             width: 80%;
         }
+
         @media (max-width: 640px) {
             #about p {
                 font-size: 24px !important;
             }
         }
+
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         @keyframes glow {
-            0% { box-shadow: 0 0 5px rgba(216, 180, 254, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(216, 180, 254, 0.8); }
-            100% { box-shadow: 0 0 5px rgba(216, 180, 254, 0.5); }
+            0% {
+                box-shadow: 0 0 5px rgba(216, 180, 254, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 20px rgba(216, 180, 254, 0.8);
+            }
+
+            100% {
+                box-shadow: 0 0 5px rgba(216, 180, 254, 0.5);
+            }
         }
 
         .floating {
@@ -431,120 +503,284 @@
             transition: all 0.3s ease;
             border: 1px solid transparent;
         }
+
         .project-card:hover {
             border-color: #d8b4fe;
             box-shadow: 0 0 25px rgba(216, 180, 254, 0.3);
         }
+
         .project-card a:hover h4 {
             color: #d8b4fe;
         }
+
+        .neon-border {
+            position: relative;
+            overflow: visible;
+        }
+
+        .neon-border::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            background: radial-gradient(ellipse, #d8b4fe 0%, #f472b6 25%, rgba(212, 180, 254, 0.6) 50%, rgba(244, 114, 182, 0.4) 75%, transparent 100%);
+            border-radius: 50%;
+            box-shadow: 
+                0 0 30px #d8b4fe, 
+                0 0 60px #f472b6, 
+                0 0 90px rgba(212, 180, 254, 0.8),
+                0 0 120px rgba(244, 114, 182, 0.6),
+                0 0 150px rgba(212, 180, 254, 0.4);
+            animation: moving-light 4s linear infinite;
+            filter: brightness(1.5);
+        }
+
+        .neon-border::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 28px;
+            background: radial-gradient(ellipse, rgba(212, 180, 254, 0.7) 0%, rgba(244, 114, 182, 0.5) 40%, rgba(212, 180, 254, 0.3) 70%, transparent 100%);
+            border-radius: 50%;
+            box-shadow: 
+                0 0 25px rgba(212, 180, 254, 0.6),
+                0 0 50px rgba(244, 114, 182, 0.4),
+                0 0 75px rgba(212, 180, 254, 0.3);
+            animation: moving-light-trail 4s linear infinite;
+            filter: brightness(1.3);
+        }
+
+        @keyframes moving-light {
+            0% {
+                top: -20px;
+                left: -10px;
+                transform: rotate(0deg);
+            }
+            25% {
+                top: -20px;
+                left: calc(100% - 10px);
+                transform: rotate(90deg);
+            }
+            50% {
+                top: calc(100% - 20px);
+                left: calc(100% - 10px);
+                transform: rotate(180deg);
+            }
+            75% {
+                top: calc(100% - 20px);
+                left: -10px;
+                transform: rotate(270deg);
+            }
+            100% {
+                top: -20px;
+                left: -10px;
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes moving-light-trail {
+            0% {
+                top: -14px;
+                left: -7px;
+                opacity: 0;
+                transform: rotate(0deg);
+            }
+            5% {
+                opacity: 0.8;
+            }
+            25% {
+                top: -14px;
+                left: calc(100% - 7px);
+                opacity: 0.9;
+                transform: rotate(90deg);
+            }
+            50% {
+                top: calc(100% - 14px);
+                left: calc(100% - 7px);
+                opacity: 0.7;
+                transform: rotate(180deg);
+            }
+            75% {
+                top: calc(100% - 14px);
+                left: -7px;
+                opacity: 0.5;
+                transform: rotate(270deg);
+            }
+            95% {
+                opacity: 0.3;
+            }
+            100% {
+                top: -14px;
+                left: -7px;
+                opacity: 0;
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
+
 <body class="bg-gray-900 text-gray-300">
-    <header class="bg-gray-800 shadow-md py-4">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center">
-                <a href="#" class="text-xl font-semibold text-purple-400"><span style="color: beige; font-style: italic;">ENG</span> || Tadros Karam</a>
-                <nav class="hidden md:block">
-                    <ul class="flex space-x-6">
-                        <li><a href="#about" class="hover:text-purple-300 transition duration-300">About</a></li>
-                        <li><a href="#certifications" class="hover:text-purple-300 transition duration-300">Certifications</a></li>
-                        <li><a href="#skills" class="hover:text-purple-300 transition duration-300">Skills</a></li>
-                         <li><a href="#cv" class="hover:text-purple-300 transition duration-300">CV</a></li>
-                        <li><a href="#contact" class="hover:text-purple-300 transition duration-300">Contact</a></li>
-                    </ul>
-                </nav>
-                <button id="hamburger-btn" class="md:hidden text-gray-400 hover:text-purple-300 focus:outline-none focus:shadow-outline">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                </button>
-            </div>
+    <div>
+        <!-- Full-width gradient background covering nav and about section -->
+        <div class="w-full bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-purple-600/20">
+            <header class="shadow-md py-4">
+                <div class="container mx-auto px-4">
+                    <div class="flex justify-between items-center">
+                        
+                        <nav class="hidden md:block">
+                            <ul class="flex space-x-6">
+                                <li><a href="#about" class="hover:text-purple-300 transition duration-300">About</a></li>
+                                <li><a href="#certifications"
+                                        class="hover:text-purple-300 transition duration-300">Certifications</a></li>
+                                <li><a href="#skills" class="hover:text-purple-300 transition duration-300">Skills</a></li>
+                                <li><a href="#cv" class="hover:text-purple-300 transition duration-300">CV</a></li>
+                                <li><a href="#contact" class="hover:text-purple-300 transition duration-300">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <button id="hamburger-btn"
+                            class="md:hidden text-gray-400 hover:text-purple-300 focus:outline-none focus:shadow-outline">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- About Me Section within gradient -->
+            <section id="about" class="py-16">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-16">
+                        About Me
+                    </h2>
+                    
+                    <div class="max-w-4xl mx-auto">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <!-- Image Column -->
+                            <div class="relative group flex justify-center">
+                                <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+                                <div class="relative bg-gray-900 rounded-2xl p-1 max-w-md">
+                                    <img src="me.jpg" alt="Tadros Karam" 
+                                         class="w-full h-auto rounded-xl shadow-2xl transform group-hover:scale-105 transition duration-500" />
+                                </div>
+                            </div>
+                            
+                            <!-- Content Column -->
+                            <div class="space-y-6 text-center lg:text-left">
+                                <div class="space-y-4">
+                                    <h3 class="text-3xl font-bold text-white">
+                                        Hi, I'm <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Tadros Karam</span>
+                                    </h3>
+                                    
+                                    <div class="flex items-center justify-center lg:justify-start space-x-2 text-xl text-gray-300">
+                                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                                        <span>Computer Engineering Student</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="prose prose-lg text-gray-300 leading-relaxed mx-auto lg:mx-0">
+                                    <p class="text-lg text-center lg:text-left">
+                                        undergraduate at 
+                                        <a href="https://eng.asu.edu.eg/" target="_blank" 
+                                           class="text-pink-400 hover:text-pink-300 transition duration-300 underline decoration-pink-400/50">
+                                            Faculty of Engineering, Ain Shams University
+                                        </a>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </header>
+    </div>
 
     <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
         <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
             <div class="flex justify-end mb-4">
-                <button id="close-menu-btn" class="text-gray-400 hover:text-purple-300 focus:outline-none focus:shadow-outline">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <button id="close-menu-btn"
+                    class="text-gray-400 hover:text-purple-300 focus:outline-none focus:shadow-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
             <nav class="block">
                 <ul class="space-y-4">
-                    <li><a href="#about" class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">About</a></li>
-                    <li><a href="#certifications" class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Certifications</a></li>
-                    <li><a href="#skills" class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Skills</a></li>
-                    <li><a href="#cv" class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">CV</a></li>
-                    <li><a href="#contact" class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Contact</a></li>
+                    <li><a href="#about"
+                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">About</a>
+                    </li>
+                    <li><a href="#certifications"
+                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Certifications</a>
+                    </li>
+                    <li><a href="#skills"
+                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Skills</a>
+                    </li>
+                    <li><a href="#cv"
+                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">CV</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Contact</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </div>
 
     <main class="container mx-auto px-4 py-8">
-        <section id="about" class="mb-16">
-            <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">About Me</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <img src="me.jpg" alt="Your Photo" class="rounded-lg shadow-lg w-full profile-photo floating" width="500px">
-                </div>
-                <div class="text-gray-400">
-                    <p class="mb-4" style="font-size: 42px; font-style: italic; font-weight: lighter;">
-                        Hello! I'm <span class="highlighted">Tadros Karam</span>, a passionate <span class="highlighted">Computer Engineering</span> Undergraduate At <span class="highlighted"><a href="https://eng.asu.edu.eg/" target="_blank">Faculty Of Enginerring Ain Shams University</a></span>
-                    </p>
-                    <p class="mb-4" style="font-size: 42px; font-style: italic; font-weight: lighter;">
-                        I'm always eager to <span class="transparent-highlight">learn</span> new things and take on <span class="transparent-highlight">challenging projects</span>.
-                    </p>
-                    <p class="mb-4" style="font-size: 42px; font-style: italic; font-weight: lighter;">
-                        And <span class="special-highlight">earn new certifications</span>.
-                    </p>
-                </div>
-            </div>
-        </section>
-
         <section id="certifications" class="mb-16">
             <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">Certifications</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105">
+                <div
+                    class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105">
                     <h3 class="text-xl font-semibold text-gray-200 mb-2">HTML & CSS Certification</h3>
                     <p class="text-gray-400 mb-4">Issued by: FreeCodeCamp</p>
                     <img src="cert1.jpg" alt="HTML & CSS Certification" class="w-full h-auto rounded-lg">
                 </div>
-                <div class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105">
+                <div
+                    class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105">
                     <h3 class="text-xl font-semibold text-gray-200 mb-2">MATLAB Certification</h3>
                     <p class="text-gray-400 mb-4">Issued by: Vanderbilt University</p>
                     <img src="cer2.png" alt="MATLAB Certification" class="w-full h-auto rounded-lg">
                 </div>
-                <div class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105">
+                <div
+                    class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105">
                     <h3 class="text-xl font-semibold text-gray-200 mb-2">Supervised Machine Learning Certification</h3>
                     <p class="text-gray-400 mb-4">Issued by: DeepLearningAI</p>
-                    <img src="cert3.png" alt="Supervised Machine Learning Certification" class="w-full h-auto rounded-lg">
+                    <img src="cert3.png" alt="Supervised Machine Learning Certification"
+                        class="w-full h-auto rounded-lg">
                 </div>
             </div>
         </section>
 
         <section id="courses" class="mb-16">
             <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">Taken Online Courses</h2>
-            <h4 style="font-size: 25px; font-style: italic; font-weight: lighter;">Audited Courses & Courses In Progress</h4>
+            <h4 style="font-size: 25px; font-style: italic; font-weight: lighter;">Audited Courses & Courses In Progress
+            </h4>
             <br>
-            
+
             <br>
-           
-            
-            
+
+
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105 cursor-pointer" onclick="openModal('udemyModal')">
+                <div class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105 cursor-pointer"
+                    onclick="openModal('udemyModal')">
                     <div class="flex flex-col items-center">
-                        <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg" alt="Udemy" class="w-48 h-auto mb-4">
-                        <img src="WhatsApp Image 2025-05-18 at 19.00.46_c69fac6c.jpg" alt="Course 1" class="w-full h-auto rounded-lg">
+                        <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg" alt="Udemy"
+                            class="w-48 h-auto mb-4">
+                        <img src="WhatsApp Image 2025-05-18 at 19.00.46_c69fac6c.jpg" alt="Course 1"
+                            class="w-full h-auto rounded-lg">
                     </div>
                 </div>
-                <div class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105 cursor-pointer" onclick="openModal('courseraModal')">
+                <div class="bg-gray-800 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105 cursor-pointer"
+                    onclick="openModal('courseraModal')">
                     <div class="flex flex-col items-center">
-                        <img src="https://about.coursera.org/static/whiteCoursera-23ec484f7091914430ce19b07d09aedf.svg" alt="Coursera" class="w-48 h-auto mb-4">
+                        <img src="https://about.coursera.org/static/whiteCoursera-23ec484f7091914430ce19b07d09aedf.svg"
+                            alt="Coursera" class="w-48 h-auto mb-4">
                         <img src="AccGPT.png" alt="Course 2" class="w-full h-auto rounded-lg">
                     </div>
                 </div>
@@ -554,28 +790,38 @@
         <!-- Udemy Modal -->
         <div id="udemyModal" class="fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center">
             <div class="bg-gray-800 p-6 rounded-lg max-w-4xl w-full mx-4 relative">
-                <button onclick="closeModal('udemyModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <button onclick="closeModal('udemyModal')"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
                 <div class="space-y-4">
-                    <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg" alt="Udemy" class="w-48 h-auto mx-auto">
-                    <img src="WhatsApp Image 2025-05-18 at 19.00.46_c69fac6c.jpg" alt="Course 1" class="w-full h-auto rounded-lg">
+                    <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg" alt="Udemy"
+                        class="w-48 h-auto mx-auto">
+                    <img src="WhatsApp Image 2025-05-18 at 19.00.46_c69fac6c.jpg" alt="Course 1"
+                        class="w-full h-auto rounded-lg">
                 </div>
             </div>
         </div>
 
         <!-- Coursera Modal -->
-        <div id="courseraModal" class="fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center">
+        <div id="courseraModal"
+            class="fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center">
             <div class="bg-gray-800 p-6 rounded-lg max-w-4xl w-full mx-4 relative">
-                <button onclick="closeModal('courseraModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <button onclick="closeModal('courseraModal')"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
                 <div class="space-y-4">
-                    <img src="https://about.coursera.org/static/whiteCoursera-23ec484f7091914430ce19b07d09aedf.svg" alt="Coursera" class="w-48 h-auto mx-auto">
+                    <img src="https://about.coursera.org/static/whiteCoursera-23ec484f7091914430ce19b07d09aedf.svg"
+                        alt="Coursera" class="w-48 h-auto mx-auto">
                     <img src="AccGPT.png" alt="Course 2" class="w-full h-auto rounded-lg">
                 </div>
             </div>
@@ -587,126 +833,192 @@
                 <div>
                     <h3 class="text-xl font-semibold text-gray-200 mb-4">Technical Skills</h3>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                             </svg>
                             <span class="text-gray-400">HTML</span>
-                            <div class="text-sm text-purple-400 mt-1">Expert - First Language I've ever learned used to teach my schoolmates when I was young ❤️</div>
+                            <div class="text-sm text-purple-400 mt-1">Expert - First Language I've ever learned used to
+                                teach my schoolmates when I was young ❤️</div>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                             </svg>
                             <span class="text-gray-400">CSS</span>
-                            <div class="text-sm text-purple-400 mt-1">Nearly an Expert just needs more practice to make it perfect ✨</div>
+                            <div class="text-sm text-purple-400 mt-1">Nearly an Expert just needs more practice to make
+                                it perfect ✨</div>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
                             </svg>
                             <span class="text-gray-400">JavaScript</span>
                             <div class="text-sm text-purple-400 mt-1">Currently focusing on it 👌</div>
-                            
+
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                             <span class="text-gray-400">MATLAB</span>
-                            <div class="text-sm text-purple-400 mt-1">I took this course as training and also prepare<br>Course will be later covered in University<br>Matlab is really fun and makes algebra and any scientfic related matter FUN 😊</div>
-                        
+                            <div class="text-sm text-purple-400 mt-1">I took this course as training and also
+                                prepare<br>Course will be later covered in University<br>Matlab is really fun and makes
+                                algebra and any scientfic related matter FUN 😊</div>
+
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                             <span class="text-gray-400">C++</span>
-                            <div class="text-sm text-purple-400 mt-1">Course taken where we touched lighty the concept of OOP<br>University Course -Computer Programming- CSE131s 😁</div>
-                            
+                            <div class="text-sm text-purple-400 mt-1">Course taken where we touched lighty the concept
+                                of OOP<br>University Course -Computer Programming- CSE131s 😁</div>
+
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" viewBox="0 0 256 255" fill="none" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z"/>
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                viewBox="0 0 256 255" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8"
+                                    d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8"
+                                    d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z" />
                             </svg>
                             <span class="text-gray-400">Python</span>
-                            <div class="text-sm text-purple-400 mt-1">Will not focus on it in the near future but it's really important and the best in machine learning will focus on it when my focus on Maching Learning<br>I took the Machine Learning course as training for my University<br>And I found how much python is really needed Currently I'm Beginner 🤖</div>
+                            <div class="text-sm text-purple-400 mt-1">Will not focus on it in the near future but it's
+                                really important and the best in machine learning will focus on it when my focus on
+                                Maching Learning<br>I took the Machine Learning course as training for my
+                                University<br>And I found how much python is really needed Currently I'm Beginner 🤖
+                            </div>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                             </svg>
                             <span class="text-gray-400">Hardware</span>
-                            <div class="text-sm text-purple-400 mt-1">I'm a gamner so it helped me acquire some skills in hardware<br>I'm not an expert but I can handle some basic stuff 🫡</div>
+                            <div class="text-sm text-purple-400 mt-1">I'm a gamner so it helped me acquire some skills
+                                in hardware<br>I'm not an expert but I can handle some basic stuff 🫡</div>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                             <span class="text-gray-400">Java</span>
-                            <div class="text-sm text-purple-400 mt-1">Currently taking focusing on the concepts of OOP<br>University Course -Advanced Computer Programming- CSE231s 😌</div>
+                            <div class="text-sm text-purple-400 mt-1">Currently taking focusing on the concepts of
+                                OOP<br>University Course -Advanced Computer Programming- CSE231s 😌</div>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3c-1.5 0-2.5 1-3 2-1.5.5-2 1.5-2 2.5 0 1.5 1 2.5 2 3M15 3c1.5 0 2.5 1 3 2 1.5.5 2 1.5 2 2.5 0 1.5-1 2.5-2 3m-6 1c-2 .5-3 2-3 3.5 0 2 1.5 3.5 3 4.5m6-8c2 .5 3 2 3 3.5 0 2-1.5 3.5-3 4.5M12 20c-3 0-5-2-5-4s2-4 5-4 5 2 5 4-2 4-5 4z"/>
-                                <circle cx="10" cy="10" r="1" fill="currentColor"/>
-                                <circle cx="14" cy="10" r="1" fill="currentColor"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14c-.5.5-1.5.5-2 0M12 16c1 .5 2 .5 3 0"/>
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M12 3c-1.5 0-2.5 1-3 2-1.5.5-2 1.5-2 2.5 0 1.5 1 2.5 2 3M15 3c1.5 0 2.5 1 3 2 1.5.5 2 1.5 2 2.5 0 1.5-1 2.5-2 3m-6 1c-2 .5-3 2-3 3.5 0 2 1.5 3.5 3 4.5m6-8c2 .5 3 2 3 3.5 0 2-1.5 3.5-3 4.5M12 20c-3 0-5-2-5-4s2-4 5-4 5 2 5 4-2 4-5 4z" />
+                                <circle cx="10" cy="10" r="1" fill="currentColor" />
+                                <circle cx="14" cy="10" r="1" fill="currentColor" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M12 14c-.5.5-1.5.5-2 0M12 16c1 .5 2 .5 3 0" />
                             </svg>
                             <span class="text-gray-400">Linux</span>
-                            <div class="text-sm text-purple-400 mt-1">Comfortable with the therminal<br>Used it as a Virtual Machine and my main OS<br>Tried different distros like ubuntu, mint, and kali 🐧</div>
+                            <div class="text-sm text-purple-400 mt-1">Comfortable with the therminal<br>Used it as a
+                                Virtual Machine and my main OS<br>Tried different distros like ubuntu, mint, and kali 🐧
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-gray-200 mb-4">Soft Skills</h3>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                             </svg>
                             <span class="text-gray-400">Problem-solving</span>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
                             <span class="text-gray-400">Teamwork</span>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill special-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill special-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span class="text-gray-400">Outgoing</span>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill special-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill special-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                             </svg>
                             <span class="text-gray-400">Friendly</span>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span class="text-gray-400">Time Management</span>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span class="text-gray-400">Attention to Detail</span>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill special-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill special-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                             <span class="text-gray-400">Quick Learner</span>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        <div
+                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                             <span class="text-gray-400">Project Management</span>
                         </div>
@@ -731,8 +1043,10 @@
                 <div class="bg-gray-800 p-6 rounded-lg hover:shadow-lg transition duration-300 goal-card glowing">
                     <div class="flex items-start space-x-4">
                         <div class="flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                         </div>
                         <div>
@@ -757,8 +1071,10 @@
                 <div class="bg-gray-800 p-6 rounded-lg hover:shadow-lg transition duration-300 goal-card">
                     <div class="flex items-start space-x-4">
                         <div class="flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                         </div>
                         <div>
@@ -766,7 +1082,9 @@
                             <ul class="space-y-3 text-gray-400">
                                 <li class="flex items-center">
                                     <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                                    Learn back-end after finishing front end to become <span style="font-weight: bold; font-style: italic; color: #6d28d9;" > full-stack Developer</span>
+                                    Learn back-end after finishing front end to become <span
+                                        style="font-weight: bold; font-style: italic; color: #6d28d9;"> full-stack
+                                        Developer</span>
                                 </li>
                                 <li class="flex items-center">
                                     <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
@@ -785,8 +1103,8 @@
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </section>
 
         <!-- Projects section -->
@@ -798,22 +1116,28 @@
                     <li>
                         <div class="flex items-center mb-6">
                             <span class="w-3 h-3 bg-purple-400 rounded-full mr-4 flex-shrink-0"></span>
-                            <h3 class="text-2xl font-semibold text-gray-200 section-title">Java Project for CSE231s - Spring 2025</h3>
+                            <h3 class="text-2xl font-semibold text-gray-200 section-title">Java Project for CSE231s -
+                                Spring 2025</h3>
                         </div>
                         <ul class="space-y-6 ml-7">
-                            <li class="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 hover:scale-105 project-card">
+                            <li
+                                class="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 hover:scale-105 project-card">
                                 <a href="https://javaprojectasu-cse231.netlify.app/" target="_blank" class="block">
                                     <div class="flex items-center mb-4">
                                         <h4 class="text-xl font-semibold text-gray-200">Hotel Management System</h4>
                                     </div>
                                     <p class="text-gray-400 mb-4 text-sm">
-                                        A comprehensive Hotel Management System built using Java, part of the CSE231 - Spring 2025 project. 
+                                        A comprehensive Hotel Management System built using Java, part of the CSE231 -
+                                        Spring 2025 project.
                                     </p>
                                     <div class="flex justify-end">
-                                        <span class="text-purple-300 hover:text-purple-400 transition duration-300 inline-flex items-center text-sm">
+                                        <span
+                                            class="text-purple-300 hover:text-purple-400 transition duration-300 inline-flex items-center text-sm">
                                             View Project
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                             </svg>
                                         </span>
                                     </div>
@@ -828,7 +1152,7 @@
 
         </section>
 
-        <section id="cv" class="mb-16"> 
+        <section id="cv" class="mb-16">
             <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">CV</h2>
             <p>Outdated CV - will be updated soon :D</p>
         </section>
@@ -854,14 +1178,15 @@
             </div>
         </section>
 
-     
+
         <button id="scrollToTop" class="scroll-to-top">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
             </svg>
         </button>
 
-        </main>
+    </main>
 
     <footer class="bg-gray-800 py-4 text-center text-gray-400">
         <p>&copy; 2025 Tadros Karam. All rights reserved.</p>
@@ -978,7 +1303,7 @@
         }
 
         // Close modal when clicking outside
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target.classList.contains('fixed')) {
                 event.target.classList.add('hidden');
                 document.body.style.overflow = 'auto';
@@ -986,7 +1311,7 @@
         }
 
         // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 document.querySelectorAll('.fixed').forEach(modal => {
                     modal.classList.add('hidden');
@@ -997,4 +1322,12 @@
     </script>
 
 </body>
+
 </html>
+
+
+<!--لاقيت ال extension 
+دي علي في يس -->
+
+<!--البنت اللي تبعتلها رسالة و تقعد خمستاشر دقيقة مش بترد و انت شايفها
+اون لاين حسن حل تمسح الرسالة مش هي مشفتهاش يبقي خلاص بقي لو شفتها هتعرف انت واد دامد -->
