@@ -623,7 +623,7 @@
     <div>
         <!-- Full-width gradient background covering nav and about section -->
         <div class="w-full bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-purple-600/20">
-            <header class="shadow-md py-4">
+            <header class="shadow-md py-4 relative z-40">
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center">
                         
@@ -638,7 +638,7 @@
                             </ul>
                         </nav>
                         <button id="hamburger-btn"
-                            class="md:hidden text-gray-400 hover:text-purple-300 focus:outline-none focus:shadow-outline">
+                            class="md:hidden text-gray-400 hover:text-purple-300 focus:outline-none focus:shadow-outline relative z-50 p-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -697,11 +697,11 @@
         </div>
     </div>
 
-    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
-        <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-[60]">
+        <div class="bg-gray-800 w-80 h-full absolute right-0 p-6 shadow-2xl">
             <div class="flex justify-end mb-4">
                 <button id="close-menu-btn"
-                    class="text-gray-400 hover:text-purple-300 focus:outline-none focus:shadow-outline">
+                    class="text-gray-400 hover:text-purple-300 focus:outline-none focus:shadow-outline p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -711,19 +711,19 @@
             <nav class="block">
                 <ul class="space-y-4">
                     <li><a href="#about"
-                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">About</a>
+                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">About</a>
                     </li>
                     <li><a href="#certifications"
-                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Certifications</a>
+                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">Certifications</a>
                     </li>
                     <li><a href="#skills"
-                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Skills</a>
+                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">Skills</a>
                     </li>
                     <li><a href="#cv"
-                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">CV</a>
+                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">CV</a>
                     </li>
                     <li><a href="#contact"
-                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300">Contact</a>
+                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -1157,27 +1157,7 @@
             <p>Outdated CV - will be updated soon :D</p>
         </section>
 
-        <section id="courses" class="mb-16">
-            <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">Courses</h2>
-            <div class="space-y-4">
-                <div class="flex items-center">
-                    <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                    <h3 class="text-lg font-medium text-gray-200">HTML & CSS</h3>
-                    <span class="ml-2 text-sm text-purple-400">(Certified - FreeCodeCamp)</span>
-                </div>
-                <div class="flex items-center">
-                    <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                    <h3 class="text-lg font-medium text-gray-200">MATLAB</h3>
-                    <span class="ml-2 text-sm text-purple-400">(Certified - Vanderbilt University)</span>
-                </div>
-                <div class="flex items-center">
-                    <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                    <h3 class="text-lg font-medium text-gray-200">Supervised Machine Learning</h3>
-                    <span class="ml-2 text-sm text-purple-400">(Certified - DeepLearningAI)</span>
-                </div>
-            </div>
-        </section>
-
+      
 
         <button id="scrollToTop" class="scroll-to-top">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -1326,8 +1306,3 @@
 </html>
 
 
-<!--لاقيت ال extension 
-دي علي في يس -->
-
-<!--البنت اللي تبعتلها رسالة و تقعد خمستاشر دقيقة مش بترد و انت شايفها
-اون لاين حسن حل تمسح الرسالة مش هي مشفتهاش يبقي خلاص بقي لو شفتها هتعرف انت واد دامد -->
