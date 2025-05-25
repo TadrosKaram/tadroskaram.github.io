@@ -296,7 +296,6 @@
         .soft-skill {
             position: relative;
             transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(216, 180, 254, 0.3);
         }
 
         .soft-skill:hover {
@@ -305,12 +304,12 @@
         }
 
         .soft-skill svg {
-            color: #d8b4fe;
+            color: #D1D5DB; /* Light gray, matching body text */
             transition: all 0.3s ease;
         }
 
         .soft-skill span {
-            color: #d8b4fe;
+            color: #D1D5DB; /* Light gray */
             transition: all 0.3s ease;
         }
 
@@ -320,20 +319,17 @@
         }
 
         .special-skill {
-            box-shadow: 0 0 25px rgba(216, 180, 254, 0.5);
-            background: linear-gradient(145deg, #1f2937, #374151);
         }
 
         .special-skill svg {
-            color: #f472b6;
         }
 
         .special-skill span {
-            color: #f472b6;
         }
 
         .special-skill:hover {
             box-shadow: 0 0 30px rgba(216, 180, 254, 0.8);
+            background: linear-gradient(145deg, #1f2937, #374151);
         }
 
         .tech-skill {
@@ -622,7 +618,7 @@
 <body class="bg-gray-900 text-gray-300">
     <div>
         <!-- Full-width gradient background covering nav and about section -->
-        <div class="w-full bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-purple-600/20">
+        <div class="w-full bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-purple-600/20 min-h-screen flex flex-col">
             <header class="shadow-md py-4 relative z-40">
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center">
@@ -650,45 +646,45 @@
             </header>
 
             <!-- About Me Section within gradient -->
-            <section id="about" class="py-16">
-                <div class="container mx-auto px-4">
-                    <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-16">
-                        About Me
-                    </h2>
-                    
-                    <div class="max-w-4xl mx-auto">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <!-- Image Column -->
-                            <div class="relative group flex justify-center">
-                                <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
-                                <div class="relative bg-gray-900 rounded-2xl p-1 max-w-md">
-                                    <img src="me.jpg" alt="Tadros Karam" 
-                                         class="w-full h-auto rounded-xl shadow-2xl transform group-hover:scale-105 transition duration-500" />
+            <section id="about" class="flex-grow flex flex-col justify-center">
+                <div class="container mx-auto px-4 py-16">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
+                       
+                        <div class="relative group flex justify-center">
+                            <div class="absolute -inset-0.5 bg-gradient-to-r  rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+                            <div class="relative bg-gray-900 rounded-2xl p-1 max-w-md">
+                                <img src="me.jpg" alt="Tadros Karam" 
+                                     class="w-full h-auto rounded-xl shadow-2xl transform group-hover:scale-105 transition duration-500" />
+                            </div>
+                        </div>
+                        
+                        <!-- Content Column -->
+                        <div class="space-y-6 text-center lg:text-left">
+                            <div class="space-y-4">
+                                <h3 class="text-3xl font-bold text-white">
+                                    Hi, I'm <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Tadros Karam</span>
+                                </h3>
+                                
+                                <div class="flex items-center justify-center lg:justify-start space-x-2 text-xl text-gray-300">
+                                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                                    <span>Computer Engineering Student</span>
                                 </div>
                             </div>
                             
-                            <!-- Content Column -->
-                            <div class="space-y-6 text-center lg:text-left">
-                                <div class="space-y-4">
-                                    <h3 class="text-3xl font-bold text-white">
-                                        Hi, I'm <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Tadros Karam</span>
-                                    </h3>
-                                    
-                                    <div class="flex items-center justify-center lg:justify-start space-x-2 text-xl text-gray-300">
-                                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                                        <span>Computer Engineering Student</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="prose prose-lg text-gray-300 leading-relaxed mx-auto lg:mx-0">
-                                    <p class="text-lg text-center lg:text-left">
-                                        undergraduate at 
-                                        <a href="https://eng.asu.edu.eg/" target="_blank" 
-                                           class="text-pink-400 hover:text-pink-300 transition duration-300 underline decoration-pink-400/50">
-                                            Faculty of Engineering, Ain Shams University
-                                        </a>.
-                                    </p>
-                                </div>
+                            <div class="prose prose-lg text-gray-300 leading-relaxed mx-auto lg:mx-0">
+                                <p class="text-lg text-center lg:text-left">
+                                    undergraduate at 
+                                    <a href="https://eng.asu.edu.eg/" target="_blank" 
+                                       class="text-pink-400 hover:text-pink-300 transition duration-300 underline decoration-pink-400/50">
+                                        Faculty of Engineering, Ain Shams University
+                                    </a>.
+                                </p>
+                            </div>
+                            <!-- Start Button -->
+                            <div class="mt-8 text-center lg:text-left">
+                                <button id="start-journey-btn" class="px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75">
+                                    Showcase
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -835,9 +831,9 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="orange" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                             </svg>
                             <span class="text-gray-400">HTML</span>
@@ -845,54 +841,43 @@
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                            </svg>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCBJ8fz6KNK6Ut3df5khikEAXIkhoquFuFgw&s" alt="CSS Logo" class="h-8 w-8 mx-auto mb-2"/>
                             <span class="text-gray-400">CSS</span>
                            
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2" viewBox="0 0 256 256">
+                                <rect width="256" height="256" fill="#F7DF1E"/>
+                                <path d="M67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371 7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259-19.245 0-30.416-9.967-36.087-21.996M152.381 211.354l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607 9.969 0 16.325-4.984 16.325-11.858 0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257 0-18.044 13.747-31.792 35.228-31.792 15.294 0 26.292 5.328 34.196 19.247L210.29 147.43c-4.125-7.389-8.591-10.31-15.465-10.31-7.046 0-11.514 4.468-11.514 10.31 0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804 0 21.654-17.012 33.51-39.867 33.51-22.339 0-36.774-10.654-43.819-24.574"/>
                             </svg>
                             <span class="text-gray-400">JavaScript</span>
                             
-
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Matlab_Logo.png/1144px-Matlab_Logo.png" alt="MATLAB Logo" class="h-8 w-8 mx-auto mb-2"/>
                             <span class="text-gray-400">MATLAB</span>
                            
-
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2" viewBox="0 0 200 200">
+                                <rect width="200" height="200" rx="20" ry="20" fill="#00599C"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" style="font-family: Arial, Helvetica, sans-serif; font-size: 90px; fill: white; font-weight: bold;">
+                                    <tspan dy="-0.05em">C</tspan><tspan style="font-size: 65px;" dy="0.1em">++</tspan>
+                                </text>
                             </svg>
                             <span class="text-gray-400">C++</span>
                         
-
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                viewBox="0 0 256 255" fill="none" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2"
+                                viewBox="0 0 256 255" fill="none" stroke="yellow" stroke-width="8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="8"
+                                <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z" />
                             </svg>
                             <span class="text-gray-400">Python</span>
@@ -900,34 +885,32 @@
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
+                            <img src="https://cdn-icons-png.flaticon.com/512/1693/1693148.png" alt="Hardware Logo" class="h-8 w-8 mx-auto mb-2"/>
                             <span class="text-gray-400">Hardware</span>
                            
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2" viewBox="0 0 256 346">
+                                <path d="M82.554 267.473s-13.198 7.675 9.393 10.272c27.369 3.122 41.356 2.675 71.517-3.034 0 0 7.93 4.972 19.009 9.283-67.611 28.977-153.019-1.679-99.919-16.521Z" fill="#5382A1"/>
+                                <path d="M74.292 230.746s-14.803 10.958 7.805 13.296c29.236 3.016 52.324 3.263 92.276-4.43 0 0 5.526 5.602 14.215 8.666-81.747 23.904-172.798 1.885-114.296-17.532Z" fill="#5382A1"/>
+                                <path d="M143.942 165.515c16.66 19.18-4.377 36.44-4.377 36.44s42.301-21.837 22.874-49.183c-18.144-25.5-32.059-38.172 43.268-81.858 0 0-118.238 29.53-61.765 94.601Z" fill="#E76F00"/>
+                                <path d="M233.364 295.442s9.767 8.047-10.757 14.273c-39.026 11.823-162.432 15.393-196.714.471-12.323-5.36 10.787-12.8 18.056-14.362 7.581-1.644 11.914-1.337 11.914-1.337-13.705-9.655-88.583 18.957-38.034 27.15 137.853 22.356 251.032-10.07 215.535-26.195Z" fill="#5382A1"/>
+                                <path d="M88.9 190.48s-62.771 14.91-22.228 20.323c17.118 2.292 51.243 1.774 83.030-.89 25.978-2.19 52.063-6.85 52.063-6.85s-9.16 3.923-15.787 8.448c-63.744 16.765-186.886 8.966-151.435-8.183 29.981-14.492 54.357-12.848 54.357-12.848Z" fill="#5382A1"/>
+                                <path d="M201.506 253.422c64.8-33.67 34.834-66.03 13.927-61.67-5.126 1.07-7.411 1.999-7.411 1.999s1.903-2.98 5.537-4.27c41.37-14.545 73.187 42.897-13.355 65.647 0-.001 1.003-.895 1.302-1.706Z" fill="#5382A1"/>
+                                <path d="M162.439 0.371s35.887 35.9-34.037 91.101c-56.071 44.282-12.786 69.53-.023 98.377-32.73-29.558-56.75-55.526-40.635-79.72C111.395 74.612 176.918 57.393 162.439.371Z" fill="#E76F00"/>
+                                <path d="M95.268 344.665c62.199 3.982 157.712-2.209 159.974-31.64 0 0-4.348 11.158-51.404 20.018-53.088 9.99-118.564 8.824-157.399 2.421.001 0 7.95 6.58 48.829 9.201Z" fill="#5382A1"/>
                             </svg>
                             <span class="text-gray-400">Java</span>
                             
                         </div>
+                     
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 tech-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M12 3c-1.5 0-2.5 1-3 2-1.5.5-2 1.5-2 2.5 0 1.5 1 2.5 2 3M15 3c1.5 0 2.5 1 3 2 1.5.5 2 1.5 2 2.5 0 1.5-1 2.5-2 3m-6 1c-2 .5-3 2-3 3.5 0 2 1.5 3.5 3 4.5m6-8c2 .5 3 2 3 3.5 0 2-1.5 3.5-3 4.5M12 20c-3 0-5-2-5-4s2-4 5-4 5 2 5 4-2 4-5 4z" />
-                                <circle cx="10" cy="10" r="1" fill="currentColor" />
-                                <circle cx="14" cy="10" r="1" fill="currentColor" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M12 14c-.5.5-1.5.5-2 0M12 16c1 .5 2 .5 3 0" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="blue" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                             <span class="text-gray-400">Linux</span>
                             
@@ -939,76 +922,68 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                             </svg>
                             <span class="text-gray-400">Problem-solving</span>
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
                             <span class="text-gray-400">Teamwork</span>
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill special-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span class="text-gray-400">Outgoing</span>
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill special-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                             </svg>
                             <span class="text-gray-400">Friendly</span>
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span class="text-gray-400">Time Management</span>
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span class="text-gray-400">Attention to Detail</span>
                         </div>
                         <div
                             class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill special-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto mb-2"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                             <span class="text-gray-400">Quick Learner</span>
                         </div>
-                        <div
-                            class="bg-gray-800 p-4 rounded-lg text-center hover:shadow-lg transition duration-300 soft-skill">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mx-auto mb-2"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            <span class="text-gray-400">Project Management</span>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -1276,6 +1251,57 @@
                 document.body.style.overflow = 'auto';
             }
         });
+
+        // Start Journey button scroll
+        const startJourneyBtn = document.getElementById('start-journey-btn');
+        if (startJourneyBtn) {
+            startJourneyBtn.addEventListener('click', () => {
+                const totalHeight = document.body.scrollHeight - window.innerHeight;
+                const duration = 20000; // Duration of the scroll in milliseconds (e.g., 20 seconds)
+                let startTime = null;
+
+                function animateScroll(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const elapsedTime = currentTime - startTime;
+                    const scrollProgress = Math.min(elapsedTime / duration, 1); // Ensure progress doesn't exceed 1
+                    
+                    // Simple linear easing
+                    const newScrollY = window.scrollY + (totalHeight - window.scrollY) * scrollProgress;
+                    
+                    window.scrollTo(0, newScrollY);
+
+                    if (scrollProgress < 1) {
+                        requestAnimationFrame(animateScroll);
+                    } else {
+                        // Optional: Ensure it ends exactly at the bottom
+                        window.scrollTo(0, totalHeight);
+                    }
+                }
+                // Start scrolling from current position to bottom
+                // We need to adjust the animateScroll function to work from current scrollY to totalHeight
+                const initialScrollY = window.scrollY;
+                function animateScrollToBottom(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const elapsedTime = currentTime - startTime;
+                    const scrollableDistance = totalHeight - initialScrollY;
+                    
+                    if (scrollableDistance <= 0) return; // Already at or past the bottom
+
+                    const progress = Math.min(elapsedTime / duration, 1);
+                    const easeInOutQuad = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+                    
+                    window.scrollTo(0, initialScrollY + scrollableDistance * easeInOutQuad);
+
+                    if (elapsedTime < duration) {
+                        requestAnimationFrame(animateScrollToBottom);
+                    } else {
+                        window.scrollTo(0, totalHeight); // Ensure it ends exactly at the bottom
+                    }
+                }
+
+                requestAnimationFrame(animateScrollToBottom);
+            });
+        }
     </script>
 
 </body>
