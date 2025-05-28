@@ -1104,10 +1104,7 @@
 
         </section>
 
-        <section id="cv" class="mb-16">
-            <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">CV</h2>
-            <object data="CV3.pdf" type="application/pdf" class="w-full h-screen"></object>
-        </section>
+       
 
         <section id="contact" class="mb-16">
             <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">Contact</h2>
@@ -1127,7 +1124,7 @@
     </main>
 
     <footer class="bg-gray-800 py-4 text-center text-gray-400">
-        <p>&copy; 2025 Tadros Karam. All rights reserved.</p>
+        <p>&copy; 2025 Tadros Karam.</p>
     </footer>
 
     <script>
@@ -1262,50 +1259,32 @@
         const startJourneyBtn = document.getElementById('start-journey-btn');
         if (startJourneyBtn) {
             startJourneyBtn.addEventListener('click', () => {
-                const totalHeight = document.body.scrollHeight - window.innerHeight;
-                const duration = 20000; // Duration of the scroll in milliseconds (e.g., 20 seconds)
-                let startTime = null;
+                const certificationsSection = document.getElementById('certifications');
+                if (certificationsSection) {
+                    const targetPosition = certificationsSection.offsetTop;
+                    const startPosition = window.pageYOffset;
+                    const distance = targetPosition - startPosition;
+                    const duration = 2000; // Duration in milliseconds (e.g., 2 seconds)
+                    let startTime = null;
 
-                function animateScroll(currentTime) {
-                    if (startTime === null) startTime = currentTime;
-                    const elapsedTime = currentTime - startTime;
-                    const scrollProgress = Math.min(elapsedTime / duration, 1); // Ensure progress doesn't exceed 1
-                    
-                    // Simple linear easing
-                    const newScrollY = window.scrollY + (totalHeight - window.scrollY) * scrollProgress;
-                    
-                    window.scrollTo(0, newScrollY);
-
-                    if (scrollProgress < 1) {
-                        requestAnimationFrame(animateScroll);
-                    } else {
-                        // Optional: Ensure it ends exactly at the bottom
-                        window.scrollTo(0, totalHeight);
+                    function easeInOutQuad(t, b, c, d) {
+                        t /= d / 2;
+                        if (t < 1) return c / 2 * t * t + b;
+                        t--;
+                        return -c / 2 * (t * (t - 2) - 1) + b;
                     }
-                }
-                // Start scrolling from current position to bottom
-                // We need to adjust the animateScroll function to work from current scrollY to totalHeight
-                const initialScrollY = window.scrollY;
-                function animateScrollToBottom(currentTime) {
-                    if (startTime === null) startTime = currentTime;
-                    const elapsedTime = currentTime - startTime;
-                    const scrollableDistance = totalHeight - initialScrollY;
-                    
-                    if (scrollableDistance <= 0) return; // Already at or past the bottom
 
-                    const progress = Math.min(elapsedTime / duration, 1);
-                    const easeInOutQuad = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-                    
-                    window.scrollTo(0, initialScrollY + scrollableDistance * easeInOutQuad);
-
-                    if (elapsedTime < duration) {
-                        requestAnimationFrame(animateScrollToBottom);
-                    } else {
-                        window.scrollTo(0, totalHeight); // Ensure it ends exactly at the bottom
+                    function animation(currentTime) {
+                        if (startTime === null) startTime = currentTime;
+                        const timeElapsed = currentTime - startTime;
+                        const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                        window.scrollTo(0, run);
+                        if (timeElapsed < duration) requestAnimationFrame(animation);
+                        else window.scrollTo(0, targetPosition); // Ensure it ends exactly at the target
                     }
-                }
 
-                requestAnimationFrame(animateScrollToBottom);
+                    requestAnimationFrame(animation);
+                }
             });
         }
     </script>
