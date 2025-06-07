@@ -621,6 +621,29 @@
                 transform: rotate(360deg);
             }
         }
+
+        .small-glow-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: -3px;
+            /* Thin ring just outside the image */
+            border-radius: 1rem;
+            background: conic-gradient(from 0deg, #9333ea, #ec4899, #f59e0b, #9333ea);
+            animation: spinGlow 3s linear infinite;
+            z-index: 0;
+            filter: blur(150px);
+            opacity: 0.8;
+        }
+
+        @keyframes spinGlow {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -670,10 +693,13 @@
                             <div
                                 class="absolute -inset-0.5 bg-gradient-to-r  rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000">
                             </div>
-                            <div class="relative bg-gray-900 rounded-2xl p-1 max-w-md">
+                            <div class="relative group max-w-md mx-auto small-glow-wrapper">
                                 <img src="me.jpg" alt="Tadros Karam"
-                                    class="w-full h-auto rounded-xl shadow-2xl transform group-hover:scale-105 transition duration-500" />
+                                    class="w-full h-auto rounded-xl shadow-2xl transform group-hover:scale-105 transition duration-500 z-10 relative"
+                                    style="border-radius: 10%;">
                             </div>
+
+
                         </div>
 
                         <!-- Content Column -->
@@ -702,21 +728,35 @@
                                 </p>
                             </div>
                             <!-- Start Button -->
-                            <div class="mt-8 text-center lg:text-left">
+                            <div class="mt-8 text-center lg:text-left flex justfiy-center" style="gap: 16px;">
                                 <button id="start-journey-btn"
                                     class="px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75 text-xl">
-                                    Showcase
+                                    ⬇️ Showcase
                                 </button>
-                                <a href="https://www.linkedin.com/in/tadros-karam/" target="_blank"><button
-                                        class="px-10 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-blue-600 hover:to-cyan-600 transform hover:scale-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75 text-xl">
+                                <a href="https://www.linkedin.com/in/tadros-karam/" target="_blank">
+                                    <button
+                                        class="flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-blue-600 hover:via-blue-700 hover:to-cyan-600 transform hover:scale-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75 text-xl">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-white"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 18h-2v-9h2v9zm-1-10.3c-.66 0-1.2-.54-1.2-1.2s.54-1.2 1.2-1.2 1.2.54 1.2 1.2-.54 1.2-1.2 1.2zm13 10.3h-2v-4.5c0-1.08-.92-2-2-2s-2 .92-2 2v4.5h-2v-9h2v1.2c.52-.84 1.58-1.4 2.5-1.4 1.93 0 3.5 1.57 3.5 3.5v5.7z" />
+                                        </svg>
                                         LinkedIn
                                     </button>
                                 </a>
-                                <a href="https://www.youtube.com/@TasoKaram" target="_blank"><button
-                                        class="px-10 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-red-600 hover:to-orange-600 transform hover:scale-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75 text-xl">
+
+                                <a href="https://www.youtube.com/@TasoKaram" target="_blank">
+                                    <button
+                                        class="flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-red-500 via-red-600 to-orange-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-red-600 hover:via-red-700 hover:to-orange-600 transform hover:scale-105 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75 text-xl">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-white"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M19.615 3.184c-4.09-.273-10.14-.275-14.23 0-3.123.208-5.272 2.162-5.385 5.433-.164 4.798-.166 7.783 0 12.58.113 3.272 2.262 5.226 5.385 5.434 4.09.274 10.14.274 14.23 0 3.123-.208 5.272-2.162 5.385-5.434.164-4.797.166-7.782 0-12.58-.113-3.271-2.262-5.225-5.385-5.433zm-10.615 14.816v-10l9 5-9 5z" />
+                                        </svg>
                                         YouTube
                                     </button>
                                 </a>
+
                             </div>
                         </div>
                     </div>
@@ -1205,7 +1245,7 @@
                     class="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 hover:scale-105 project-card">
                     <a href="javacalc.gif" target="_blank" class="block">
                         <div class="flex items-center mb-4">
-                            <h4 class="text-xl font-semibold text-gray-200">Simple Calculator with UI</h4>
+                            <h4 class="text-xl font-semibold text-gray-200">Simple Calculator </h4>
                         </div>
 
                         <div class="flex justify-end">
@@ -1296,6 +1336,10 @@
 
             </div>
             <br>
+            <p style="opacity: 0.5;">All of these projects created with an UI</p>
+            <br>
+            <hr>
+            <br>
             <br>
             <br>
             <div style="display: flex; align-items: center;">
@@ -1367,6 +1411,9 @@
                     </li>
                 </ul>
             </div>
+            <br>
+            <br>
+            <hr>
             <br>
             <br>
             <br>
@@ -1447,15 +1494,40 @@
 
         </section>
 
+        <br>
+        <hr>
+        <br>
+        <br>
+        <br>
 
 
-        <section id="contact" class="mb-16">
-            <h2 class="text-3xl font-semibold text-purple-400 mb-4 section-title">Contact</h2>
-            <p>Linkedin <a href="https://www.linkedin.com/in/tadros-karam/" target="_blank"
-                    class="text-purple-400 hover:text-purple-500 transition duration-300">Profile</a></p>
-            <p>Email <a href="mailto:2100425@eng.asu.edu.eg" target="_blank"
-                    class="text-purple-400 hover:text-purple-500 transition duration-300">2100425@eng.asu.edu.eg</a></p>
+
+        <section id="contact" class="mb-16 p-8 rounded-2xl bg-gradient-to-br from-gray-500 to-black-300 shadow-2xl">
+            <h2 class="text-4xl font-bold mb-8 border-b-4 border-white-300 pb-2 inline-block">Contact
+            </h2>
+
+            <div class="flex flex-col gap-6 mt-6 text-lg">
+
+                <!-- LinkedIn Button -->
+                <a href="https://www.linkedin.com/in/tadros-karam/" target="_blank"
+                    class="flex items-center gap-3 px-5 py-3 bg-purple-100 text-blue-700 font-medium rounded-xl shadow hover:bg-purple-200 transition duration-300 w-fit">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-blue-600" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 18h-2v-9h2v9zm-1-10.3c-.66 0-1.2-.54-1.2-1.2s.54-1.2 1.2-1.2 1.2.54 1.2 1.2-.54 1.2-1.2 1.2zm13 10.3h-2v-4.5c0-1.08-.92-2-2-2s-2 .92-2 2v4.5h-2v-9h2v1.2c.52-.84 1.58-1.4 2.5-1.4 1.93 0 3.5 1.57 3.5 3.5v5.7z" />
+                    </svg>
+                    LinkedIn Profile
+                </a>
+
+                <!-- Email Button -->
+                <a href="mailto:2100425@eng.asu.edu.eg" target="_blank"
+                    class="flex items-center gap-3 px-5 py-3 bg-purple-100 text-amber-700 font-medium rounded-xl shadow hover:bg-purple-200 transition duration-300 w-fit">
+
+                    2100425@eng.asu.edu.eg
+                </a>
+
+            </div>
         </section>
+
 
 
 
