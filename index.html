@@ -555,6 +555,13 @@
   border: 5px solid purple;
   opacity: 0.4; /* Adjust the thickness and change the color */
 }
+.currently:hover{
+
+    color: chocolate;
+
+    
+
+}
 
 
         @keyframes moving-light {
@@ -664,7 +671,7 @@
         <!-- Full-width gradient background covering nav and about section -->
         <div
             class="w-full bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-purple-600/20 min-h-screen flex flex-col">
-            <header class="shadow-md py-4 relative z-40">
+            <header class=" py-4 relative z-40">
                 <div class="container mx-auto px-4">
                     <div class="flex justify-between items-center">
 
@@ -680,7 +687,8 @@
                                 </li>
                                 <li><a href="#projects"
                                         class="hover:text-purple-300 transition duration-300">Projects</a></li>
-                                     
+                                         <li><a href="Tadros_Karam_ CV.pdf"
+                                        class="hover:text-purple-300 transition duration-300" target="_blank">View CV</a></li>
                             </ul>
                         </nav>
                         <button id="hamburger-btn"
@@ -692,6 +700,14 @@
                             </svg>
                         </button>
                     </div>
+                    <br>
+               
+                    <br>
+                </div>
+                <div style="display: flex;justify-content: flex-end; align-items: flex-start;" class="currently">
+                <a href="https://www.linkedin.com/school/national-telecommunication-institute/posts/?feedView=all" target="_blank"><div style="background-color: rgb(122, 52, 113); width: 450px; height: 80px; display: flex;justify-content: center; align-items: center; border-radius: 5%; font-weight: bold;  border-bottom: 2px solid #fca607; font-size: 20px; border-right: 0px;">✅ Currently - Training at NTI 
+                    FullStack Web Development by PHP 
+                </div></a>
                 </div>
             </header>
 
@@ -805,7 +821,9 @@
                     <li><a href="#contact"
                             class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">Contact</a>
                     </li>
-                 
+                     <li><a href="Tadros_Karam_ CV.pdf"
+                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">CV</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -1099,6 +1117,40 @@
 
             </div>
             <br>
+              <ul class=" space-y-8">
+                    <li>
+
+
+                        <ul class="space-y-6 ml-7">
+
+                            <li
+                                class="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 hover:scale-105 project-card">
+                                <a href="lyricjava.mp4" target="_blank" class="block">
+                                    <div class="flex items-center mb-4">
+                                        <h4 class="text-xl font-semibold text-gray-200">Music Lyric System
+                                        </h4>
+                                    </div>
+
+                                    <div class="flex justify-end">
+                                        <span
+                                            class="text-purple-300 hover:text-purple-400 transition duration-300 inline-flex items-center text-sm">
+                                            View Project
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </div>
+            <br>
             <p style="opacity: 0.5;">All of these projects created with an UI</p>
             <br>
             <hr>
@@ -1143,7 +1195,35 @@
                 </ul>
             </div>
             <br>
-            
+             <div>
+                <ul class="space-y-8">
+                    <li>
+
+                        <ul class="space-y-6 ml-7">
+                            <li
+                                class="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 hover:scale-105 project-card">
+                                <a href="Tadros_Karam_ CV.pdf" target="_blank" class="block">
+                                    <div class="flex items-center mb-4">
+                                        <h4 class="text-xl font-semibold text-gray-200">My CV</h4>
+                                    </div>
+
+                                    <div class="flex justify-end">
+                                        <span
+                                            class="text-purple-300 hover:text-purple-400 transition duration-300 inline-flex items-center text-sm">
+                                            View Project
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
             <br>
 
 
@@ -1659,8 +1739,7 @@
 
     <footer class="bg-gray-800 py-4 text-center text-gray-400">
         <p>&copy; 2025 Tadros Karam.</p>
-        <p>This is my personal portfolio, created to showcase my academic and coding projects. Built and maintained by me for educational and professional purposes.</p>
-
+        
     </footer>
 
     <script>
