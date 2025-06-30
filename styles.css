@@ -154,8 +154,12 @@
     padding: 1rem;
   }
 }
+
+
+
 body {
   font-family: "Inter", sans-serif;
+  background-color:#100
 }
 
 /* From Uiverse.io by jeremyssocial */
