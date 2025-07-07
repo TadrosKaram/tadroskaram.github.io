@@ -20,30 +20,28 @@
    
 </head>
 
-<body class="text-gray-300">
+<body class="text-gray-300" id="home">
 
         <!-- pointer effect -->
      <div class="circle"></div>
 
-        
+        <header class="border-b-7 border-b-purple-400" style=" background: linear-gradient(135deg, #2a003f, #a855f7);
+;">
 
-                <div class="container mx-auto px-4">
+                <div class="container mx-auto px-4" >
                     
-                    <div class="flex justify-between items-center">
+                    <div class="flex justify-between items-center ">
 
-                        <nav class="hidden md:block mt-8">
+                        <nav class="hidden md:block mt-8 bg-transparent border-b border-b-purple-400">
                             <ul class="flex space-x-6">
-                                <li><a href="#about" class="hover:text-purple-300 transition duration-300">About</a>
-                                </li>
+                        
                                 <li><a href="#certifications"
                                         class="hover:text-purple-300 transition duration-300">Certifications</a></li>
                                 <li><a href="#skills" class="hover:text-purple-300 transition duration-300">Skills</a>
                                 </li>
                                 <li><a href="#projects"
                                         class="hover:text-purple-300 transition duration-300">Projects</a></li>
-                                         <li><a href="Tadros_Karam_ CV.pdf"
-                                        class="hover:text-purple-300 transition duration-300" target="_blank">View CV</a></li>
-                            </ul>
+                                      
                         </nav>
                         <button id="hamburger-btn"
                             class="md:hidden text-gray-400 hover:text-purple-300 focus:outline-none focus:shadow-outline relative z-50 p-2">
@@ -53,21 +51,32 @@
                                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                             </svg>
                         </button>
+                                 <nav id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 flex flex-col items-center justify-center space-y-6 text-xl text-gray-200 hidden z-40">
+
+  <a href="#certifications" class="hover:text-purple-300">Certifications</a>
+  <a href="#skills" class="hover:text-purple-300">Skills</a>
+  <a href="#projects" class="hover:text-purple-300">Projects</a>
+ 
+</nav>
                     </div>
                     <br>
                
                     <br>
                 </div>
-                <div style="display: flex;justify-content: flex-end; align-items: flex-start;" class="currently">
-               <div style="background-color: rgb(122, 52, 113); width: fit-content; height: 80px; display: flex;justify-content: center; align-items: center; border-radius: 5%; font-weight: bold;  border-bottom: 2px solid #fca607; font-size: 20px; border-right: 0px;"><a href="https://www.linkedin.com/school/national-telecommunication-institute/posts/?feedView=all" target="_blank">✅ Currently - Training at NTI 
-                    FullStack Web Development by PHP 
-                </a>
-            </div>
-                </div>
+         <div class="flex justify-end items-start p-4">
+  <div class="bg-purple-900 text-white px-6 py-4 rounded-md border-b-4 border-yellow-400 font-semibold text-lg shadow-md max-w-md">
+    <a href="https://www.linkedin.com/school/national-telecommunication-institute/posts/?feedView=all" 
+       target="_blank" 
+       class="hover:underline hover:text-yellow-300 transition">
+      ✅ Currently - Training at NTI <br />
+      FullStack Web Development with PHP
+    </a>
+  </div>
+</div>
 
                 
                 
-            </header>
+           
      
 
             <!-- About Me Section within gradient -->
@@ -113,7 +122,7 @@
                                     </a>.
                                 </p>
                             </div>
-                            <!-- Start Button row 1 -->
+                        
                             <div class="mt-8 text-center lg:text-left flex justfiy-center" style="gap: 16px;">
                            
                                 <a href="https://www.linkedin.com/in/tadros-karam/" target="_blank">
@@ -128,9 +137,6 @@
                                     </button>
                                 </a>
                             
-                                                            <!-- Start Button row 2 -->
-
-                           
 
 
                                                           
@@ -180,28 +186,11 @@
                     </svg>
                 </button>
             </div>
-            <nav class="block">
-                <ul class="space-y-4">
-                    <li><a href="#about"
-                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">About</a>
-                    </li>
-                    <li><a href="#certifications"
-                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">Certifications</a>
-                    </li>
-                    <li><a href="#skills"
-                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">Skills</a>
-                    </li>
-                  
-                    <li><a href="#projects"
-                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">Projects</a>
-                    </li>
-                     <li><a href="Tadros_Karam_ CV.pdf"
-                            class="block text-lg text-gray-300 hover:text-purple-300 transition duration-300 p-2 rounded hover:bg-gray-700">CV</a>
-                    </li>
-                </ul>
-            </nav>
+
+
         </div>
     </div>
+     </header>
      
 
 
@@ -214,7 +203,7 @@
     <h1 class="text-center text-6xl font-bold" style="border: 2px solid purple;">WEB</h1>
         <!-- WEB Skills practiced -->
          <br><br>
-    <div style="display: flex; align-items: center; gap: 30px;">
+    <div id="skill-web" style="display: flex; align-items: center; gap: 30px;">
         
         <img src="htmllogo.png" style="height: 40px; width: 40px;" title="HTML">
         <img src="csslogo.png" style="height: 40px; width: 40px;" title="CSS">
@@ -341,7 +330,7 @@
     
  
 
-    <h1 class="text-center text-6xl font-bold" style="border: 2px solid purple;">SOFTWARE</h1>
+    <h1 id="software-title-shrink" class="text-center text-6xl font-bold" style="border: 2px solid purple;">SOFTWARE</h1>
     <br>
     <br>
     
@@ -898,6 +887,23 @@
         
     </footer>
 
+    <button
+  id="thescroll"
+  class="hide-scroll"
+  style="
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 80px;
+    z-index: 999;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  "
+  title="Back to top"
+>
+ <a href="#home" style="text-decoration: none;">⬆️</a> 
+</button>
    <script src="script.js"></script>
 
 </body>

@@ -153,6 +153,14 @@
   .certification-card {
     padding: 1rem;
   }
+  #skill-web {
+    gap: 0px !important;
+    width: 40px !important;
+    /* why is t not applying */
+  }
+  #software-title-shrink {
+    font-size: 45px !important;
+  }
 }
 
 body {
@@ -804,12 +812,12 @@ hr {
   position: absolute;
   inset: -3px;
   /* Thin ring just outside the image */
-  border-radius: 1rem;
-  background: conic-gradient(from 0deg, #9333ea, #ec4899, #f59e0b, #9333ea);
+  border-radius: 0.5rem;
+  background: conic-gradient(from 0deg, #8d20f3, #a82768, #bd7b09, #ffffff);
   animation: spinGlow 3s linear infinite;
-  z-index: 0;
-  filter: blur(150px);
-  opacity: 0.8;
+  z-index: 999;
+  filter: blur(135px);
+  opacity: 0.4;
 }
 
 @keyframes spinGlow {
@@ -820,4 +828,27 @@ hr {
   100% {
     transform: rotate(360deg);
   }
+}
+/* Scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Background of scrollbar track */
+::-webkit-scrollbar-track {
+  background: #1e1b2e; /* dark purple background */
+}
+
+/* Scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#7c3aed, #a855f7); /* dark to light purple */
+  border-radius: 10px;
+}
+
+/* On hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#a855f7, #c084fc); /* lighter on hover */
+}
+.hide-scroll {
+  display: none;
 }
