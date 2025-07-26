@@ -164,26 +164,143 @@
 }
 
 * {
+  font-family: "Manrope", sans-serif;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background-color: #fbfaf4;
+  background-color: white;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Sora", sans-serif;
+header {
+  background-color: #152938;
 }
+
+#main-title-font {
+  font-family: "Creepster", cursive !important;
+}
+
+/* Custom Responsive Adjustments */
+@media (max-width: 1200px) {
+  #projects .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  header > div {
+    width: 100% !important;
+    min-height: 50vh;
+  }
+
+  #projects .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #exp {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #exp > div {
+    width: 100% !important;
+    min-height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  #main-title-font {
+    font-size: 3.5rem !important;
+  }
+
+  #tech-skills .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #projects .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-title {
+    font-size: 2.5rem !important;
+  }
+
+  #contact + section > div {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #contact + section > div > div {
+    width: 100% !important;
+    min-height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  #main-title-font {
+    font-size: 2.5rem !important;
+  }
+
+  nav ul {
+    font-size: 0.9rem;
+    gap: 15px;
+  }
+
+  #tech-skills .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #projects .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #my-project-card {
+    width: 90vw !important;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+
+  #certifications .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #thescroll {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #main-title-font {
+    font-size: 2rem !important;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #tech-skills .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .circle {
   position: fixed;
   width: 50px;
   height: 50px;
 
-  border: 3px dashed #000000;
+  border-radius: 30px;
+
+  border: 3px solid orange;
 
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -198,26 +315,15 @@ nav ul li a {
 }
 
 nav ul li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #bf3803;
-  transition: width 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #bf3803;
+  display: none;
 }
 
 nav ul li a:hover::after {
-  width: 100%;
+  display: none;
 }
 
 .fab:hover {
-  color: #bf3803;
+  color: orange;
 }
 @keyframes blinkCursor {
   50% {
@@ -677,23 +783,25 @@ nav ul li a:hover::after {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  color: #bf3803 !important;
+  color: orange !important;
   transition: all 0.3s ease;
-  text-align: center !important;
+  text-align: left !important;
   border-radius: 10px;
-  text-align: center !important;
+  text-align: center;
   font-size: 60px !important;
   transition: 0.5s ease-in-out;
+  font-weight: bold;
+  margin-left: 30px;
+  background-color: #152938;
+  color: #fbfaf4 !important;
+  padding-right: 50px;
+  padding-left: 15px;
 }
 
 .section-title:hover {
-  transform: scale(1.1);
-}
-
-.section-tittle-center {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  color: orange !important;
+  background-color: transparent;
+  border: 2px solid orange;
 }
 
 #my-project-card {
@@ -703,18 +811,18 @@ nav ul li a:hover::after {
 }
 
 #my-project-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 4px 10px #ffc005, 0 0 20px rgba(255, 223, 0, 0.7);
 }
 
 #my-button:hover {
-  background-color: #bf3803 !important;
+  background-color: orange !important;
 
   color: #000000 !important;
 }
 
 hr {
-  border: 5px solid #bf3803;
+  border: 2px solid orange;
 }
 
 @keyframes moving-light {
@@ -829,13 +937,13 @@ hr {
 
 /* Scrollbar handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#ed8181, #df7314); /* dark to light purple */
+  background-color: white; /* dark to light purple */
   border-radius: 10px;
 }
 
 /* On hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(#ffffff, #ffffff); /* lighter on hover */
+  background-color: #d1d5db; /* lighter on hover */
 }
 .hide-scroll {
   display: none;

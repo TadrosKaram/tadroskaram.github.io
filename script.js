@@ -19,16 +19,3 @@ hamburgerBtn.addEventListener("click", () => {
 });
 
 //////////////////////////////////////
-//scroll up button
-
-const scrollUp = document.querySelector("#thescroll");
-window.addEventListener("scroll", function () {
-  let isClicked = false;
-  if (window.scrollY > 500) {
-    scrollUp.classList.remove("hide-scroll");
-    isClicked = true;
-  } else if (window.scrollY == 0) {
-    scrollUp.classList.add("hide-scroll");
-  }
-  console.log(window.scrollY);
-});
