@@ -170,11 +170,15 @@
 }
 
 body {
-  background-color: #f0f4f8;
+  background-color: #152938;
 }
 
 header {
-  background-color: #152938;
+  background-color: #1b1b1a;
+}
+
+section {
+  border-top: 2px solid orange;
 }
 
 #main-title-font {
@@ -323,7 +327,7 @@ nav ul li a:hover::after {
 }
 
 .fab:hover {
-  color: orange;
+  color: #ffc005;
 }
 @keyframes blinkCursor {
   50% {
@@ -796,6 +800,7 @@ nav ul li a:hover::after {
   color: #fbfaf4 !important;
   padding-right: 50px;
   padding-left: 15px;
+  margin-top: 30px;
 }
 
 .section-title:hover {

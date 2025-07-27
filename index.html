@@ -33,14 +33,14 @@
     <header class="h-screen flex" style="width: 100%; ">
 
      <!-- image -->
-  <div style="width: 50%; display: flex; align-items: center; justify-content: center;">
+  <div style="margin-right: -200px; width: 50%; display: flex; align-items: center; justify-content: center;">
     <div class="glow-rotate-wrapper">
       <div class="glow-rotate"></div>
       <div
      style="
        width: 450px;
        height: 450px;
-       background-image: url('ChatGPT Image Jul 22, 2025, 06_50_47 AM.png');
+       background-image: url('logodone.png');
        background-size: contain;
        background-repeat: no-repeat;
        background-position: center;
@@ -64,14 +64,14 @@
      position: absolute;
      top: 0;
      left: 0;
-     width: 470px;
-     height: 470px;
+     width: 485px;
+     height: 485px;
      border-radius: 50%;
      background: conic-gradient(
        #ffc005 0deg,
        #ff9900 90deg,
-       #d9e004 180deg,
-       #99ff00 270deg,
+       #abb107 180deg,
+       #b2a904 270deg,
        #ffc005 360deg
      );
      filter: blur(18px) brightness(1.2);
@@ -148,7 +148,7 @@
     font-size: 30px;
     font-weight: bold;
     margin-top: -20px;
-    color: orange;
+    color: #ffc005;
     letter-spacing: 2px;
     font-family: 'Space Grotesk', 'Consolas', monospace;
     min-height: 40px;
@@ -225,7 +225,7 @@
      
 
 
-    <main style="width: 80%; margin: 100px auto 0 auto; height: 500vh;" >
+    <main style="width: 80%;  auto 0 auto; height: 500vh;" >
 
 <section id="skills" class="section-border py-12 bg-transparent text-white" style="width: 100%; height: 100vh; ">
     <!-- title -->
@@ -233,7 +233,7 @@
   <h2 class="text-6xl section-title text-center"><i>Skills</i></h2>
   </div>
 
-  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br>
 
 
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 px-4">
@@ -336,138 +336,119 @@
 
 
 
-<section id="projects" class="mb-16 h-[100vh] overflow-hidden">
-
-    <!-- title -->
-    <div class="section-tittle-center" >
-  <h2 class="text-6xl section-title text-center"><i>Projects</i></h2>
+<section id="projects" class="mb-16 h-[130vh] ">
+  <!-- title -->
+  <div class="section-tittle-center">
+    <h2 class="text-6xl section-title text-center" style="color: #ffc005;"><i>Projects</i></h2>
   </div>
-
   <br><br><br><br>
-  <!-- projects show -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-8 mt-8 px-2" style="margin-left: 0; color: black; height: 100vh;">
-
+  <!-- projects grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-8 px-2" style="margin-left: 0; height: 100vh;">
     <!-- Card 1 -->
-    <div class="rounded-2xl shadow-lg bg-white/90 hover:shadow-2xl transition-all duration-300 flex flex-col justify-end overflow-hidden border-2 border-[#ffc005] group relative" style="width: 250px; height: 320px;">
-      <div class="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-105" style="background-image: url('fstask.gif'); filter: grayscale(10%) brightness(0.97);"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#ffc005cc] via-transparent to-transparent opacity-80"></div>
-      <div class="relative z-10 flex flex-col justify-end h-full">
-        <div class="p-3 flex flex-col gap-2">
-          <a href="fstask.gif">
-            <button class="w-full py-2 rounded-lg bg-[#152938] text-white font-semibold shadow hover:bg-[#ffc005] hover:text-[#152938] transition-all duration-200">View Project</button>
-          </a>
-          <button onclick="alert('Register Form , Successfully Connects PHP & MySQL / Languages: PHP , MySQL ,Frontend UI')" class="w-full py-2 rounded-lg bg-white text-[#ffc005] font-semibold border border-[#ffc005] hover:bg-[#ffc005] hover:text-white transition-all duration-200">Details</button>
-        </div>
+    <a href="fstask.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('fstask.gif') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">PHP Register Form</h3>
+        <p class="text-gray-100 mb-8 drop-shadow">A simple registration form that connects to a MySQL database using PHP. Demonstrates backend integration and user data handling.</p>
       </div>
-    </div>
-
+      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
+        View Project
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
     <!-- Card 2 -->
-    <div class="rounded-2xl shadow-lg bg-white/90 hover:shadow-2xl transition-all duration-300 flex flex-col justify-end overflow-hidden border-2 border-[#ffc005] group relative" style="width: 250px; height: 320px;">
-      <div class="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-105" style="background-image: url('phplogin.gif'); filter: grayscale(10%) brightness(0.97);"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#ffc005cc] via-transparent to-transparent opacity-80"></div>
-      <div class="relative z-10 flex flex-col justify-end h-full">
-        <div class="p-3 flex flex-col gap-2">
-          <a href="fstask.gif">
-            <button class="w-full py-2 rounded-lg bg-[#152938] text-white font-semibold shadow hover:bg-[#ffc005] hover:text-[#152938] transition-all duration-200">View Project</button>
-          </a>
-          <button onclick="alert('College System with login authenticator | Roles apply | CRUD | Session handling | Sign up & Login | One of NTI Fullstack Training program / Languages: PHP , MySQL &Frontend UI')" class="w-full py-2 rounded-lg bg-white text-[#ffc005] font-semibold border border-[#ffc005] hover:bg-[#ffc005] hover:text-white transition-all duration-200">Details</button>
-        </div>
+    <a href="phplogin.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('phplogin.gif') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">College System Authenticator</h3>
+        <p class="text-gray-100 mb-8 drop-shadow">A college management system with login authentication, role-based access, CRUD operations, and session handling. Built with PHP and MySQL.</p>
       </div>
-    </div>
-
+      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
+        View Project
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
     <!-- Card 3 -->
-    <div class="rounded-2xl shadow-lg bg-white/90 hover:shadow-2xl transition-all duration-300 flex flex-col justify-end overflow-hidden border-2 border-[#ffc005] group relative" style="width: 250px; height: 320px;">
-      <div class="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-105" style="background-image: url('uigif.gif'); filter: grayscale(10%) brightness(0.97);"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#ffc005cc] via-transparent to-transparent opacity-80"></div>
-      <div class="relative z-10 flex flex-col justify-end h-full">
-        <div class="p-3 flex flex-col gap-2">
-          <a href="#">
-            <button class="w-full py-2 rounded-lg bg-[#152938] text-white font-semibold shadow hover:bg-[#ffc005] hover:text-[#152938] transition-all duration-200">View Project</button>
-          </a>
-          <button onclick="alert('click View Project i have full site with full details! / Languages: Java')" class="w-full py-2 rounded-lg bg-white text-[#ffc005] font-semibold border border-[#ffc005] hover:bg-[#ffc005] hover:text-white transition-all duration-200">Details</button>
-        </div>
+    <a href="https://javaprojectasu-cse231.netlify.app/" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('uigif.gif') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Java UI Showcase</h3>
+        <p class="text-gray-100 mb-8 drop-shadow">A full-featured Java desktop application with a modern user interface. Demonstrates advanced Java Swing UI design and usability.</p>
       </div>
-    </div>
-
+      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
+        View Project
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
     <!-- Card 4 -->
-    <div class="rounded-2xl shadow-lg bg-white/90 hover:shadow-2xl transition-all duration-300 flex flex-col justify-end overflow-hidden border-2 border-[#ffc005] group relative" style="width: 250px; height: 320px;">
-      <div class="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-105" style="background-image: url('guessthenumber.gif'); filter: grayscale(10%) brightness(0.97);"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#ffc005cc] via-transparent to-transparent opacity-80"></div>
-      <div class="relative z-10 flex flex-col justify-end h-full">
-        <div class="p-3 flex flex-col gap-2">
-          <a href="#">
-            <button class="w-full py-2 rounded-lg bg-[#152938] text-white font-semibold shadow hover:bg-[#ffc005] hover:text-[#152938] transition-all duration-200">View Project</button>
-          </a>
-          <button onclick="alert('JavaScript number guesser game best to view it for yourself :)')" class="w-full py-2 rounded-lg bg-white text-[#ffc005] font-semibold border border-[#ffc005] hover:bg-[#ffc005] hover:text-white transition-all duration-200">Details</button>
-        </div>
+    <a href="https://tadroskaram.github.io/number-guess.js/" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('guessthenumber.gif') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Guess The Number Game</h3>
+        <p class="text-gray-100 mb-8 drop-shadow">A fun JavaScript game where users try to guess a randomly generated number. Features interactive UI and instant feedback.</p>
       </div>
-    </div>
-
+      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
+        View Project
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
     <!-- Card 5 -->
-    <div class="rounded-2xl shadow-lg bg-white/90 hover:shadow-2xl transition-all duration-300 flex flex-col justify-end overflow-hidden border-2 border-[#ffc005] group relative" style="width: 250px; height: 320px;">
-      <div class="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-105" style="background-image: url('task1-nti.png'); filter: grayscale(10%) brightness(0.97);"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#ffc005cc] via-transparent to-transparent opacity-80"></div>
-      <div class="relative z-10 flex flex-col justify-end h-full">
-        <div class="p-3 flex flex-col gap-2">
-          <a href="https://tadroskaram.github.io/nti-clone-task1/">
-            <button class="w-full py-2 rounded-lg bg-[#152938] text-white font-semibold shadow hover:bg-[#ffc005] hover:text-[#152938] transition-all duration-200">View Project</button>
-          </a>
-          <button onclick="alert('Front-End Page Clone | ensuring responsiveness as the screen shot shows | One of NTI Fullstack Training Tasks')" class="w-full py-2 rounded-lg bg-white text-[#ffc005] font-semibold border border-[#ffc005] hover:bg-[#ffc005] hover:text-white transition-all duration-200">Details</button>
-        </div>
+    <a href="https://tadroskaram.github.io/nti-clone-task1/" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('task1-nti.png') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">NTI Page Clone</h3>
+        <p class="text-gray-100 mb-8 drop-shadow">A responsive front-end clone of the NTI website. Built with HTML, CSS, and Bootstrap to match the original design closely.</p>
       </div>
-    </div>
-
+      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
+        View Project
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
     <!-- Card 6 -->
-    <div class="rounded-2xl shadow-lg bg-white/90 hover:shadow-2xl transition-all duration-300 flex flex-col justify-end overflow-hidden border-2 border-[#ffc005] group relative" style="width: 250px; height: 320px;">
-      <div class="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-105" style="background-image: url('TaskMySQL.png'); filter: grayscale(10%) brightness(0.97);"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#ffc005cc] via-transparent to-transparent opacity-80"></div>
-      <div class="relative z-10 flex flex-col justify-end h-full">
-        <div class="p-3 flex flex-col gap-2">
-          <a href="TaskMySQL.png">
-            <button class="w-full py-2 rounded-lg bg-[#152938] text-white font-semibold shadow hover:bg-[#ffc005] hover:text-[#152938] transition-all duration-200">View Project</button>
-          </a>
-          <button onclick="alert('Cloning an entire MySQL database')" class="w-full py-2 rounded-lg bg-white text-[#ffc005] font-semibold border border-[#ffc005] hover:bg-[#ffc005] hover:text-white transition-all duration-200">Details</button>
-        </div>
+    <a href="TaskMySQL.png" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('TaskMySQL.png') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">MySQL Database Clone</h3>
+        <p class="text-gray-100 mb-8 drop-shadow">A project demonstrating the process of cloning an entire MySQL database, useful for backups and migrations.</p>
       </div>
-    </div>
-
+      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
+        View Project
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
     <!-- Card 7 -->
-    <div class="rounded-2xl shadow-lg bg-white/90 hover:shadow-2xl transition-all duration-300 flex flex-col justify-end overflow-hidden border-2 border-[#ffc005] group relative" style="width: 250px; height: 320px;">
-      <div class="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-105" style="background-image: url('carplate.gif'); filter: grayscale(10%) brightness(0.97);"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#ffc005cc] via-transparent to-transparent opacity-80"></div>
-      <div class="relative z-10 flex flex-col justify-end h-full">
-        <div class="p-3 flex flex-col gap-2">
-          <a href="carplate.gif">
-            <button class="w-full py-2 rounded-lg bg-[#152938] text-white font-semibold shadow hover:bg-[#ffc005] hover:text-[#152938] transition-all duration-200">View Project</button>
-          </a>
-          <button onclick="alert('Full Car Plating system | avoids duplicates | Random Plate Generator | Special plate number feature / Languages: Java ')" class="w-full py-2 rounded-lg bg-white text-[#ffc005] font-semibold border border-[#ffc005] hover:bg-[#ffc005] hover:text-white transition-all duration-200">Details</button>
-        </div>
+    <a href="carplate.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('carplate.gif') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Car Plate System</h3>
+        <p class="text-gray-100 mb-8 drop-shadow">A Java-based car plate management system with duplicate avoidance, random plate generation, and special plate features.</p>
       </div>
-    </div>
-
+      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
+        View Project
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
   </div>
-
-  </section>
+</section>
 
 <!-- Experience & Education -->
 
-<section class="section-border flex flex-col lg:flex-row w-full h-[100vh] lg:h-[80vh] mt-24" id="exp">
-
+<section class="section-border flex flex-col lg:flex-row w-full min-h-[60vh] lg:min-h-[60vh] relative" id="exp" style="margin-bottom: 80px;">
   <!-- Experience -->
-  <div class="lg:w-1/2 w-full bg-[#152938]   p-8 flex flex-col justify-center min-h-[400px]" style="border-radius: 20px;">
-    <h1 class="text-center text-white text-4xl font-bold mb-8" style="margin-bottom: 50px;">Experience</h1>
+  <div class="lg:w-1/2 w-full bg-[#182c47] p-8 flex flex-col justify-center min-h-[400px] rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none" style="box-shadow: 0 4px 24px rgba(21,41,56,0.12);">
+    <h1 class="text-center text-[#ffc005] text-4xl font-bold mb-8" style="margin-bottom: 50px;">Experience</h1>
     <div class="flex flex-col items-center gap-10">
       <!-- Exp1 -->
-      <div class="flex items-center gap-6 w-full max-w-xl mx-auto bg-[#1e3557] rounded-lg shadow-lg p-4">
+      <div class="flex items-center gap-6 w-full max-w-xl mx-auto bg-[#223a5e] rounded-lg shadow-lg p-4">
         <!-- image box -->
         <div class="flex-shrink-0 w-24 h-24 bg-center bg-contain bg-no-repeat rounded-lg" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjjE1so9vdok-71BKkeEdFJhO1ai33BDFN7w&s');"></div>
         <!-- text box -->
         <div class="flex-1 text-white ml-2">
-          <h2 class="text-xl font-semibold mb-1">NTI - Fullstack Training</h2>
+          <h2 class="text-xl font-semibold mb-1" style="color: #ffc005;">NTI - Fullstack Training</h2>
           <p class="text-sm leading-relaxed">
-            Practiced my <mark class="bg-yellow-200 text-black px-1 rounded">Front-end</mark> Skills <span class="font-semibold">(HTML, CSS & Bootstrap, JS)</span>,<br>
-            my <mark class="bg-yellow-200 text-black px-1 rounded">Back-end</mark> Skills <span class="font-semibold">(PHP, Laravel, MySQL)</span><br>
-            Also the course offered <mark class="bg-yellow-200 text-black px-1 rounded">Soft skills</mark> & freelancing and how to work professionally.
+            Practiced my <mark style="background: #ffc005; color: #152938; padding: 2px 6px; border-radius: 4px;">Front-end</mark> Skills <span class="font-semibold">(HTML, CSS & Bootstrap, JS)</span>,<br>
+            my <mark style="background: #ffc005; color: #152938; padding: 2px 6px; border-radius: 4px;">Back-end</mark> Skills <span class="font-semibold">(PHP, Laravel, MySQL)</span><br>
+            Also the course offered <mark style="background: #ffc005; color: #152938; padding: 2px 6px; border-radius: 4px;">Soft skills</mark> & freelancing and how to work professionally.
           </p>
           <p class="text-right text-gray-300 text-xs mt-2 opacity-70">June-July 2025</p>
         </div>
@@ -476,42 +457,43 @@
   </div>
 
   <!-- Education -->
-  <div class="lg:w-1/2 w-full bg-transparent flex flex-col justify-center min-h-[400px] px-8 py-8">
-    <h1 class="text-center text-[#152938] text-4xl font-bold mb-8" style="margin-bottom: 50px;">Education</h1>
+  <div class="lg:w-1/2 w-full bg-[#223a5e] flex flex-col justify-center min-h-[400px] px-8 py-8 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none" style="box-shadow: 0 4px 24px rgba(21,41,56,0.10);">
+    <h1 class="text-center text-[#ffc005] text-4xl font-bold mb-8" style="margin-bottom: 50px;">Education</h1>
     <div class="flex flex-col items-center gap-10">
       <!-- Edu1 -->
-      <div class="flex items-center gap-6 w-full max-w-xl mx-auto bg-white/80 rounded-lg shadow-lg p-4">
+      <div class="flex items-center gap-6 w-full max-w-xl mx-auto bg-white/90 rounded-lg shadow-lg p-4">
         <!-- image box -->
         <div class="flex-shrink-0 w-24 h-24 bg-center bg-contain bg-no-repeat rounded-lg" style="background-image: url('engasu.jpg');"></div>
         <!-- text box -->
-        <div class="flex-1 text-[#152938] ml-2">
+        <div class="flex-1 text-[#223a5e] ml-2">
           <h2 class="text-lg font-semibold mb-1">Computer Engineering Undergraduate<br>@ FOE Ain Shams University</h2>
           <p class="text-sm leading-relaxed">
-            Practiced my <mark class="bg-yellow-200 text-black px-1 rounded">Front-end</mark> Skills <span class="font-semibold">(HTML, CSS & Bootstrap, JS)</span>,<br>
-            my <mark class="bg-yellow-200 text-black px-1 rounded">Back-end</mark> Skills <span class="font-semibold">(PHP, Laravel, MySQL)</span><br>
-            Also the course offered <mark class="bg-yellow-200 text-black px-1 rounded">Soft skills</mark> & freelancing and how to work professionally.
+            Practiced my <mark style="background: #ffc005; color: #223a5e; padding: 2px 6px; border-radius: 4px;">Front-end</mark> Skills <span class="font-semibold">(HTML, CSS & Bootstrap, JS)</span>,<br>
+            my <mark style="background: #ffc005; color: #223a5e; padding: 2px 6px; border-radius: 4px;">Back-end</mark> Skills <span class="font-semibold">(PHP, Laravel, MySQL)</span><br>
+            Also the course offered <mark style="background: #ffc005; color: #223a5e; padding: 2px 6px; border-radius: 4px;">Soft skills</mark> & freelancing and how to work professionally.
           </p>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Stylish bottom border -->
+  <div style="
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 10px;
+    background: linear-gradient(90deg, #ffc005 0%, #ff9900 50%, #abb107 100%);
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 4px 24px 0 rgba(255,192,5,0.13);
+    z-index: 2;
+    width: 100%;
+  "></div>
 </section>
-
-
-
-
-</section>
-
-
-
-
-   
-     
 
          <section class="section-border" id="certifications" style="margin-top: 200px; height: 100vh;">
             <!-- title -->
-    <div class="section-tittle-center" style="margin-top: 100px;" >
-  <h2 class="text-6xl section-title "><i>Certifications</i></h2>
+    <div class="section-tittle-center" style="" >
+  <h2 class="text-6xl section-title" style="border-top: 0 !important;"><i>Certifications</i></h2>
   </div>
             <br>
             <br>
@@ -540,7 +522,7 @@
 
         <!-- Contact Section -->
         <div style="margin-top: 80px; margin-left: 20px;">
-          <h2 class="text-6xl text-gray-400 text-left border-b-3 border-b-gray-200" id="contact">
+          <h2 class="text-6xl text-gray-400 text-left " id="contact">
             <i>Contact</i>
           </h2>
         </div>
