@@ -174,14 +174,7 @@ body {
 }
 
 header {
-  background: radial-gradient(
-    circle at center,
-    #ffc005 0%,
-    #b98e00 50%,
-    #c07825 100%
-  );
-  background-blend-mode: overlay;
-  box-shadow: 0 0 80px rgba(255, 192, 5, 0.2);
+  background: linear-gradient(90deg, rgb(14, 14, 14), rgb(43, 42, 42));
 }
 
 #main-title-font {

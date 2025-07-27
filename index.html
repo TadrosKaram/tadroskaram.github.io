@@ -40,8 +40,8 @@
       <div class="glow-rotate"></div>
       <div
      style="
-       width: 500px;
-       height: 500px;
+       width: 550px;
+       height: 550px;
        background-image: url('Screenshot_7-removebg-preview\ \(1\).png');
        background-size: cover;
        background-repeat: no-repeat;
@@ -56,12 +56,12 @@
     <style>
       .glow-rotate-wrapper {
      position: relative;
-     width: 530px;
-     height: 530px;
+     width: 580px;
+     height: 580px;
      display: flex;
      align-items: center;
      justify-content: center;
-      box-shadow: 0 0 40px rgba(255, 192, 5, 0.2);
+      
   border-radius: 50%;
       }
  .glow-rotate {
@@ -80,10 +80,10 @@
     #ffd700 300deg,    /* Gold */
     #fffacd 360deg     /* Back to LemonChiffon */
   );
-  filter: blur(24px) brightness(1.1);
+  filter: blur(20px) brightness(1.1);
   z-index: 999;
   animation: rotateGlow 5s linear infinite;
-  opacity: 0.2;
+  opacity: 0.25;
 }
 
      filter: blur(18px) brightness(1.2);
@@ -254,7 +254,7 @@
 </h3>
 <script>
   // Hacking typing animation for "Web Developer"
-  const text = "</Web Developer>";
+  const text = "Computer Engineering Student";
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
   const el = document.getElementById("hacking-title");
   let display = "";
@@ -293,22 +293,27 @@
   }
 </style>
 
-<div class="slide-up-invisible">
-  <p class="mt-2 text-gray-400">Undergraduate Computer Engineer @ FOE Ain Shams University</p>
-      
-
-<div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 10px;">
-  <div style="display: flex; justify-content: center; gap: 30px; font-size: 42px; ">
-    <a href="https://github.com/TadrosKaram" target="_blank" class="social-icon">
+<div class="slide-up-invisible" style="display: flex; align-items: center; gap: 24px;">
+  <p class="mt-2 text-gray-200" style="margin: 0;">@ FOE Ain Shams University</p>
+  <div style="display: flex; gap: 24px; font-size: 42px; align-items: center; margin: 0;">
+    <a href="https://github.com/TadrosKaram" target="_blank" class="social-icon" style="display: inline-flex; align-items: center;">
       <i class="fab fa-github"></i>
     </a>
-    <a href="https://www.linkedin.com/in/tadros-karam/" target="_blank" class="social-icon">
+    <a href="https://www.linkedin.com/in/tadros-karam/" target="_blank" class="social-icon" style="display: inline-flex; align-items: center;">
       <i class="fab fa-linkedin"></i>
     </a>
+    <a href="Tadros_Karam_Resume_2.pdf" target="_blank" download="" style="display: inline-flex; align-items: center;">
+      <i class="fas fa-file" style="font-size: 22px; color: #D1D5DB; margin-right: 6px;" onmouseover="this.style.color='#ffc005';" onmouseout="this.style.color='#D1D5DB'"></i>
+      <span style="font-size: 15px; color: #D1D5DB;">Download Resume</span>
+    </a>
   </div>
+  
 
-  <p class="scroll-hint" style="background: linear-gradient(90deg,rgb(206, 137, 34),#152938); box-shadow: 20px 22px 20px rgba(0, 0, 0, 0.25); width: 230px; height: 50px;
-"><span></span>↓ Scroll for more</p>
+</div>
+<br><br>
+  <p class="scroll-hint" style="background: linear-gradient(90deg,rgb(241, 166, 52),#d4b21a); box-shadow: 20px 22px 70px rgba(0, 0, 0, 0.25); width: 250px; height: 50px; border-radius: 20px; text-align: center; border: 2px solid white; display: flex; align-items: center; justify-content: center; margin: 0 0 0 24px;">
+    ↓ Scroll for more
+  </p>
 </div>
 
 
@@ -434,7 +439,7 @@
   <!-- projects grid -->
   <div class="projects-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-12 px-2">
     <!-- Card 1 -->
-    <a href="fstask.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('fstask.gif') center/cover no-repeat;">
+    <a href="fstask.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTYRK6tmMsMp58Xvlm1Z5KvLjP9zv50rNmg&s') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
       <div class="relative z-10">
         <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">PHP Register Form</h3>
@@ -446,7 +451,7 @@
       </span>
     </a>
     <!-- Card 2 -->
-    <a href="phplogin.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('phplogin.gif') center/cover no-repeat;">
+    <a href="phplogin.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCMv4JAeDMdh5y1NUWlFb2X-lMtDcr5Tu5QA&s') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
       <div class="relative z-10">
         <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">College System Authenticator</h3>
@@ -458,7 +463,7 @@
       </span>
     </a>
     <!-- Card 3 -->
-    <a href="https://javaprojectasu-cse231.netlify.app/" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('uigif.gif') center/cover no-repeat;">
+    <a href="https://javaprojectasu-cse231.netlify.app/" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUz-ljBUHgvIJYKlb3Z3mc_452JBJsAEEYuw&s') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
       <div class="relative z-10">
         <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Java Hotel Management System</h3>
@@ -506,7 +511,7 @@
       </span>
     </a>
     <!-- Card 7 -->
-    <a href="carplate.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('carplate.gif') center/cover no-repeat;">
+    <a href="carplate.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0-kQ0B_cD51fGMpfclihPUwz_CXo8FuJQwQ&s') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
       <div class="relative z-10">
         <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Car Plate System</h3>
@@ -529,12 +534,62 @@
         <i class="fas fa-arrow-right"></i>
       </span>
     </a>
-        <!-- Card 9 -->
-    <a href="gpacalc.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('gpacalc.gif') center/cover no-repeat;">
+
+         <!-- Card 9 -->
+    <a href="gpacalc.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQcUL1vjhADgl6TyBLY0zkOHkJpSCkeLkVOg&s') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
       <div class="relative z-10">
         <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">GPA Calculator</h3>
         <p class="text-gray-100 mb-8 drop-shadow">gpa calculator with UI using JavaFX with the ability to calculate CGPA and edit and many more view for yourself</p>
+      </div>
+      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
+        View Project
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+            <!-- Card 10 -->
+    <a href="javacalc.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcuqZpxzUU47pk2cEyKSGy_S7CXBoAszF80A&s) center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Simple Calculator</h3>
+        <p class="text-gray-100 mb-8 drop-shadow">Simple calculator with UI using JavaFX</p>
+      </div>
+      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
+        View Project
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+
+            <!-- Card 11 -->
+    <a href="passwordjava.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://www.seoclerk.com/pics/002/124/985/fe0eb05f178eb242f2567c204f4854d7.jpg') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Strong Password Generator</h3>
+        <p class="text-gray-100 mb-8 drop-shadow">With the ability to choose how many symbols, numbers and letters and position randomly across the generated password</p>
+      </div>
+      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
+        View Project
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+            <!-- Card 12 -->
+    <a href="Quizjava.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_4Xy_wNfcgC-OlJxa2r64hzNvwde4pYzxbRqpmWhywnBcAzNAmmQeF8T89lJUWZc6plA&usqp=CAU') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Quiz App</h3>
+        <p class="text-gray-100 mb-8 drop-shadow">Built with UI using javaFX</p>
+      </div>
+      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
+        View Project
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+            <!-- Card 13 -->
+    <a href="wikisearch.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp4zgEfdz5GHeGYVqZ6MJFqK9wK91Fg6OBow&s') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Local Wikipedia search</h3>
+        <p class="text-gray-100 mb-8 drop-shadow">Local search of wikipedia websites with ui using JavaFX</p>
       </div>
       <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
         View Project
