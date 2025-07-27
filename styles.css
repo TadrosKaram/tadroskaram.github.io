@@ -174,7 +174,7 @@ body {
 }
 
 header {
-  background-color: #1b1b1a;
+  background: linear-gradient(135deg, #957004 0%, #9d9218 60%, #59532a 100%);
 }
 
 section {

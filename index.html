@@ -86,16 +86,21 @@
       }
     </style>
   </div>
-
-  <!-- Fix nav bar positioning: make it fixed at top left, full width, and above header -->
-  <nav class="slide-in-left-nav" style="position: fixed; top: 0; left: 0; width: 100vw; background: rgba(21,41,56,0.85); display: flex; align-items: center; padding: 20px 40px; z-index: 1000; color: #fbfaf4;">
-    <ul style="display: flex; list-style: none; gap: 30px; padding: 0; margin: 0;" class=" text-xl" >
+  <nav class="slide-in-left-nav" style="position: fixed; top: 0; left: 0; width: 100vw; background: rgba(35, 37, 37, 0.85); display: flex; align-items: center; padding: 20px 40px; z-index: 1000; color: #fbfaf4;">
+    <!-- Hamburger Button (hidden on large screens) -->
+    <button id="nav-hamburger" aria-label="Open menu"
+      style="display: none; background: none; border: none; cursor: pointer; margin-right: 20px;"
+      class="lg:hidden focus:outline-none">
+      <span style="display: block; width: 32px; height: 4px; background: #ffc005; margin: 6px 0; border-radius: 2px;"></span>
+      <span style="display: block; width: 32px; height: 4px; background: #ffc005; margin: 6px 0; border-radius: 2px;"></span>
+      <span style="display: block; width: 32px; height: 4px; background: #ffc005; margin: 6px 0; border-radius: 2px;"></span>
+    </button>
+    <ul id="main-nav-list" style="display: flex; list-style: none; gap: 30px; padding: 0; margin: 0;" class="text-xl">
       <li>
-     <a href="https://www.linkedin.com/in/tadros-karam/">
-       <div style="background: url(ChatGPT\ Image\ Jul\ 22\,\ 2025\,\ 06_50_47\ AM.png); background-size: cover; background-position: center; width: 30px; height: 30px; border-radius: 50%;"></div>
-     </a>
+        <a href="https://www.linkedin.com/in/tadros-karam/">
+          <div style="background: url(logodone.png); background-size: cover; background-position: center; width: 30px; height: 30px; border-radius: 50%;"></div>
+        </a>
       </li>
-      
       <li><a href="#home">Home</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -103,6 +108,87 @@
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <style>
+      /* Hamburger visible only on small screens */
+      @media (max-width: 1024px) {
+        #nav-hamburger {
+          display: block !important;
+        }
+        #main-nav-list {
+          display: none;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100vw;
+          flex-direction: column;
+          background: rgba(35, 37, 37, 0.97);
+          gap: 0;
+          padding: 20px 0 10px 0;
+          z-index: 1100;
+        }
+        #main-nav-list.open {
+          display: flex !important;
+        }
+        #main-nav-list li {
+          margin: 0 0 18px 0;
+          text-align: center;
+        }
+        #main-nav-list li:last-child {
+          margin-bottom: 0;
+        }
+      }
+      @media (min-width: 1025px) {
+        #main-nav-list {
+          display: flex !important;
+          position: static;
+          flex-direction: row;
+          background: none;
+          gap: 30px;
+        }
+        #nav-hamburger {
+          display: none !important;
+        }
+      }
+    </style>
+    <script>
+      // Hamburger menu toggle for small screens, always show nav on large screens
+      document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('nav-hamburger');
+        const navList = document.getElementById('main-nav-list');
+        function updateNavDisplay() {
+          if (window.innerWidth > 1024) {
+            navList.classList.add('open');
+            navList.style.display = 'flex';
+          } else {
+            navList.classList.remove('open');
+            navList.style.display = '';
+          }
+        }
+        updateNavDisplay();
+        window.addEventListener('resize', updateNavDisplay);
+
+        if (!btn || !navList) return;
+        btn.addEventListener('click', function() {
+          if (window.innerWidth <= 1024) {
+            navList.classList.toggle('open');
+            if (navList.classList.contains('open')) {
+              navList.style.display = 'flex';
+            } else {
+              navList.style.display = '';
+            }
+          }
+        });
+        // Close menu when clicking a link (on small screens)
+        navList.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            if (window.innerWidth <= 1024) {
+              navList.classList.remove('open');
+              navList.style.display = '';
+            }
+          });
+        });
+      });
+    </script>
   </nav>
 </div>
 
@@ -196,10 +282,10 @@
 </style>
 
 <div class="slide-up-invisible">
-  <p class="mt-2">Undergraduate Computer Engineer @ FOE Ain Shams University</p>
+  <p class="mt-2 text-gray-400">Undergraduate Computer Engineer @ FOE Ain Shams University</p>
   <div style="display: flex; justify-content: center; gap: 30px; font-size: 50px; margin-top: 10px;">
-    <a href="https://github.com/TadrosKaram" target="_blank"><i class="fab fa-github"></i> </a>
-    <a href="https://www.linkedin.com/in/tadros-karam/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/TadrosKaram" target="_blank"><i class="fab fa-github text-gray-400"></i> </a>
+    <a href="https://www.linkedin.com/in/tadros-karam/" target="_blank"><i class="fab fa-linkedin text-gray-400"></i></a>
   </div>
 </div>
 
@@ -500,19 +586,19 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div
                     class=" rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">HTML & CSS Certification</h3>
+                    <h3 class="text-xl font-semibold text-white mb-2">HTML & CSS Certification</h3>
                     <p class="text-amber-800 mb-4">Issued by: FreeCodeCamp</p>
                     <img src="cert1.jpg" alt="HTML & CSS Certification" class="w-full h-auto rounded-lg">
                 </div>
                 <div
                     class=" rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">MATLAB Certification</h3>
+                    <h3 class="text-xl font-semibold text-white mb-2">MATLAB Certification</h3>
                     <p class="text-amber-800 mb-4">Issued by: Vanderbilt University</p>
                     <img src="cer2.png" alt="MATLAB Certification" class="w-full h-auto rounded-lg">
                 </div>
                 <div
                     class=" rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 hover:scale-105">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Supervised Machine Learning Certification</h3>
+                    <h3 class="text-xl font-semibold text-white mb-2">Supervised Machine Learning Certification</h3>
                     <p class="text-amber-800 mb-4">Issued by: DeepLearningAI</p>
                     <img src="cert3.png" alt="Supervised Machine Learning Certification"
                         class="w-full h-auto rounded-lg">
