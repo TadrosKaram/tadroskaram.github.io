@@ -170,19 +170,60 @@
 }
 
 body {
-  background-color: #152938;
+  background-color: #1c1c1c;
 }
 
 header {
-  background: linear-gradient(135deg, #957004 0%, #9d9218 60%, #59532a 100%);
-}
-
-section {
-  border-top: 2px solid orange;
+  background: radial-gradient(
+    circle at center,
+    #ffc005 0%,
+    #b98e00 50%,
+    #c07825 100%
+  );
+  background-blend-mode: overlay;
+  box-shadow: 0 0 80px rgba(255, 192, 5, 0.2);
 }
 
 #main-title-font {
-  font-family: "Creepster", cursive !important;
+  background: linear-gradient(to right, #fff, #ffc005);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* make it pop */
+}
+
+#main-nav-list {
+  backdrop-filter: blur(6px);
+  background-color: rgba(35, 37, 37, 0.9); /* ensure semi-transparent */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.skill-card {
+  border: 2px solid rgba(255, 192, 5, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 192, 5, 0.1);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  border-color: #ffc005;
+  box-shadow: 0 0 20px rgba(255, 192, 5, 0.4);
+}
+
+.skill-card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
+}
+
+.skill-card span {
+  display: block;
+  font-weight: bold;
+  color: #ffc005;
+  font-size: 1rem;
 }
 
 /* Custom Responsive Adjustments */
@@ -216,6 +257,31 @@ section {
     width: 100% !important;
     min-height: 50vh;
   }
+
+  #main-nav-list {
+    margin-top: 70px;
+    padding: 20px 0;
+    gap: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 @media (max-width: 768px) {
@@ -246,54 +312,99 @@ section {
   }
 }
 
-@media (max-width: 480px) {
-  #main-title-font {
-    font-size: 2.5rem !important;
-  }
-
-  nav ul {
-    font-size: 0.9rem;
-    gap: 15px;
-  }
-
-  #tech-skills .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  #projects .grid {
-    grid-template-columns: 1fr;
-  }
-
-  #my-project-card {
-    width: 90vw !important;
-    margin: 0 auto;
-  }
-
-  .section-title {
-    font-size: 1.8rem !important;
-  }
-
-  #certifications .grid {
-    grid-template-columns: 1fr;
-  }
-
-  #thescroll {
-    font-size: 2.5rem !important;
-  }
+section {
+  margin-top: 80px; /* or padding-top: 80px; */
+  padding-bottom: 60px;
+  clear: both;
 }
 
-@media (max-width: 360px) {
-  #main-title-font {
-    font-size: 2rem !important;
+/* ========== Mobile First ========== */
+
+/* Small devices (phones, 0px – 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  section {
+    padding: 40px 20px;
+  }
+
+  .card,
+  .exp-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .exp-card img {
+    margin: 0 auto 12px auto;
+    max-width: 60px;
+    max-height: 60px;
   }
 
   nav ul {
     flex-direction: column;
-    gap: 5px;
+    gap: 12px;
+  }
+}
+
+/* ========== Tablet Portrait (481px – 768px) ========== */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
   }
 
-  #tech-skills .grid {
+  .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .glow-rotate-wrapper {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+/* ========== Tablet Landscape & Small Laptop (769px – 1024px) ========== */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .experience-education-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-card i {
+    margin-bottom: 12px;
+  }
+}
+
+/* ========== Medium Desktop (1025px – 1200px) ========== */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* ========== Large Desktop (1201px and up) ========== */
+@media (min-width: 1201px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -324,6 +435,40 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
   display: none;
+}
+
+.social-icon {
+  color: #d1d5db;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ffc005;
+  transform: scale(1.1);
+}
+
+.scroll-hint {
+  font-size: 30px;
+  color: #f8f7f6;
+  font-style: italic;
+  animation: pulseScroll 2s infinite;
+  margin-top: 15px;
+  margin-top: 150px;
+}
+
+@keyframes pulseScroll {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(5px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
 }
 
 .fab:hover {
@@ -796,7 +941,7 @@ nav ul li a:hover::after {
   transition: 0.5s ease-in-out;
   font-weight: bold;
   margin-left: 30px;
-  background-color: #152938;
+  background-color: #ffc005;
   color: #fbfaf4 !important;
   padding-right: 50px;
   padding-left: 15px;
