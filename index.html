@@ -120,6 +120,30 @@
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+<button id="theme-toggle"
+  style="
+    position: fixed;
+  top: 15px;
+  right: 20px;
+    background-color: #161515;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;">
+  <i class="fas fa-moon"></i>
+  <span>Dark Mode</span>
+</button>
+
+
+
     <style>
       /* Hamburger visible only on small screens */
       @media (max-width: 1024px) {
@@ -201,7 +225,9 @@
         });
       });
     </script>
+
   </nav>
+
 </div>
 
 
@@ -860,28 +886,30 @@ main {
 <script src="script.js"></script>
 
 <script>
-// Highlight nav link for section in view
+// Highlight nav link for section in view (improved logic)
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = Array.from(document.querySelectorAll('nav ul li a[href^="#"]'));
   const sectionIds = navLinks.map(link => link.getAttribute('href').replace('#','')).filter(Boolean);
-  // Add 'home' section (body with id="home")
-  const sections = sectionIds.map(id => id === 'home' ? document.body : document.getElementById(id)).filter(Boolean);
+  // Map 'home' to header section instead of document.body
+  const headerSection = document.querySelector('header');
+  const sections = sectionIds.map(id => id === 'home' ? headerSection : document.getElementById(id)).filter(Boolean);
   function onScroll() {
     let current = null;
-    const scrollY = window.scrollY || window.pageYOffset;
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    let maxVisible = 0;
+    let maxIndex = 0;
     for (let i = 0; i < sections.length; i++) {
       const section = sections[i];
       if (section) {
-        const rect = (section === document.body)
-          ? { top: 0, bottom: window.innerHeight, height: window.innerHeight }
-          : section.getBoundingClientRect();
+        const rect = section.getBoundingClientRect();
         const visible = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0));
-        if (visible / rect.height > 0.4) {
-          current = sectionIds[i];
+        if (visible > maxVisible) {
+          maxVisible = visible;
+          maxIndex = i;
         }
       }
     }
+    current = sectionIds[maxIndex];
     navLinks.forEach(link => {
       if (link.getAttribute('href') === '#' + current) {
         link.classList.add('active-section-link');
@@ -893,6 +921,45 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const themeBtn = document.getElementById('theme-toggle');
+
+  // Load saved theme or default to light
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  applyTheme(savedTheme);
+
+  themeBtn.addEventListener('click', function () {
+    const isLight = document.body.classList.contains('light-theme');
+    const newTheme = isLight ? 'dark' : 'light';
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+
+  function applyTheme(theme) {
+    const isLight = theme === 'light';
+
+    document.body.classList.toggle('light-theme', isLight);
+
+    if (isLight) {
+      document.body.style.background = '';
+      document.body.style.color = '';
+     
+
+        themeBtn.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+      themeBtn.style.backgroundColor = 'black';
+      themeBtn.style.color = 'white';
+    } else {
+      document.body.style.background = '#161515';
+      document.body.style.color = '#f8fafc';
+       themeBtn.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+      themeBtn.style.backgroundColor = 'orange';
+      themeBtn.style.color = 'black';
+    
+    }
+  }
+});
+
 </script>
 <style>
 .active-section-link {
@@ -903,6 +970,8 @@ document.addEventListener('DOMContentLoaded', function() {
   transition: all 0.2s;
 }
 </style>
+
+<script src="script.js"></script>
 
 
 </body>
