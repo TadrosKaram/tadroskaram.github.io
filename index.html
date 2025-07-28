@@ -319,7 +319,8 @@
   }
 </style>
 
-<div class="slide-up-invisible" style="display: flex; align-items: center; gap: 24px;">
+<div class="slide-up-invisible" style="display: flex; align-items: center; gap: 24px;   text-shadow: 0px 2px 5px rgba(0, 0, 0);
+">
   <p class="mt-2 text-gray-200" style="margin: 0;">@ FOE Ain Shams University</p>
   <div style="display: flex; gap: 24px; font-size: 42px; align-items: center; margin: 0;">
     <a href="https://github.com/TadrosKaram" target="_blank" class="social-icon" style="display: inline-flex; align-items: center;">
@@ -924,6 +925,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function () {
   const themeBtn = document.getElementById('theme-toggle');
+  const header = document.querySelector('header');
 
   // Load saved theme or default to light
   const savedTheme = localStorage.getItem('theme') || 'light';
@@ -944,17 +946,26 @@ document.addEventListener('DOMContentLoaded', function () {
     if (isLight) {
       document.body.style.background = '';
       document.body.style.color = '';
+    
      
 
         themeBtn.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
       themeBtn.style.backgroundColor = 'black';
       themeBtn.style.color = 'white';
+          if (header) {
+      header.style.background = 'linear-gradient(120deg, #f3f4f6 60%, #e5e7eb 100%)';
+    }
+
     } else {
       document.body.style.background = '#161515';
       document.body.style.color = '#f8fafc';
        themeBtn.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
       themeBtn.style.backgroundColor = 'orange';
       themeBtn.style.color = 'black';
+            if (header) {
+          header.style.background = 'linear-gradient(120deg, #181d24 60%, #23272f 100%)';
+
+    }
     
     }
   }
