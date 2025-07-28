@@ -273,7 +273,7 @@ header {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  #exp {
+  #projects .grid #exp {
     flex-direction: column;
     height: auto;
   }
@@ -988,6 +988,14 @@ nav ul li a:hover::after {
 #my-project-card:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 10px #ffc005, 0 0 20px rgba(255, 223, 0, 0.7);
+}
+
+.projects-grid a {
+  filter: brightness(110%);
+}
+
+.projects-grid a:hover {
+  filter: brightness(130%);
 }
 
 #my-button:hover {
