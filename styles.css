@@ -16,6 +16,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: url("cursor.png") 0 0, auto !important;
 }
 /* Example usage for cards and nav */
 .card {
@@ -37,64 +38,68 @@ nav {
   .grid.grid-cols-5 {
     grid-template-columns: repeat(4, 1fr);
   }
+    #contact {
+      display: none !important;
+    }
 
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .grid.grid-cols-5 {
-    grid-template-columns: repeat(3, 1fr);
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 
-  .grid.grid-cols-2 {
-    grid-template-columns: 1fr;
-  }
+  @media (max-width: 768px) {
+    .grid.grid-cols-5 {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-  .section-title {
-    font-size: 1.75rem;
-  }
+    .grid.grid-cols-2 {
+      grid-template-columns: 1fr;
+    }
 
-  .terminal-loader {
-    width: 100%;
-  }
+    .section-title {
+      font-size: 1.75rem;
+    }
 
-  #about h3 {
-    font-size: 2.5rem;
-  }
+    .terminal-loader {
+      width: 100%;
+    }
 
-  .mt-8.flex {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
+    #about h3 {
+      font-size: 2.5rem;
+    }
 
-  .mt-8.flex button {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
+    .mt-8.flex {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
 
-  .currently {
-    justify-content: center;
-  }
+    .mt-8.flex button {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
 
-  .currently div {
-    font-size: 16px;
-    height: auto;
-    padding: 0.5rem;
-  }
+    .currently {
+      justify-content: center;
+    }
 
-  .profile-photo {
-    max-width: 80%;
-    margin: 0 auto;
-  }
+    .currently div {
+      font-size: 16px;
+      height: auto;
+      padding: 0.5rem;
+    }
 
-  .tech-skill,
-  .soft-skill {
-    padding: 1rem;
+    .profile-photo {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    .tech-skill,
+    .soft-skill {
+      padding: 1rem;
+    }
   }
 }
 
