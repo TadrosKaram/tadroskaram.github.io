@@ -68,8 +68,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 485px;
-  height: 485px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background: conic-gradient(
     #fffacd 0deg,      /* LemonChiffon */
@@ -80,17 +80,14 @@
     #ffd700 300deg,    /* Gold */
     #fffacd 360deg     /* Back to LemonChiffon */
   );
-  filter: blur(20px) brightness(1.1);
+  filter: blur(40px) brightness(1.1);
   z-index: 999;
   animation: rotateGlow 5s linear infinite;
   opacity: 0.25;
 }
 
-     filter: blur(18px) brightness(1.2);
-     z-index: 1;
-     animation: rotateGlow 4s linear infinite;
-     opacity: 0.7;
-      }
+ 
+  
       @keyframes rotateGlow {
      100% {
        transform: rotate(360deg);
@@ -98,28 +95,7 @@
       }
     </style>
   </div>
-  <nav class="slide-in-left-nav" style="position: fixed; top: 0; left: 0; width: 100vw; background: rgba(35, 37, 37, 0.85); display: flex; align-items: center; padding: 20px 40px; z-index: 1000; color: #fbfaf4;">
-    <!-- Hamburger Button (hidden on large screens) -->
-    <button id="nav-hamburger" aria-label="Open menu"
-      style="display: none; background: none; border: none; cursor: pointer; margin-right: 20px;"
-      class="lg:hidden focus:outline-none">
-      <span style="display: block; width: 32px; height: 4px; background: #ffc005; margin: 6px 0; border-radius: 2px;"></span>
-      <span style="display: block; width: 32px; height: 4px; background: #ffc005; margin: 6px 0; border-radius: 2px;"></span>
-      <span style="display: block; width: 32px; height: 4px; background: #ffc005; margin: 6px 0; border-radius: 2px;"></span>
-    </button>
-    <ul id="main-nav-list" style="display: flex; list-style: none; gap: 30px; padding: 0; margin: 0;" class="text-xl">
-      <li>
-        <a href="https://www.linkedin.com/in/tadros-karam/">
-          <div style="background: url(logodone.png); background-size: cover; background-position: center; width: 30px; height: 30px; border-radius: 50%;"></div>
-        </a>
-      </li>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#exp">Experience</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+ 
 <button id="theme-toggle"
   style="
     position: fixed;
@@ -296,7 +272,7 @@
       }
       el.textContent = shown + randoms;
       i++;
-      setTimeout(hackType, 200);
+      setTimeout(hackType, 50);
     } else {
       el.textContent = text;
     }
@@ -366,7 +342,7 @@
      
 
 
-    <main style="width: 80%;  auto 0 auto; height: 500vh;" >
+    <main style="width: 80%; margin: auto; " >
 
 <section id="skills" class="py-20 text-white ">
   <!-- Title -->
@@ -658,7 +634,7 @@
     </a>
   </div>
 </section>
-<section id="exp" class=" py-20 px-4" style="display: flex; justify-content: center;">
+<section id="exp" class=" py-20 px-4" style="display: flex; justify-content: center; ">
   <div class="max-w-7xl mx-auto flex flex-col items-center justify-center">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 w-full justify-items-center">
       <!-- Experience card -->
@@ -679,18 +655,14 @@
         </div>
       </div>
       <!-- Education card -->
-      <div class="w-full max-w-2xl bg-[#f8f8f1] text-[#223a5e] rounded-3xl border-2 border-[#ffc005]/40 shadow-2xl p-12 flex flex-col justify-between hover:scale-[1.03] transition duration-300 education-card-lg">
+      <div class="w-full max-w-2xl bg-[#0560A1] text-[#e5e7eb] rounded-3xl border-2 border-[#ffc005]/40 shadow-2xl p-12 flex flex-col justify-between hover:scale-[1.03] transition duration-300 education-card-lg" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
         <div class="flex items-center gap-6 mb-8">
-          <img src="engasu.jpg" class="w-20 h-20 rounded-lg object-contain bg-[#e5e7eb] p-2 shadow-md" alt="Ain Shams Logo">
-          <h2 class="text-4xl font-extrabold text-[#223a5e] tracking-wide">Education</h2>
+          <img src="engasu.jpg" class="w-20 h-20 rounded-lg object-contain  p-2 shadow-md" alt="Ain Shams Logo">
+          
         </div>
         <h3 class="text-2xl font-bold mb-4">Computer Engineering Undergraduate<br>@ FOE Ain Shams University</h3>
-        <p class="text-lg leading-relaxed mb-6">
-          Practiced <span class="text-[#ffc005] font-semibold">Front-end</span> (HTML, CSS, Bootstrap, JS),
-          <span class="text-[#ffc005] font-semibold">Back-end</span> (PHP, Laravel, MySQL).<br>
-          Also developed <span class="text-[#ffc005] font-semibold">Soft skills</span> & learned about freelancing and professional work.
-        </p>
-        <div class="flex justify-between items-center text-base text-gray-600 mt-6">
+     
+        <div class="flex justify-between items-center text-base text-gray-400 mt-6">
           <span>2021–Present</span>
         </div>
       </div>
@@ -724,165 +696,25 @@
   </style>
 </section>
 
+<div class="cert-container" id="certifications">
+  <a href="cert1.png" target="_blank">
+    <div class="cert-card" style="background: url(cert1.jpg); background-size: cover; background-position: end; background-repeat: no-repeat;"></div>
+  </a>
+  <a href="cer2.png" target="_blank">
+    <div class="cert-card" style="background: url(cer2.png); background-size: cover; background-position: end; background-repeat: no-repeat;"></div>
+  </a>
+  <a href="cert3.png" target="_blank">
+    <div class="cert-card" style="background: url(cert3.png); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+  </a>
+</div>
 
-         <section class="section-border" id="certifications" style=" height: 100vh; margin-bottom: -300px;">
-            <!-- title -->
+
+
+      
    
-            <br>
-            <br>
-            <a href="cert1.jpg" target="_blank" rel="noopener noreferrer">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 certs-grid-responsive">
-                <div class="cert-card rounded-2xl shadow-lg p-6 flex flex-col items-center bg-[#181d24] hover:scale-[1.03] transition duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-3 text-center">HTML & CSS Certification</h3>
-                    <p class="text-amber-400 mb-4 text-center">Issued by: FreeCodeCamp</p>
-                    <div class="cert-img-wrapper mb-2"><img src="cert1.jpg" alt="HTML & CSS Certification" class="cert-img"></div>
-                    <!-- <a href="cert1.jpg" target="_blank" rel="noopener noreferrer" style="margin: 30px 0px; font-size: 2rem;" onmouseenter="this.style.color='#ffc005'" onmouseleave="this.style.color=''">View</a> -->
-                </div>
-                </a>
-                <a href="cer2.png" target="_blank" rel="noopener noreferrer">
-                <div class="cert-card rounded-2xl shadow-lg p-6 flex flex-col items-center bg-[#181d24] hover:scale-[1.03] transition duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-3 text-center">MATLAB Certification</h3>
-                    <p class="text-amber-400 mb-4 text-center">Issued by: Vanderbilt University</p>
-                    <div class="cert-img-wrapper mb-2"><img src="cer2.png" alt="MATLAB Certification" class="cert-img"></div>
-                       <!-- <a href="cer2.jpg" target="_blank" rel="noopener noreferrer" style="margin: 30px 0px; font-size: 2rem;" onmouseenter="this.style.color='#ffc005'" onmouseleave="this.style.color=''">View</a> -->
-                </div>
-                </a>
-                <a href="cert3.png" target="_blank" rel="noopener noreferrer">
-                <div class="cert-card rounded-2xl shadow-lg p-6 flex flex-col items-center bg-[#181d24] hover:scale-[1.03] transition duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-3 text-center">Supervised Machine Learning Certification</h3>
-                    <p class="text-amber-400 mb-4 text-center">Issued by: DeepLearningAI</p>
-                    <div class="cert-img-wrapper mb-2"><img src="cert3.png" alt="Supervised Machine Learning Certification" class="cert-img"></div>
-                    <!-- <a href="cert3.jpg" target="_blank" rel="noopener noreferrer" style="margin: 30px 0px; font-size: 2rem;" onmouseenter="this.style.color='#ffc005'" onmouseleave="this.style.color=''">View</a> -->
-                </div>
-                </a>
-            </div>
-            <style>
-/* Responsive certifications section */
-@media (max-width: 1024px) {
-  .certs-grid-responsive {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 1.5rem !important;
-    margin-bottom: 40px !important;
-  }
-  .cert-card {
-    min-height: 220px !important;
-    padding: 1.2rem !important;
-  }
-  .cert-img-wrapper {
-    min-height: 100px !important;
-  }
-  .cert-img {
-    width: 120px !important;
-    height: 80px !important;
-  }
-}
-@media (max-width: 768px) {
-  .certs-grid-responsive {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-    margin-bottom: 80px !important;
-    img {
-      display:none !important;
-    }
-  }
-  .cert-card {
-    height: 60px !important;
-  }
-  .cert-img-wrapper {
-    height: 60px !important;
-  }
-  .cert-img {
-    width: 80px !important;
-    height: 50px !important;
-  }
-
-@media (max-width: 480px) {
-  .certs-grid-responsive {
-    margin-bottom: 120px !important;
-  }
-  .cert-card {
-    min-height: 120px !important;
-    padding: 0.5rem !important;
-  }
-  .cert-img-wrapper {
-    min-height: 40px !important;
-  }
-  .cert-img {
-    width: 60px !important;
-    height: 36px !important;
-  }
-}
-.section-border {
-  width: 100% !important;
-  min-height: 400px;
-  margin-bottom: 40px !important;
-  padding-bottom: 40px !important;
-  box-sizing: border-box;
-  display: block;
-}
-
-            .cert-img-wrapper {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 180px;
-                margin-bottom: 0.5rem;
-            }
-            .cert-img {
-                width: 320px;
-                height: 320px;
-                object-fit: contain;
-                border-radius: 1rem;
-                background: #fff;
-                box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-                border: 2px solid #ffc00522;
-                padding: 8px;
-                max-width: 100%;
-                max-height: 100%;
-            }
-            .cert-card {
-                min-height: 370px;
-                min-width: 0;
-            }
-            .certs-grid-responsive {
-                margin-bottom: 60px;
-            }
-            .certifications {
-                margin-bottom: -50px !important;
-            }
-          }
-            @media (max-width: 1024px) {
-                .certs-grid-responsive {
-                    grid-template-columns: 1fr 1fr !important;
-                    gap: 1.5rem !important;
-                }
-                .cert-card {
-                    min-height: 320px;
-                    padding: 1.5rem !important;
-                }
-                .cert-img {
-                    width: 160px;
-                    height: 110px;
-                }
-            }
-            @media (max-width: 640px) {
-                .certs-grid-responsive {
-                    grid-template-columns: 1fr !important;
-                    gap: 1.2rem !important;
-                    margin-bottom: 100px !important;
-                }
-                .cert-card {
-                    min-height: 220px;
-                    padding: 1rem !important;
-                }
-                .cert-img {
-                    width: 120px;
-                    height: 80px;
-                }
-            }
-            </style>
-        </section>
+ 
+    
+      
 <!-- Contact Section -->
 <div style="margin-top: 100px; margin-left: 40px;">
 <section id="contact" style="margin-top: 100px;">
@@ -941,12 +773,7 @@
 
 
 
-        <button id="scrollToTop" class="scroll-to-top">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
-        </button>
+      
 
         
 
@@ -1063,8 +890,7 @@ main {
 <script>
 // Highlight nav link for section in view (improved logic)
 document.addEventListener('DOMContentLoaded', function() {
-  const navLinks = Array.from(document.querySelectorAll('nav ul li a[href^="#"]'));
-  const sectionIds = navLinks.map(link => link.getAttribute('href').replace('#','')).filter(Boolean);
+
   // Map 'home' to header section instead of document.body
   const headerSection = document.querySelector('header');
   const sections = sectionIds.map(id => id === 'home' ? headerSection : document.getElementById(id)).filter(Boolean);

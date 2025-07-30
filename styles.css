@@ -25,6 +25,40 @@ body {
 nav {
   background: var(--bg-color);
 }
+nav ul li a:hover {
+  transition: all 0.5s ease-in-out;
+  color: var(--accent-color) !important;
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+}
+.cert-container {
+  display: flex;
+  /* Optional spacing between cards */
+height: 300px;
+/* Set desired height */
+  
+}
+
+
+
+.cert-container a {
+  flex-grow: 1;
+  flex-basis: 0;
+  transition: flex-grow 0.3s ease;
+  display: flex;
+ 
+}
+
+.cert-container a:hover {
+  flex-grow: 3;
+}
+
+.cert-card {
+  flex: 1;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
 /* …adjust other elements similarly… */
 @media (max-width: 768px) {
   #theme-toggle,
@@ -153,6 +187,7 @@ nav {
     font-size: 0.9rem;
   }
 
+ 
   .text-lg {
     font-size: 1rem;
   }
@@ -223,7 +258,7 @@ header {
 
 #main-nav-list {
   backdrop-filter: blur(6px);
-  background-color: rgba(35, 37, 37, 0.9); /* ensure semi-transparent */
+   /* ensure semi-transparent */
   padding: 20px;
   border-radius: 10px;
 }
@@ -1125,7 +1160,7 @@ hr {
 
 /* Scrollbar handle */
 ::-webkit-scrollbar-thumb {
-  background-color: white; /* dark to light purple */
+  background-color: var(--accent-color); /* dark to light purple */
   border-radius: 10px;
 }
 
