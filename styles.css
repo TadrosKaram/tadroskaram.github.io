@@ -270,6 +270,10 @@ header {
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(255, 192, 5, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .skill-card:hover {
@@ -1044,9 +1048,6 @@ nav ul li a:hover::after {
   color: #000000 !important;
 }
 
-hr {
-  border: 2px solid orange;
-}
 
 @keyframes moving-light {
   0% {
