@@ -14,7 +14,6 @@ The goal of this site is to showcase:
 - GitHub contributions and growth
 - My resume and professional presence
 
-## ⚙️ Tech Stack
 
 ## ⚙️ Tech Stack
 
