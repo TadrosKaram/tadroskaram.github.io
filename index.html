@@ -766,48 +766,77 @@
   </style>
 </section>
 
+<section id="certifications-section" class="py-20">
+  <div class="text-center mb-12">
+    <h2 class="text-5xl font-bold text-[#ffc005] tracking-wide border-b-4 border-[#ffc005] inline-block pb-2 section-title" style="margin-bottom: 0;">
+      <i>Certifications</i>
+    </h2>
+  </div>
+  <div class="cert-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 justify-items-center px-4" style="margin: 60px 0;">
+    <a href="cert1.png" target="_blank" class="cert-link group">
+      <div class="cert-card rounded-2xl shadow-lg border-2 border-[#ffc005] overflow-hidden transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl bg-gray-900 relative" style="aspect-ratio: 4/3; background: url(cert1.jpg) center/cover no-repeat;">
+        <div class="cert-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <span class="text-[#ffc005] text-xl font-bold bg-black/60 px-4 py-2 rounded-lg">View Certificate</span>
+        </div>
+      </div>
+    </a>
+    <a href="cer2.png" target="_blank" class="cert-link group">
+      <div class="cert-card rounded-2xl shadow-lg border-2 border-[#ffc005] overflow-hidden transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl bg-gray-900 relative" style="aspect-ratio: 4/3; background: url(cer2.png) center/cover no-repeat;">
+        <div class="cert-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <span class="text-[#ffc005] text-xl font-bold bg-black/60 px-4 py-2 rounded-lg">View Certificate</span>
+        </div>
+      </div>
+    </a>
+    <a href="cert3.png" target="_blank" class="cert-link group">
+      <div class="cert-card rounded-2xl shadow-lg border-2 border-[#ffc005] overflow-hidden transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl bg-gray-900 relative" style="aspect-ratio: 4/3; background: url(cert3.png) center/cover no-repeat;">
+        <div class="cert-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <span class="text-[#ffc005] text-xl font-bold bg-black/60 px-4 py-2 rounded-lg">View Certificate</span>
+        </div>
+      </div>
+    </a>
+    <a href="cert4.png" target="_blank" class="cert-link group">
+      <div class="cert-card rounded-2xl shadow-lg border-2 border-[#ffc005] overflow-hidden transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl bg-gray-900 relative" style="aspect-ratio: 4/3; background: url(cert4.png) center/cover no-repeat;">
+        <div class="cert-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <span class="text-[#ffc005] text-xl font-bold bg-black/60 px-4 py-2 rounded-lg">View Certificate</span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <style>
+    .cert-card {
+      min-width: 220px;
+      min-height: 160px;
+      cursor: pointer;
+      transition: box-shadow 0.3s, transform 0.3s;
+      box-shadow: 0 4px 24px rgba(255,192,5,0.10), 0 1.5px 8px rgba(0,0,0,0.10);
+      background-color: #23272f;
+    }
+    .cert-card:hover {
+      box-shadow: 0 8px 32px rgba(255,192,5,0.18), 0 4px 16px rgba(0,0,0,0.18);
+      transform: scale(1.04);
+    }
+    .cert-overlay {
+      pointer-events: none;
+    }
+    @media (max-width: 1024px) {
+      .cert-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+    }
+    @media (max-width: 640px) {
+      .cert-container {
+        grid-template-columns: 1fr !important;
+      }
+      .cert-card {
+        min-width: 100px;
+        min-height: 80px;
+      }
+    }
+  </style>
+</section>
 
-<div class="cert-container" id="certifications" style="margin: 350px 0px; ">
+        
 
-  <h1 class="section-title" style="margin: auto 20px;" >Certifications</h1>
-  
-  <a href="cert1.png" target="_blank">
-    <div class="cert-card" style="background: url(cert1.jpg); background-size: cover; background-position: end; background-repeat: no-repeat;"></div>
-  </a>
-  <a href="cer2.png" target="_blank">
-    <div class="cert-card" style="background: url(cer2.png); background-size: cover; background-position: end; background-repeat: no-repeat;"></div>
-  </a>
-  <a href="cert3.png" target="_blank">
-    <div class="cert-card" style="background: url(cert3.png); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
-  </a>
-</div>
-
-
-
-      
-   
- 
-    
-      
-
-        <script>
-          // Simple contact form handler (demo only)
-          document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contact-form');
-            if (form) {
-              form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                document.getElementById('contact-msg').style.display = 'inline';
-                form.reset();
-                setTimeout(() => {
-                  document.getElementById('contact-msg').style.display = 'none';
-                }, 3000);
-              });
-            }
-          });
-        </script>
-
-<!-- to be fixed -->
 
 
 
