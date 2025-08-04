@@ -245,9 +245,7 @@ height: 300px;
 
 /* removed duplicate background rule, now only uses CSS variable */
 
-header {
-  background: linear-gradient(90deg, rgb(14, 14, 14), rgb(43, 42, 42));
-}
+
 
 #main-title-font {
   background: linear-gradient(to right, #fff, #ffc005);
