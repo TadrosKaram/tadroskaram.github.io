@@ -19,6 +19,7 @@
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="screens.css">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
 
 
@@ -429,13 +430,14 @@
     <div class="skill-card">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
       <span>Java</span>
+       <p class="text-gray-600 mt-2">CSE231s</p>
     </div>
 
     <div class="skill-card">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
       <span>C++</span>
 
-      <p class="text-gray-600 mt-2">Familiar</p>
+      <p class="text-gray-600 mt-2">CSE131s</p>
     </div>
 
     <div class="skill-card">
@@ -451,16 +453,26 @@
     </div>
 
     <div class="skill-card">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB" style="margin-top: 65px;">
       <span>MATLAB</span>
       
     </div>
 
     <div class="skill-card">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" style="margin-top: 65px;">
       <span>Linux</span>
     </div>
 
+    <div class="skill-card" style="grid-column: span 2; text-align: center;">
+      <span style="display: block; font-size: 1.1rem; color: #ffc005; font-weight: 600; margin-bottom: 8px;">
+        AI Tools
+      </span>
+      <p style="font-size: 1.05rem; color: #d1d5db; line-height: 1.6; margin: 0 auto; max-width: 320px;">
+        AI is integral to my workflow, enhancing productivity and creativity. I leverage AI tools like GitHub Copilot inside Visual Studio Code <br> ⚠️ <span style="color: red;">I don't like vibe coding</span>  but AI can be a great Assistant , code Reviewer and a Debugger 
+      </p>
+    </div>
+
+    
 <div class="skill-card">
   <img
     src="https://www.podfeet.com/blog/wp-content/uploads/2021/09/GitHub-Copilot-logo-1040x650.png"
@@ -473,22 +485,15 @@
 
 <div class="skill-card">
   <img
-    src="https://conserto.pro/wp-content/uploads/2022/11/microsoftteams-image-56.png"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrQ_CU3a6muH84mLfoP6xmM4ZJ9Z6RAXMmdA&s"
     alt="GitHub Copilot Logo"
     style="object-fit: contain; width: 50%; height: 50%;"
 
   >
-  <span>Codex </span>
-              <p class="text-gray-600 mt-2">OpenAI</p>
+  <span>Comfortable with AI IDEs</span>
+</div>
 
 
-
-
-
-
-
-
-      
     </div>
   </div>
   <br><br>
@@ -517,7 +522,7 @@
   <!-- projects grid -->
   <div class="projects-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-12 px-2">
     <!-- Card 1 -->
-    <a href="fstask.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTYRK6tmMsMp58Xvlm1Z5KvLjP9zv50rNmg&s') center/cover no-repeat;">
+    <a href="fstask.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('fstask.gif') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
       <div class="relative z-10">
         <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">PHP Register Form</h3>
@@ -530,7 +535,7 @@
       </span>
     </a>
     <!-- Card 2 -->
-    <a href="phplogin.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCMv4JAeDMdh5y1NUWlFb2X-lMtDcr5Tu5QA&s') center/cover no-repeat;">
+    <a href="phplogin.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('phplogin.gif') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
       <div class="relative z-10">
         <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">College System Authenticator</h3>
@@ -555,18 +560,7 @@
         <i class="fas fa-arrow-right"></i>
       </span>
     </a>
-    <!-- Card 4 -->
-    <a href="https://tadroskaram.github.io/number-guess.js/" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('guessthenumber.gif') center/cover no-repeat;">
-      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
-      <div class="relative z-10">
-        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Guess The Number Game</h3>
-        <p class="text-gray-100 mb-8 drop-shadow">A fun JavaScript game where users try to guess a randomly generated number. Features interactive UI and instant feedback.</p>
-      </div>
-      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
-        Test Project for yourself
-        <i class="fas fa-arrow-right"></i>
-      </span>
-    </a>
+   
     <!-- Card 5 -->
     <a href="https://tadroskaram.github.io/nti-clone-task1/" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('task1-nti.png') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
@@ -592,7 +586,7 @@
       </span>
     </a>
     <!-- Card 7 -->
-    <a href="carplate.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0-kQ0B_cD51fGMpfclihPUwz_CXo8FuJQwQ&s') center/cover no-repeat;">
+    <a href="carplate.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('carplate.gif') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
       <div class="relative z-10">
         <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Car Plate System</h3>
@@ -604,45 +598,11 @@
       </span>
     </a>
 
-     <a href="lyricjava.mp4" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://www.butlerbranding.com/wp-content/uploads/2019/09/Spotify-Logo-Large.jpg') center/cover no-repeat;">
-      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
-      <div class="relative z-10">
-        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Lyrics system</h3>
-        <p class="text-gray-100 mb-8 drop-shadow">lyrics system just like in music apps using java</p>
-      </div>
-      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
-        View Project
-        <i class="fas fa-arrow-right"></i>
-      </span>
-    </a>
+    
 
-         <!-- Card 9 -->
-    <a href="gpacalc.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQcUL1vjhADgl6TyBLY0zkOHkJpSCkeLkVOg&s') center/cover no-repeat;">
-      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
-      <div class="relative z-10">
-        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">GPA Calculator</h3>
-        <p class="text-gray-100 mb-8 drop-shadow">gpa calculator with UI using JavaFX with the ability to calculate CGPA and edit and many more view for yourself</p>
-      </div>
-      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
-        View Project
-        <i class="fas fa-arrow-right"></i>
-      </span>
-    </a>
-            <!-- Card 10 -->
-    <a href="javacalc.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcuqZpxzUU47pk2cEyKSGy_S7CXBoAszF80A&s) center/cover no-repeat;">
-      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
-      <div class="relative z-10">
-        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Simple Calculator</h3>
-        <p class="text-gray-100 mb-8 drop-shadow">Simple calculator with UI using JavaFX</p>
-      </div>
-      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
-        View Project
-        <i class="fas fa-arrow-right"></i>
-      </span>
-    </a>
-
+   
             <!-- Card 11 -->
-    <a href="passwordjava.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://www.seoclerk.com/pics/002/124/985/fe0eb05f178eb242f2567c204f4854d7.jpg') center/cover no-repeat;">
+    <a href="passwordjava.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('passwordjava.gif') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
       <div class="relative z-10">
         <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Strong Password Generator</h3>
@@ -653,54 +613,8 @@
         <i class="fas fa-arrow-right"></i>
       </span>
     </a>
-            <!-- Card 12 -->
-    <a href="Quizjava.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_4Xy_wNfcgC-OlJxa2r64hzNvwde4pYzxbRqpmWhywnBcAzNAmmQeF8T89lJUWZc6plA&usqp=CAU') center/cover no-repeat;">
-      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
-      <div class="relative z-10">
-        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Quiz App</h3>
-        <p class="text-gray-100 mb-8 drop-shadow">Built with UI using javaFX</p>
-      </div>
-      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
-        View Project
-        <i class="fas fa-arrow-right"></i>
-      </span>
-    </a>
-            <!-- Card 13 -->
-    <a href="wikisearch.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp4zgEfdz5GHeGYVqZ6MJFqK9wK91Fg6OBow&s') center/cover no-repeat;">
-      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
-      <div class="relative z-10">
-        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Local Wikipedia search</h3>
-        <p class="text-gray-100 mb-8 drop-shadow">Local search of wikipedia websites with ui using JavaFX</p>
-      </div>
-      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
-        View Project
-        <i class="fas fa-arrow-right"></i>
-      </span>
-    </a>
-
-                <!-- Card 14 -->
-    <a href="piggamejs.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('piggamejs.gif') center/cover no-repeat;">
-      <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
-      <div class="relative z-10">
-        <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Pig Game</h3>
-        <p class="text-gray-100 mb-8 drop-shadow">A pig game with JavaScript
-          <br>
-          Rules:
-          <br>
-          - Roll the dice to accumulate points. 
-          <br>
-          - Choose to hold and save points or risk losing them.
-          <br>
-          - If you roll a 1, you lose all points for that turn.
-          <br>
-          - First player to reach 100 points wins.
-        </p>
-      </div>
-      <span class="absolute bottom-4 right-6 text-[#ffc005] font-semibold flex items-center gap-2 group-hover:underline z-10">
-        Test Project for yourself
-        <i class="fas fa-arrow-right"></i>
-      </span>
-    </a>
+ 
+           
       <!-- Card 15 -->
     <a href="todolistlaravel.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('todolistlaravel.gif') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
@@ -716,7 +630,7 @@
     </a>
 
           <!-- Card 16 -->
-    <a href="attendkashafa.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('https://media.istockphoto.com/id/1198430065/vector/attendance-concept-vector-flat-design.jpg?s=612x612&w=0&k=20&c=Q21HKmopEQcN1mhGYNPzRYMWtjla-C-eyGyVEPpoJ5w=') center/cover no-repeat;">
+    <a href="attendkashafa.gif" target="_blank" class="group relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#ffc005] flex flex-col justify-between p-6 cursor-pointer hover:scale-105 overflow-hidden" style="min-height: 260px; background: url('attendkashafa.gif') center/cover no-repeat;">
       <div class="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition duration-300 z-0"></div>
       <div class="relative z-10">
         <h3 class="text-2xl font-bold text-[#ffc005] mb-2 drop-shadow-lg">Attendance system</h3>
@@ -810,7 +724,7 @@
       </div>
     </a>
     <a href="cer2.png" target="_blank" class="cert-link group">
-      <div class="cert-card rounded-2xl shadow-lg border-2 border-[#ffc005] overflow-hidden transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl bg-gray-900 relative" style="aspect-ratio: 4/3; background: url(cer2.png) center/cover no-repeat;">
+      <div class="cert-card rounded-2xl shadow-lg border-2 border-[#ffc005] overflow-hidden transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl bg-gray-900 relative" style="aspect-ratio: 4/3; background: url(cert2.png) center/cover no-repeat;">
         <div class="cert-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <span class="text-[#ffc005] text-xl font-bold bg-black/60 px-4 py-2 rounded-lg">View Certificate</span>
         </div>
@@ -831,43 +745,41 @@
       </div>
     </a>
   </div>
-  <style>
-    .cert-card {
-      min-width: 220px;
-      min-height: 160px;
-      cursor: pointer;
-      transition: box-shadow 0.3s, transform 0.3s;
-      box-shadow: 0 4px 24px rgba(255,192,5,0.10), 0 1.5px 8px rgba(0,0,0,0.10);
-      background-color: #23272f;
-    }
-    .cert-card:hover {
-      box-shadow: 0 8px 32px rgba(255,192,5,0.18), 0 4px 16px rgba(0,0,0,0.18);
-      transform: scale(1.04);
-    }
-    .cert-overlay {
-      pointer-events: none;
-    }
-    @media (max-width: 1024px) {
-      .cert-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      }
-    }
-    @media (max-width: 640px) {
-      .cert-container {
-        grid-template-columns: 1fr !important;
-      }
-      .cert-card {
-        min-width: 100px;
-        min-height: 80px;
-      }
-    }
-  </style>
+
 </section>
 
-        
 
 
+<section id="certifications-mobile">
+  <h1 style="text-align: center;">Certifications</h1>
+  <a href="cert1.png" target="_blank">HTML & CSS (Responsive Design)</a>
+  <a href="cert2.png" target="_blank">MATLAB</a>
+  <a href="cert3.png" target="_blank">Supervised Machine Learning</a>
+  <a href="cert4.png" target="_blank">NTI - FullStack Web Development</a>
+</section>
 
+<style>
+  #certifications-mobile {
+    display: none;
+  }
+
+  #certifications-mobile a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #152938;
+    color: #ffc005;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  @media (max-width: 1024px) {
+    #certifications-mobile {
+      display: block !important;
+      margin-top: -200px;
+    }
+  }
+</style>
 
       
 
