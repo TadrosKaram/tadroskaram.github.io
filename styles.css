@@ -634,7 +634,7 @@ hr {
   animation: spinGlow 8s linear infinite;
   z-index: 0;
   filter: blur(150px);
-  opacity: 0.15;
+  opacity: 0.1;
 }
 
 @keyframes spinGlow {
